@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item&#x2F;construction&#x2F;rcd - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item/construction/rcd.html#var">Var Details</a> - <a href="obj/item/construction/rcd.html#proc">Proc Details</a></header>
+<main>
+<h1>rcd <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/construction.html">construction</a>/<a href="obj/item/construction/rcd.html">rcd</a></aside>
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L294">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 294"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/item/construction/rcd.html#var/airlock_electronics">airlock_electronics</a></th><td>Integrated airlock electronics for setting access to a newly built airlocks</td></tr>
+            <tr><th><a href="obj/item/construction/rcd.html#var/design_title">design_title</a></th><td>english name for the design to check if it was selected or not</td></tr>
+            <tr><th><a href="obj/item/construction/rcd.html#var/owner">owner</a></th><td>owner of this rcd. It can either be an construction console or an player</td></tr>
+            <tr><th><a href="obj/item/construction/rcd.html#var/root_categories">root_categories</a></th><td>all stuff used by RCD for construction</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item/construction/rcd.html#proc/attack_self">attack_self</a></th><td>The advantage of organizing designs into categories is that
+You can ignore an complete category if the design disk upgrade for that category isn't installed.</td></tr>
+            <tr><th><a href="obj/item/construction/rcd.html#proc/is_turf_blocked">is_turf_blocked</a></th><td>checks if the turf has dense objects that could block construction of big structures such as walls, airlocks etc
+Arguments:</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/airlock_electronics"><aside class="declaration">var </aside>airlock_electronics
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/electronics/airlock.html">electronics/airlock</a></aside>
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L422">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 422"/></a></h3>
+        <p>Integrated airlock electronics for setting access to a newly built airlocks</p><h3 id="var/design_title"><aside class="declaration">var </aside>design_title
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L399">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 399"/></a></h3>
+        <p>english name for the design to check if it was selected or not</p><h3 id="var/owner"><aside class="declaration">var </aside>owner
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L404">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 404"/></a></h3>
+        <p>owner of this rcd. It can either be an construction console or an player</p><h3 id="var/root_categories"><aside class="declaration">var </aside>root_categories
+            <aside>&ndash; /static/list</aside>
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L309">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 309"/></a></h3>
+        <p>all stuff used by RCD for construction</p><h2 id="proc">Proc Details</h2><h3 id="proc/attack_self"><aside class="parent"><a title="/obj/item" href="obj/item.html#proc/attack_self">&uarr;</a></aside>attack_self<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L814">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 814"/></a></aside>
+        </h3>
+        <p>The advantage of organizing designs into categories is that
+You can ignore an complete category if the design disk upgrade for that category isn't installed.</p><h3 id="proc/is_turf_blocked"><aside class="declaration">proc </aside>is_turf_blocked<aside>(/<a href="turf.html">turf</a>/the_turf, ignore_mobs, /list/ignored_atoms) 
+        
+    
+            <a href="https://github.com/AlmaTray/almabuild/blob/cac811cb05e9b24239586f6c21a5bd52d6ab3538/code/game/objects/items/RCD.dm#L535">
+        <img src="git.png" width="16" height="16" title="code&#x2F;game&#x2F;objects&#x2F;items&#x2F;RCD.dm 535"/></a></aside>
+        </h3>
+        <p>checks if the turf has dense objects that could block construction of big structures such as walls, airlocks etc
+Arguments:</p>
+<ul>
+<li>turf/the_turf - The turf we are checking</li>
+<li>ignore_mobs - should we ignore mobs when checking for dense objects. this is TRUE only for windoors</li>
+<li>ignored_atoms - ignore these object types when checking for dense objects on the turf. e.g. ignore directional windows when building windoors cause they all can exist on the same turf</li>
+</ul></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/AlmaTray/almabuild/tree/cac811cb05e9b24239586f6c21a5bd52d6ab3538">cac811c</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.7.3</a></footer>
+</body>
+</html>
