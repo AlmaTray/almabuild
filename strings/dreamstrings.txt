@@ -1,0 +1,44 @@
+%A% %ADJECTIVE% alien
+%A% %ADJECTIVE% ally
+%A% %ADJECTIVE% bottle
+%A% %ADJECTIVE% crewmember
+%A% %ADJECTIVE% doctor
+%A% %ADJECTIVE% engineer
+%A% %ADJECTIVE% familiar face
+%A% %ADJECTIVE% gun
+%A% %ADJECTIVE% hat
+%A% %ADJECTIVE% ID card
+%A% %ADJECTIVE% laboratory
+%A% %ADJECTIVE% loved one
+%A% %ADJECTIVE% miner
+%A% %ADJECTIVE% monkey
+%A% %ADJECTIVE% monster
+%A% %ADJECTIVE% planet
+%A% %ADJECTIVE% scientist
+%A% %ADJECTIVE% security officer
+%A% %ADJECTIVE% shuttle
+%A% %ADJECTIVE% slime
+%A% %ADJECTIVE% toolbox
+%A% %ADJECTIVE% traitor
+%ADJECTIVE% blinking lights
+%ADJECTIVE% blood
+%ADJECTIVE% darkness
+%ADJECTIVE% death
+%ADJECTIVE% flames
+%ADJECTIVE% light
+%ADJECTIVE% plasma
+%ADJECTIVE% power
+%ADJECTIVE% riches
+%ADJECTIVE% wind
+Nanotrasen
+some %ADJECTIVE% melons
+the %ADJECTIVE% bridge
+the %ADJECTIVE% brig
+the %ADJECTIVE% captain
+the engine
+the medical bay
+the station
+the sun
+the Syndicate
+the Wizard Federation
+water
