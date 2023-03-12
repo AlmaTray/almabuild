@@ -1,11 +1,11 @@
 {
-	"name": "Beckon",
-	"description": "Beckon someone over to you.",
+	"name": "Поманить",
+	"description": "Помани кого-то к себе.",
 	"usage": "other",
 	"category": "Miscellaneous",
 	"distance_allowed": 1,
 	"message": [
-		"%USER% beckons %TARGET% over to them."
+		"%USER% зовет %TARGET% рукой к себе."
 	],
 	"sound_use": 0,
 	"sound_possible": [
