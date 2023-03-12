@@ -170,15 +170,15 @@ export const QuirksPage = (props, context) => {
 
           if (quirk.value > 0) {
             if (positiveQuirks >= maxPositiveQuirks) {
-              return "You can't have any more positive quirks!";
+              return "Вы больше не можете иметь положительных особенностей!";
             } else if (balance + quirk.value > 0) {
-              return 'You need a negative quirk to balance this out!';
+              return 'Для баланса вам нужна негативная особенность.';
             }
           }
 
           // SKYRAT EDIT START - Veteran quirks
           if (quirk.veteran_only && !data.is_veteran) {
-            return 'You need to be a veteran to select this quirk, apply today!';
+            return 'Вам нужно быть ветераном, чтобы применить это.';
           }
           // SKYRAT EDIT END
 
@@ -196,7 +196,7 @@ export const QuirksPage = (props, context) => {
                 incompatibleQuirk !== quirk.name &&
                 selectedQuirkNames.indexOf(incompatibleQuirk) !== -1
               ) {
-                return `This is incompatible with ${incompatibleQuirk}!`;
+                return `Это несовместимо с ${incompatibleQuirk}!`;
               }
             }
           }
@@ -208,7 +208,7 @@ export const QuirksPage = (props, context) => {
           const quirk = quirkInfo[quirkName];
 
           if (balance - quirk.value > 0) {
-            return 'You need to remove a positive quirk first!';
+            return 'Сначала вам нужно убрать положительную особенность.';
           }
 
           return undefined;

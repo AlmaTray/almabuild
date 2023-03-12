@@ -2,23 +2,23 @@
 //this file is named weirdly so that positive traits are listed above negative ones
 
 /datum/quirk/alcohol_tolerance
-	name = "Alcohol Tolerance"
-	desc = "You become drunk more slowly and suffer fewer drawbacks from alcohol."
+	name = "Устойчивость к алкоголю"
+	desc = "Вы напиваетесь медленнее и ощущаете меньше негативных сторон опьянения."
 	icon = "beer"
 	value = 4
 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
-	gain_text = span_notice("You feel like you could drink a whole keg!")
-	lose_text = span_danger("You don't feel as resistant to alcohol anymore. Somehow.")
-	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
+	gain_text = span_notice("Вы чувствуете, словно можете выпить целую кегу пива!")
+	lose_text = span_danger("Каким-то образом, вы чувствуете меньшую устойчивость к алкоголю.")
+	medical_record_text = "Пациент демонстрирует сильную устойчивость к алкоголю."
 	mail_goodies = list(/obj/item/skillchip/wine_taster)
 
 /datum/quirk/apathetic
-	name = "Apathetic"
-	desc = "You just don't care as much as other people. That's nice to have in a place like this, I guess."
+	name = "Апатичный"
+	desc = "В отличие от других, вам, в принципе, на всё плевать. Полезно в таком месте."
 	icon = "meh"
 	value = 4
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
-	medical_record_text = "Patient was administered the Apathy Evaluation Scale but did not bother to complete it."
+	medical_record_text = "Пациенту дали тест на апатичность, но он даже не взглянул на него."
 	mail_goodies = list(/obj/item/hourglass)
 
 /datum/quirk/apathetic/add(client/client_source)
@@ -28,13 +28,13 @@
 	quirk_holder.mob_mood?.mood_modifier += 0.2
 
 /datum/quirk/drunkhealing
-	name = "Drunken Resilience"
-	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
+	name = "Пьяная устойчивость"
+	desc = "От хорошего напитка вы чувствуете себя, словно бог. Пьянство медленно восстанавливает ваши ранения."
 	icon = "wine-bottle"
 	value = 8
-	gain_text = span_notice("You feel like a drink would do you good.")
-	lose_text = span_danger("You no longer feel like drinking would ease your pain.")
-	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
+	gain_text = span_notice("Вы думаете, что вам не помешало бы выпить.")
+	lose_text = span_danger("Вам больше не кажется, что алкоголь снижает боль.")
+	medical_record_text = "У пациента необычные метаболические свойства печени, и его ранения лечатся алкоголем."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/effect/spawner/random/food_or_drink/booze)
 
@@ -51,25 +51,25 @@
 			quirk_holder.adjustFireLoss(-0.4 * delta_time, required_bodytype = BODYTYPE_ORGANIC)
 
 /datum/quirk/empath
-	name = "Empath"
-	desc = "Whether it's a sixth sense or careful study of body language, it only takes you a quick glance at someone to understand how they feel."
+	name = "Эмпат"
+	desc = "То ли это шестое чувство, то ли вы очень хорошо знаете язык тела, но вы можете угадать, что думают личности вокруг вас."
 	value = 6 /// SKYRAT EDIT - Quirk Rebalance - Original: value = 8
 	icon = "smile-beam"
 	mob_trait = TRAIT_EMPATH
-	gain_text = span_notice("You feel in tune with those around you.")
-	lose_text = span_danger("You feel isolated from others.")
-	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."
+	gain_text = span_notice("Вы словно на одной волне со всеми остальными.")
+	lose_text = span_danger("Вы чувствуете себя изолированно от остальных.")
+	medical_record_text = "Пациент очень восприимчив к чужим эмоциям. Возможно, он экстрасенс? Требуется дальнейшее исследование."
 	mail_goodies = list(/obj/item/toy/foamfinger)
 
 /datum/quirk/item_quirk/clown_enjoyer
-	name = "Clown Enjoyer"
-	desc = "You enjoy clown antics and get a mood boost from wearing your clown pin."
+	name = "Любитель клоунов"
+	desc = "Вам нравятся клоунские проделки и ваше настроение поднимается, когда вы носите свой клоунский значок."
 	icon = "map-pin"
 	value = 2
 	mob_trait = TRAIT_CLOWN_ENJOYER
-	gain_text = span_notice("You are a big enjoyer of clowns.")
-	lose_text = span_danger("The clown doesn't seem so great.")
-	medical_record_text = "Patient reports being a big enjoyer of clowns."
+	gain_text = span_notice("Вам очень нравятся клоуны.")
+	lose_text = span_danger("Клоуны больше не кажутся вам такими классными.")
+	medical_record_text = "Пациенту очень нравятся клоуны."
 	mail_goodies = list(
 		/obj/item/bikehorn,
 		/obj/item/stamp/clown,
@@ -91,14 +91,14 @@
 	fan.show_to(quirk_holder)
 
 /datum/quirk/item_quirk/mime_fan
-	name = "Mime Fan"
-	desc = "You're a fan of mime antics and get a mood boost from wearing your mime pin."
+	name = "Любитель мимов"
+	desc = "Вам нравятся проделки мимов и ваше настроение поднимается, когда вы носите свой значок мима."
 	icon = "thumbtack"
 	value = 2
 	mob_trait = TRAIT_MIME_FAN
-	gain_text = span_notice("You are a big fan of the Mime.")
-	lose_text = span_danger("The mime doesn't seem so great.")
-	medical_record_text = "Patient reports being a big fan of mimes."
+	gain_text = span_notice("Вам очень нравятся мимы.")
+	lose_text = span_danger("Мимы больше не кажутся вам такими классными.")
+	medical_record_text = "Пациенту очень нравятся мимы."
 	mail_goodies = list(
 		/obj/item/toy/crayon/mime,
 		/obj/item/clothing/mask/gas/mime,
@@ -121,72 +121,72 @@
 	fan.show_to(quirk_holder)
 
 /datum/quirk/freerunning
-	name = "Freerunning"
-	desc = "You're great at quick moves! You can climb tables more quickly and take no damage from short falls."
+	name = "Ловкач"
+	desc = "Вы очень хороши в быстром передвижении! Вы залезаете на столы быстрее других и не получаете урона от небольших падений."
 	icon = "running"
 	value = 8
 	mob_trait = TRAIT_FREERUNNING
-	gain_text = span_notice("You feel lithe on your feet!")
-	lose_text = span_danger("You feel clumsy again.")
-	medical_record_text = "Patient scored highly on cardio tests."
+	gain_text = span_notice("Вы чувствуете себя крайне гибкими.")
+	lose_text = span_danger("Вы снова чувствуете себя неуклюжими.")
+	medical_record_text = "У пациента высокие показатели в кардиотренировках."
 	mail_goodies = list(/obj/item/melee/skateboard, /obj/item/clothing/shoes/wheelys/rollerskates)
 
 /datum/quirk/friendly
-	name = "Friendly"
-	desc = "You give the best hugs, especially when you're in the right mood."
+	name = "Дружелюбный"
+	desc = "Вы обнимаетесь лучше всех, особенно в хорощем настроении."
 	icon = "hands-helping"
 	value = 2
 	mob_trait = TRAIT_FRIENDLY
-	gain_text = span_notice("You want to hug someone.")
-	lose_text = span_danger("You no longer feel compelled to hug others.")
+	gain_text = span_notice("Вы хотите обниматься.")
+	lose_text = span_danger("Вы больше не хотите обниматься.")
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
-	medical_record_text = "Patient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case."
+	medical_record_text = "Пациент демонстрирует низкие ограничения касаемо физического контакта. Прошу другого врача заняться им."
 	mail_goodies = list(/obj/item/storage/box/hug)
 
 /datum/quirk/jolly
-	name = "Jolly"
-	desc = "You sometimes just feel happy, for no reason at all."
+	name = "Радостный"
+	desc = "Иногда у вас просто отличное настроение без конкретной причины."
 	icon = "grin"
 	value = 4
 	mob_trait = TRAIT_JOLLY
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
-	medical_record_text = "Patient demonstrates constant euthymia irregular for environment. It's a bit much, to be honest."
+	medical_record_text = "Пациент демонстрирует постоянную эутимию необычную для своего окружения. Пациент, если честно, даже слишком довольный."
 	mail_goodies = list(/obj/item/clothing/mask/joy)
 
 /datum/quirk/light_step
-	name = "Light Step"
-	desc = "You walk with a gentle step; footsteps and stepping on sharp objects is quieter and less painful. Also, your hands and clothes will not get messed in case of stepping in blood."
+	name = "Легкий шаг"
+	desc = "Вы аккуратно ходите; Шаги становятся тише и ходить по осколкам менее больно. Также, если вы наступите в кровь, вы не запачкаетесь."
 	icon = "shoe-prints"
 	value = 4
 	mob_trait = TRAIT_LIGHT_STEP
-	gain_text = span_notice("You walk with a little more litheness.")
-	lose_text = span_danger("You start tromping around like a barbarian.")
-	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
+	gain_text = span_notice("Вы ходите чуть аккуратнее.")
+	lose_text = span_danger("Вы топаете как варвар.")
+	medical_record_text = "Ловкость пациента помогает ему быть тише и скрытнее"
 	mail_goodies = list(/obj/item/clothing/shoes/sandal)
 
 /datum/quirk/item_quirk/musician
-	name = "Musician"
-	desc = "You can tune handheld musical instruments to play melodies that clear certain negative effects and soothe the soul."
+	name = "Музыкант"
+	desc = "Вы умеете настраивать ручные музыкальные инструменты и играть мелодии, очищающие тело и разум."
 	icon = "guitar"
 	value = 2
 	mob_trait = TRAIT_MUSICIAN
-	gain_text = span_notice("You know everything about musical instruments.")
-	lose_text = span_danger("You forget how musical instruments work.")
-	medical_record_text = "Patient brain scans show a highly-developed auditory pathway."
+	gain_text = span_notice("Вы знаете всё о музыкальных инструментах.")
+	lose_text = span_danger("Вы забыли, как работают музыкальные инструменты.")
+	medical_record_text = "Сканирование мозга пациента показало хорошо развитую способность к музыке."
 	mail_goodies = list(/obj/effect/spawner/random/entertainment/musical_instrument, /obj/item/instrument/piano_synth/headphones)
 
 /datum/quirk/item_quirk/musician/add_unique(client/client_source)
 	give_item_to_holder(/obj/item/choice_beacon/music, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /datum/quirk/night_vision
-	name = "Night Vision"
-	desc = "You can see slightly more clearly in full darkness than most people."
+	name = "Ночное видение"
+	desc = "Вы видите в темноте чуть лучше остальных."
 	icon = "eye"
 	value = 4
 	mob_trait = TRAIT_NIGHT_VISION
-	gain_text = span_notice("The shadows seem a little less dark.")
-	lose_text = span_danger("Everything seems a little darker.")
-	medical_record_text = "Patient's eyes show above-average acclimation to darkness."
+	gain_text = span_notice("Тени кажутся вам чуть менее темными.")
+	lose_text = span_danger("Всё кажется чуть более тёмным.")
+	medical_record_text = "Глаза пациента чуть лучше привыкают к темноте."
 	mail_goodies = list(
 		/obj/item/flashlight/flashdark,
 		/obj/item/food/grown/mushroom/glowshroom/shadowshroom,
@@ -208,12 +208,12 @@
 	eyes.refresh()
 
 /datum/quirk/item_quirk/poster_boy
-	name = "Poster Boy"
-	desc = "You have some great posters! Hang them up and make everyone have a great time."
+	name = "Любитель постеров"
+	desc = "У вас есть отличные постеры! Повесьте их на стену, чтобы порадовать остальных."
 	icon = "tape"
 	value = 4
 	mob_trait = TRAIT_POSTERBOY
-	medical_record_text = "Patient reports a desire to cover walls with homemade objects."
+	medical_record_text = "Пациент сообщает о сильном желании развешивать постеры по стенам."
 	mail_goodies = list(/obj/item/poster/random_official)
 
 /datum/quirk/item_quirk/poster_boy/add_unique()
@@ -223,8 +223,8 @@
 	give_item_to_holder(newbox, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /obj/item/storage/box/posterbox
-	name = "Box of Posters"
-	desc = "You made them yourself!"
+	name = "Коробка постеров"
+	desc = "Вы сделали их сами!"
 
 /// fills box of posters based on job, one neutral poster and 2 department posters
 /obj/item/storage/box/posterbox/proc/add_quirk_posters(datum/mind/posterboy)
@@ -240,32 +240,32 @@
 		new potential_poster(src)
 
 /datum/quirk/selfaware
-	name = "Self-Aware"
-	desc = "You know your body well, and can accurately assess the extent of your wounds."
+	name = "Самосознание"
+	desc = "Вы отлично знаете своё тело и можете понять, насколько серьёзно поранились."
 	icon = "bone"
 	value = 8
 	mob_trait = TRAIT_SELF_AWARE
-	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
+	medical_record_text = "У пациента несколько тревожная любовь к самодиагностике."
 	mail_goodies = list(/obj/item/clothing/neck/stethoscope, /obj/item/skillchip/entrails_reader)
 
 /datum/quirk/skittish
-	name = "Skittish"
-	desc = "You're easy to startle, and hide frequently. Run into a closed locker to jump into it, as long as you have access. You can walk to avoid this."
+	name = "Пугливый"
+	desc = "Вас легко напугать и вы часто прячетесь. Забегите в шкафчик, чтобы автоматически закрыть за собой дверцу, если у вас есть доступ к шкафчику. Этого можно избежать, используя режим ходьбы."
 	icon = "trash"
 	value = 8
 	mob_trait = TRAIT_SKITTISH
-	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
+	medical_record_text = "Пациент демонстрирует высокий уровень избегания угроз и любит прятаться в шкафах."
 	mail_goodies = list(/obj/structure/closet/cardboard)
 
 /datum/quirk/item_quirk/spiritual
-	name = "Spiritual"
-	desc = "You hold a spiritual belief, whether in God, nature or the arcane rules of the universe. You gain comfort from the presence of holy people, and believe that your prayers are more special than others. Being in the chapel makes you happy."
+	name = "Духовный"
+	desc = "У вас есть духовная вера в Бога, природу или таинственные силы Вселенной. Вам нравится присутствие святых людей и вы чувствуете, что ваши молитвы работают лучше, чем молитвы остальных. Пребывание в церкви радует вас."
 	value = 2 /// SKYRAT EDIT - Quirk Rebalance - Original: value = 4
 	icon = "bible"
 	mob_trait = TRAIT_SPIRITUAL
-	gain_text = span_notice("You have faith in a higher power.")
-	lose_text = span_danger("You lose faith!")
-	medical_record_text = "Patient reports a belief in a higher power."
+	gain_text = span_notice("Вы верите в высшие силы.")
+	lose_text = span_danger("Вы теряете веру!")
+	medical_record_text = "Пациент сообщает о вере в высшие силы."
 	mail_goodies = list(
 		/obj/item/storage/book/bible/booze,
 		/obj/item/reagent_containers/cup/glass/bottle/holywater,
@@ -279,14 +279,14 @@
 	give_item_to_holder(/obj/item/storage/box/matches, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /datum/quirk/item_quirk/tagger
-	name = "Tagger"
-	desc = "You're an experienced artist. People will actually be impressed by your graffiti, and you can get twice as many uses out of drawing supplies."
+	name = "Тэггер"
+	desc = "Вы опытный художник. Людям действительно будут нравиться ваши граффити и вы можете использовать принадлежности для рисования в два раза дольше."
 	icon = "spray-can"
 	value = 4
 	mob_trait = TRAIT_TAGGER
-	gain_text = span_notice("You know how to tag walls efficiently.")
-	lose_text = span_danger("You forget how to tag walls properly.")
-	medical_record_text = "Patient was recently seen for possible paint huffing incident."
+	gain_text = span_notice("Вы умеете эффективно рисовать на стенах.")
+	lose_text = span_danger("Вы забываете, как правильно рисовать на стенах.")
+	medical_record_text = "Недавно пациент наблюдался в больнице из-за вероятного инцидента со вдыханием краски."
 	mail_goodies = list(
 		/obj/item/toy/crayon/spraycan,
 		/obj/item/canvas/nineteen_nineteen,
@@ -298,29 +298,29 @@
 	give_item_to_holder(/obj/item/toy/crayon/spraycan, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /datum/quirk/throwingarm
-	name = "Throwing Arm"
-	desc = "Your arms have a lot of heft to them! Objects that you throw just always seem to fly further than everyone elses, and you never miss a toss."
+	name = "Метатель"
+	desc = "У вас крайне сильные руки! Вы можете бросать объекты дальше остальных, а ваши броски всегда попадают в цель."
 	icon = "baseball"
 	value = 7
 	mob_trait = TRAIT_THROWINGARM
-	gain_text = span_notice("Your arms are full of energy!")
-	lose_text = span_danger("Your arms ache a bit.")
-	medical_record_text = "Patient displays mastery over throwing balls."
+	gain_text = span_notice("Ваши руки полны энергии!")
+	lose_text = span_danger("Ваши руки ослабевают.")
+	medical_record_text = "Пациент демонстрирует великолепные умения бросать предметы."
 	mail_goodies = list(/obj/item/toy/beach_ball/baseball, /obj/item/toy/beach_ball/holoball, /obj/item/toy/beach_ball/holoball/dodgeball)
 
 /datum/quirk/voracious
-	name = "Voracious"
-	desc = "Nothing gets between you and your food. You eat faster and can binge on junk food! Being fat suits you just fine."
+	name = "Обжора"
+	desc = "Ничто не встанет между вами и едой. Вы едите быстрее и можете есть тонны фастфуда! Вам нравится быть толстым. "
 	icon = "drumstick-bite"
 	value = 4
 	mob_trait = TRAIT_VORACIOUS
-	gain_text = span_notice("You feel HONGRY.")
-	lose_text = span_danger("You no longer feel HONGRY.")
+	gain_text = span_notice("Вы ГОЛООООДНЫ.")
+	lose_text = span_danger("Вы больше не ГОЛООООДНЫ.")
 	mail_goodies = list(/obj/effect/spawner/random/food_or_drink/dinner)
 
 /datum/quirk/item_quirk/signer
-	name = "Signer"
-	desc = "You possess excellent communication skills in sign language."
+	name = "Знаток знаков"
+	desc = "Вы отлично умеете общаться на языке знаков."
 	icon = "hands"
 	value = 4
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE

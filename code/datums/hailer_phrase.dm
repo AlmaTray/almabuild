@@ -43,7 +43,7 @@
 	phrase_sound = "god"
 
 /datum/hailer_phrase/freeze
-	phrase_text = "Freeze, Scum Bag!"
+	phrase_text = "Freeze, scumbag!"
 	phrase_sound = "freeze"
 
 /datum/hailer_phrase/imperial
@@ -59,7 +59,7 @@
 	phrase_sound = "harry"
 
 /datum/hailer_phrase/asshole
-	phrase_text = "Stop breaking the law, ass hole."
+	phrase_text = "Stop breaking the law, asshole."
 	phrase_sound = "asshole"
 
 /datum/hailer_phrase/stfu
