@@ -2,7 +2,7 @@
 //this file is named weirdly so that positive traits are listed above negative ones
 
 /datum/quirk/alcohol_tolerance
-	name = "Устойчивость к алкоголю"
+	name = "Alcohol Tolerance"
 	desc = "Вы напиваетесь медленнее и ощущаете меньше негативных сторон опьянения."
 	icon = "beer"
 	value = 4
@@ -13,7 +13,7 @@
 	mail_goodies = list(/obj/item/skillchip/wine_taster)
 
 /datum/quirk/apathetic
-	name = "Апатичный"
+	name = "Apathetic"
 	desc = "В отличие от других, вам, в принципе, на всё плевать. Полезно в таком месте."
 	icon = "meh"
 	value = 4
@@ -28,7 +28,7 @@
 	quirk_holder.mob_mood?.mood_modifier += 0.2
 
 /datum/quirk/drunkhealing
-	name = "Пьяная устойчивость"
+	name = "Drunken Resilience"
 	desc = "От хорошего напитка вы чувствуете себя, словно бог. Пьянство медленно восстанавливает ваши ранения."
 	icon = "wine-bottle"
 	value = 8
@@ -62,7 +62,7 @@
 	mail_goodies = list(/obj/item/toy/foamfinger)
 
 /datum/quirk/item_quirk/clown_enjoyer
-	name = "Любитель клоунов"
+	name = "Clown Enjoyer"
 	desc = "Вам нравятся клоунские проделки и ваше настроение поднимается, когда вы носите свой клоунский значок."
 	icon = "map-pin"
 	value = 2
@@ -91,7 +91,7 @@
 	fan.show_to(quirk_holder)
 
 /datum/quirk/item_quirk/mime_fan
-	name = "Любитель мимов"
+	name = "Mime Fan"
 	desc = "Вам нравятся проделки мимов и ваше настроение поднимается, когда вы носите свой значок мима."
 	icon = "thumbtack"
 	value = 2
@@ -121,7 +121,7 @@
 	fan.show_to(quirk_holder)
 
 /datum/quirk/freerunning
-	name = "Ловкач"
+	name = "Freerunning"
 	desc = "Вы очень хороши в быстром передвижении! Вы залезаете на столы быстрее других и не получаете урона от небольших падений."
 	icon = "running"
 	value = 8
@@ -132,7 +132,7 @@
 	mail_goodies = list(/obj/item/melee/skateboard, /obj/item/clothing/shoes/wheelys/rollerskates)
 
 /datum/quirk/friendly
-	name = "Дружелюбный"
+	name = "Friendly"
 	desc = "Вы обнимаетесь лучше всех, особенно в хорощем настроении."
 	icon = "hands-helping"
 	value = 2
@@ -144,7 +144,7 @@
 	mail_goodies = list(/obj/item/storage/box/hug)
 
 /datum/quirk/jolly
-	name = "Радостный"
+	name = "Jolly"
 	desc = "Иногда у вас просто отличное настроение без конкретной причины."
 	icon = "grin"
 	value = 4
@@ -154,7 +154,7 @@
 	mail_goodies = list(/obj/item/clothing/mask/joy)
 
 /datum/quirk/light_step
-	name = "Легкий шаг"
+	name = "Light Step"
 	desc = "Вы аккуратно ходите; Шаги становятся тише и ходить по осколкам менее больно. Также, если вы наступите в кровь, вы не запачкаетесь."
 	icon = "shoe-prints"
 	value = 4
@@ -165,7 +165,7 @@
 	mail_goodies = list(/obj/item/clothing/shoes/sandal)
 
 /datum/quirk/item_quirk/musician
-	name = "Музыкант"
+	name = "Musician"
 	desc = "Вы умеете настраивать ручные музыкальные инструменты и играть мелодии, очищающие тело и разум."
 	icon = "guitar"
 	value = 2
@@ -179,7 +179,7 @@
 	give_item_to_holder(/obj/item/choice_beacon/music, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /datum/quirk/night_vision
-	name = "Ночное видение"
+	name = "Night Vision"
 	desc = "Вы видите в темноте чуть лучше остальных."
 	icon = "eye"
 	value = 4
@@ -208,7 +208,7 @@
 	eyes.refresh()
 
 /datum/quirk/item_quirk/poster_boy
-	name = "Любитель постеров"
+	name = "Poster Boy"
 	desc = "У вас есть отличные постеры! Повесьте их на стену, чтобы порадовать остальных."
 	icon = "tape"
 	value = 4
@@ -240,7 +240,7 @@
 		new potential_poster(src)
 
 /datum/quirk/selfaware
-	name = "Самосознание"
+	name = "Self-Aware"
 	desc = "Вы отлично знаете своё тело и можете понять, насколько серьёзно поранились."
 	icon = "bone"
 	value = 8
@@ -249,7 +249,7 @@
 	mail_goodies = list(/obj/item/clothing/neck/stethoscope, /obj/item/skillchip/entrails_reader)
 
 /datum/quirk/skittish
-	name = "Пугливый"
+	name = "Skittish"
 	desc = "Вас легко напугать и вы часто прячетесь. Забегите в шкафчик, чтобы автоматически закрыть за собой дверцу, если у вас есть доступ к шкафчику. Этого можно избежать, используя режим ходьбы."
 	icon = "trash"
 	value = 8
@@ -258,7 +258,7 @@
 	mail_goodies = list(/obj/structure/closet/cardboard)
 
 /datum/quirk/item_quirk/spiritual
-	name = "Духовный"
+	name = "Spiritual"
 	desc = "У вас есть духовная вера в Бога, природу или таинственные силы Вселенной. Вам нравится присутствие святых людей и вы чувствуете, что ваши молитвы работают лучше, чем молитвы остальных. Пребывание в церкви радует вас."
 	value = 2 /// SKYRAT EDIT - Quirk Rebalance - Original: value = 4
 	icon = "bible"
@@ -279,7 +279,7 @@
 	give_item_to_holder(/obj/item/storage/box/matches, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /datum/quirk/item_quirk/tagger
-	name = "Тэггер"
+	name = "Tagger"
 	desc = "Вы опытный художник. Людям действительно будут нравиться ваши граффити и вы можете использовать принадлежности для рисования в два раза дольше."
 	icon = "spray-can"
 	value = 4
@@ -298,7 +298,7 @@
 	give_item_to_holder(/obj/item/toy/crayon/spraycan, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS))
 
 /datum/quirk/throwingarm
-	name = "Метатель"
+	name = "Throwing Arm"
 	desc = "У вас крайне сильные руки! Вы можете бросать объекты дальше остальных, а ваши броски всегда попадают в цель."
 	icon = "baseball"
 	value = 7
@@ -309,7 +309,7 @@
 	mail_goodies = list(/obj/item/toy/beach_ball/baseball, /obj/item/toy/beach_ball/holoball, /obj/item/toy/beach_ball/holoball/dodgeball)
 
 /datum/quirk/voracious
-	name = "Обжора"
+	name = "Voracious"
 	desc = "Ничто не встанет между вами и едой. Вы едите быстрее и можете есть тонны фастфуда! Вам нравится быть толстым. "
 	icon = "drumstick-bite"
 	value = 4
@@ -319,7 +319,7 @@
 	mail_goodies = list(/obj/effect/spawner/random/food_or_drink/dinner)
 
 /datum/quirk/item_quirk/signer
-	name = "Знаток знаков"
+	name = "Signer"
 	desc = "Вы отлично умеете общаться на языке знаков."
 	icon = "hands"
 	value = 4

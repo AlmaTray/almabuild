@@ -2,13 +2,13 @@
 
 /datum/quirk/badback
 	name = "Bad Back"
-	desc = "Thanks to your poor posture, backpacks and other bags never sit right on your back. More evenly weighted objects are fine, though."
+	desc = "Из-за плохой осанки рюкзаки и другие сумки никогда не сидят удобно на спине. Однако объекты с более равномерным распределеним веса сидят нормально."
 	icon = "hiking"
 	value = -8
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
-	gain_text = span_danger("Your back REALLY hurts!")
-	lose_text = span_notice("Your back feels better.")
-	medical_record_text = "Patient scans indicate severe and chronic back pain."
+	gain_text = span_danger("У вас СИЛЬНО болит спина!")
+	lose_text = span_notice("Ваша спина чувствует себя лучше.")
+	medical_record_text = "Сканирование пациента указывает на сильную и хроническую боль в спине."
 	hardcore_value = 4
 	mail_goodies = list(/obj/item/cane)
 	var/datum/weakref/backpack
@@ -53,12 +53,12 @@
 
 /datum/quirk/blooddeficiency
 	name = "Blood Deficiency"
-	desc = "Your body can't produce enough blood to sustain itself."
+	desc = "Ваше тело не может производить достаточно крови, чтобы поддерживать себя."
 	icon = "tint"
 	value = -8
-	gain_text = span_danger("You feel your vigor slowly fading away.")
-	lose_text = span_notice("You feel vigorous again.")
-	medical_record_text = "Patient requires regular treatment for blood loss due to low production of blood."
+	gain_text = span_danger("Вы чувствуете, что ваша жизнь медленно угасает.")
+	lose_text = span_notice("Вы снова чувствуете себя бодрым.")
+	medical_record_text = "Пациенту требуется регулярное лечение по поводу кровопотери из-за низкой выработки крови."
 	hardcore_value = 8
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/item/reagent_containers/blood/o_minus) // universal blood type that is safe for all
@@ -80,12 +80,12 @@
 
 /datum/quirk/item_quirk/blindness
 	name = "Blind"
-	desc = "You are completely blind, nothing can counteract this."
+	desc = "Вы совершенно слепы, это не лечится."
 	icon = "eye-slash"
 	value = -16
-	gain_text = span_danger("You can't see anything.")
-	lose_text = span_notice("You miraculously gain back your vision.")
-	medical_record_text = "Patient has permanent blindness."
+	gain_text = span_danger("Вы ничего не видите.")
+	lose_text = span_notice("К вам чудесным образом вернулось зрение.")
+	medical_record_text = "У пациента необратимая слепота."
 	hardcore_value = 15
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	mail_goodies = list(/obj/item/clothing/glasses/sunglasses, /obj/item/cane/white)
@@ -106,12 +106,12 @@
 	 */
 /datum/quirk/item_quirk/brainproblems
 	name = "Brain Tumor"
-	desc = "You have a little friend in your brain that is slowly destroying it. Better bring some mannitol!"
+	desc = "У вас смертельное заболевание в вашем мозгу, которое медленно разрушает его. Запасайтесь маннитолом!"
 	icon = "brain"
 	value = -12
-	gain_text = span_danger("You feel smooth.")
+	gain_text = span_danger("You feel smooth.") //Я не столь хороша в таких выражениях, надеюсь кто то другой переведет
 	lose_text = span_notice("You feel wrinkled again.")
-	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
+	medical_record_text = "У пациента смертельное заболевание головного мозга, которое медленно вызывает смерть мозга."
 	hardcore_value = 12
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/item/storage/pill_bottle/mannitol/braintumor)
@@ -125,7 +125,7 @@
 			LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
 			LOCATION_HANDS = ITEM_SLOT_HANDS,
 		),
-		flavour_text = "These will keep you alive until you can secure a supply of medication. Don't rely on them too much!",
+		flavour_text = "Это поможет вам выжить, пока вы не добудете запас лекарств. Не полагайтесь на них слишком сильно!",
 	)
 
 /datum/quirk/item_quirk/brainproblems/process(delta_time)
@@ -139,13 +139,13 @@
 
 /datum/quirk/item_quirk/deafness
 	name = "Deaf"
-	desc = "You are incurably deaf."
+	desc = "Вы неизлечимо глухи."
 	icon = "deaf"
 	value = -8
 	mob_trait = TRAIT_DEAF
-	gain_text = span_danger("You can't hear anything.")
-	lose_text = span_notice("You're able to hear again!")
-	medical_record_text = "Patient's cochlear nerve is incurably damaged."
+	gain_text = span_danger("Вы ничего не слышите.")
+	lose_text = span_notice("Слух вернулся к вам!")
+	medical_record_text = "Улитковый нерв пациента неизлечимо поврежден."
 	hardcore_value = 12
 	mail_goodies = list(/obj/item/clothing/mask/whistle)
 
@@ -154,23 +154,23 @@
 
 /datum/quirk/depression
 	name = "Depression"
-	desc = "You sometimes just hate life."
+	desc = "Иногда вы просто ненавидите жизнь."
 	icon = "frown"
 	mob_trait = TRAIT_DEPRESSION
 	value = -3
-	gain_text = span_danger("You start feeling depressed.")
-	lose_text = span_notice("You no longer feel depressed.") //if only it were that easy!
-	medical_record_text = "Patient has a mild mood disorder causing them to experience acute episodes of depression."
+	gain_text = span_danger("Вы начинаете чувствовать грусть, тоску и тревогу.")
+	lose_text = span_notice("Вы больше не чувствуете депрессии.") //if only it were that easy! <- И правда
+	medical_record_text = "У пациента легкое расстройство настроения, вызывающее острые эпизоды депрессии."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	hardcore_value = 2
 	mail_goodies = list(/obj/item/storage/pill_bottle/happinesspsych)
 
 /datum/quirk/item_quirk/family_heirloom
 	name = "Family Heirloom"
-	desc = "You are the current owner of an heirloom, passed down for generations. You have to keep it safe!"
+	desc = "Вы нынешний владелец семейной реликвии, передаваемой из поколения в поколение. Вы должны держать её в безопасности!" // Если она появится у вас вообще :(
 	icon = "toolbox"
 	value = -2
-	medical_record_text = "Patient demonstrates an unnatural attachment to a family heirloom."
+	medical_record_text = "Пациент демонстрирует неестественную привязанность к семейной реликвии."
 	hardcore_value = 1
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES|QUIRK_MOODLET_BASED
 	/// A weak reference to our heirloom.
@@ -206,7 +206,7 @@
 			LOCATION_BACKPACK = ITEM_SLOT_BACKPACK,
 			LOCATION_HANDS = ITEM_SLOT_HANDS,
 		),
-		flavour_text = "This is a precious family heirloom, passed down from generation to generation. Keep it safe!",
+		flavour_text = "Это драгоценная семейная реликвия, передающаяся из поколения в поколение. Держите её в безопасности!",
 	)
 
 /datum/quirk/item_quirk/family_heirloom/post_add()
@@ -215,7 +215,7 @@
 
 	var/obj/family_heirloom = heirloom?.resolve()
 	if(!family_heirloom)
-		to_chat(quirk_holder, span_boldnotice("A wave of existential dread runs over you as you realize your precious family heirloom is missing. Perhaps the Gods will show mercy on your cursed soul?"))
+		to_chat(quirk_holder, span_boldnotice("Вас накрывает волна страха, когда вы понимаете, что ваша драгоценная семейная реликвия пропала. Быть может, боги пощадят твою душу?"))
 		return
 	family_heirloom.AddComponent(/datum/component/heirloom, quirk_holder.mind, family_name)
 
@@ -240,12 +240,12 @@
 
 /datum/quirk/glass_jaw
 	name = "Glass Jaw"
-	desc = "You have a very fragile jaw. Any sufficiently hard blow to your head might knock you out."
+	desc = "У вас очень хрупкая челюсть. Любой достаточно сильный удар по голове может вырубить вас."
 	icon = "boxing-glove"
 	value = -4
-	gain_text = span_danger("Your jaw feels loose.")
-	lose_text = span_notice("Your jaw feels fitting again.")
-	medical_record_text = "Patient is absurdly easy to knock out. Do not allow them near a boxing ring."
+	gain_text = span_danger("Вы чувствуете, что у вас стеклянная челюсть") // Да понятие из бокса... как это еще перевести
+	lose_text = span_notice("Вы более не испытываете проблем с челюстью") // Ладно, если кто придумает лучше исправите?
+	medical_record_text = "Пациента абсурдно легко нокаутировать. Не подпускайте их к боксерскому рингу."
 	hardcore_value = 4
 	mail_goodies = list(
 		/obj/item/clothing/gloves/boxing,
@@ -283,33 +283,33 @@
 	//blunt items are more likely to knock out, but sharp ones are still capable of doing it
 	if(prob(CEILING(actual_damage * (sharpness & (SHARP_EDGED|SHARP_POINTY) ? 0.65 : 1), 1)))
 		source.visible_message(
-			span_warning("[source] gets knocked out!"),
-			span_userdanger("You are knocked out!"),
+			span_warning("[source] падает в отключку!"),
+			span_userdanger("Вы нокаутированы!"),
 			vision_distance = COMBAT_MESSAGE_RANGE,
 		)
 		source.Unconscious(3 SECONDS)
 
 /datum/quirk/frail
 	name = "Frail"
-	desc = "You have skin of paper and bones of glass! You suffer wounds much more easily than most."
+	desc = "У тебя кожа из бумаги и кости из стекла! Вы страдаете от ран намного легче, чем большинство."
 	icon = "skull"
 	value = -6
 	mob_trait = TRAIT_EASILY_WOUNDED
-	gain_text = span_danger("You feel frail.")
-	lose_text = span_notice("You feel sturdy again.")
-	medical_record_text = "Patient is absurdly easy to injure. Please take all due diligence to avoid possible malpractice suits."
+	gain_text = span_danger("Вы чувствуете себя хрупким.")
+	lose_text = span_notice("Ты снова чувствуешь себя крепким.")
+	medical_record_text = "Пациента абсурдно легко ранить. Пожалуйста, примите все меры предосторожности!."
 	hardcore_value = 4
 	mail_goodies = list(/obj/effect/spawner/random/medical/minor_healing)
 
 /datum/quirk/heavy_sleeper
 	name = "Heavy Sleeper"
-	desc = "You sleep like a rock! Whenever you're put to sleep or knocked unconscious, you take a little bit longer to wake up."
+	desc = "Ты спишь как убитый! Всякий раз, когда вас усыпляют или вы теряете сознание, вам требуется немного больше времени, чтобы проснуться."
 	icon = "bed"
 	value = -2
 	mob_trait = TRAIT_HEAVY_SLEEPER
-	gain_text = span_danger("You feel sleepy.")
-	lose_text = span_notice("You feel awake again.")
-	medical_record_text = "Patient has abnormal sleep study results and is difficult to wake up."
+	gain_text = span_danger("Вы чувствуете сонливость.")
+	lose_text = span_notice("Вы снова чувствуете себя бодро.")
+	medical_record_text = "У пациента аномальные результаты исследования сна, и ему трудно проснуться."
 	hardcore_value = 2
 	mail_goodies = list(
 		/obj/item/clothing/glasses/blindfold,
@@ -323,12 +323,12 @@
 
 /datum/quirk/hypersensitive
 	name = "Hypersensitive"
-	desc = "For better or worse, everything seems to affect your mood more than it should."
+	desc = "Плохое или хорошее, все влияет на вас сильнее чем должно."
 	icon = "flushed"
 	value = -2
-	gain_text = span_danger("You seem to make a big deal out of everything.")
-	lose_text = span_notice("You don't seem to make a big deal out of everything anymore.")
-	medical_record_text = "Patient demonstrates a high level of emotional volatility."
+	gain_text = span_danger("Вы воспринимаете все серьезнее чем оно есть!")
+	lose_text = span_notice("Вы более не придаете всему столь большого значения")
+	medical_record_text = "Пациент демонстрирует высокий уровень эмоциональной изменчивости."
 	hardcore_value = 3
 	mail_goodies = list(/obj/effect/spawner/random/entertainment/plushie_delux)
 
@@ -342,24 +342,24 @@
 
 /datum/quirk/light_drinker
 	name = "Light Drinker"
-	desc = "You just can't handle your drinks and get drunk very quickly."
+	desc = "Вы поразительно быстро пьянеете."
 	icon = "cocktail"
 	value = -2
 	mob_trait = TRAIT_LIGHT_DRINKER
-	gain_text = span_notice("Just the thought of drinking alcohol makes your head spin.")
-	lose_text = span_danger("You're no longer severely affected by alcohol.")
-	medical_record_text = "Patient demonstrates a low tolerance for alcohol. (Wimp)"
+	gain_text = span_notice("Только мысль об алкоголе вызывает у вас головокружение.")
+	lose_text = span_danger("Алкоголь более не влияет на вас столь сильно.")
+	medical_record_text = "Пациент демонстрирует низкую толерантность к алкоголю. (слабак)"
 	hardcore_value = 3
 	mail_goodies = list(/obj/item/reagent_containers/cup/glass/waterbottle)
 
 /datum/quirk/item_quirk/nearsighted
 	name = "Nearsighted"
-	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
+	desc = "Вы близоруки без рецептурных очков, но появляетесь с парой очков."
 	icon = "glasses"
 	value = -4
-	gain_text = span_danger("Things far away from you start looking blurry.")
-	lose_text = span_notice("You start seeing faraway things normally again.")
-	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+	gain_text = span_danger("Вещи вдали от вас начинают выглядеть размытыми.")
+	lose_text = span_notice("Вы снова начинаете нормально видеть далекие вещи.")
+	medical_record_text = "Пациенту требуются очки, отпускаемые по рецепту, чтобы противодействовать близорукости."
 	hardcore_value = 5
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	mail_goodies = list(/obj/item/clothing/glasses/regular) // extra pair if orginal one gets broken by somebody mean
@@ -391,10 +391,10 @@
 
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
-	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctively act careful, and constantly feel a sense of dread."
+	desc = "Насколько вы помните, вы всегда боялись тьмы. Находясь в темноте без источника света, вы инстинктивно ведете себя осторожно и постоянно испытываете чувство страха."
 	icon = "lightbulb"
 	value = -3
-	medical_record_text = "Patient demonstrates a fear of the dark. (Seriously?)"
+	medical_record_text = "Пациент демонстрирует боязнь темноты. (Серьезно?)"
 	hardcore_value = 5
 	mail_goodies = list(/obj/effect/spawner/random/engineering/flashlight)
 
@@ -432,30 +432,30 @@
 		return
 
 	if(quirk_holder.m_intent == MOVE_INTENT_RUN)
-		to_chat(quirk_holder, span_warning("Easy, easy, take it slow... you're in the dark..."))
+		to_chat(quirk_holder, span_warning("Полегче, полегче, помедленнее... ты в темноте..."))
 		quirk_holder.toggle_move_intent()
 	quirk_holder.add_mood_event("nyctophobia", /datum/mood_event/nyctophobia)
 
 /datum/quirk/nonviolent
 	name = "Pacifist"
-	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
+	desc = "Мысль о насилии вызывает у вас тошноту. На самом деле настолько, что вы не можете никому навредить."
 	icon = "peace"
 	value = -8
 	mob_trait = TRAIT_PACIFISM
-	gain_text = span_danger("You feel repulsed by the thought of violence!")
-	lose_text = span_notice("You think you can defend yourself again.")
-	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
+	gain_text = span_danger("Вас отталкивает мысль о насилии!")
+	lose_text = span_notice("Вы снова можете за себя постоять.")
+	medical_record_text = "Пациент необычайно миролюбив и не может заставить себя причинить физический вред.."
 	hardcore_value = 6
 	mail_goodies = list(/obj/effect/spawner/random/decoration/flower, /obj/effect/spawner/random/contraband/cannabis) // flower power
 
 /datum/quirk/paraplegic
 	name = "Paraplegic"
-	desc = "Your legs do not function. Nothing will ever fix this. But hey, free wheelchair!"
+	desc = "Ваши ноги не работают. Ничто никогда не исправит это. Но эй, бесплатное инвалидное кресло!"
 	icon = "wheelchair"
 	value = -12
 	gain_text = null // Handled by trauma.
 	lose_text = null
-	medical_record_text = "Patient has an untreatable impairment in motor function in the lower extremities."
+	medical_record_text = "У больного неизлечимое нарушение двигательной функции нижних конечностей."
 	hardcore_value = 15
 	mail_goodies = list(/obj/vehicle/ridden/wheelchair/motorized) //yes a fullsized unfolded motorized wheelchair does fit
 
@@ -492,31 +492,31 @@
 
 /datum/quirk/poor_aim
 	name = "Stormtrooper Aim"
-	desc = "You've never hit anything you were aiming for in your life."
+	desc = "Вы никогда не попадали куда целились."
 	icon = "bullseye"
 	value = -4
 	mob_trait = TRAIT_POOR_AIM
-	medical_record_text = "Patient possesses a strong tremor in both hands."
+	medical_record_text = "У больного сильный тремор обеих рук."
 	hardcore_value = 3
 	mail_goodies = list(/obj/item/cardboard_cutout) // for target practice
 
 /datum/quirk/prosopagnosia
 	name = "Prosopagnosia"
-	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
+	desc = "У вас психическое расстройство, из-за которого вы вообще не можете узнавать лица."
 	icon = "user-secret"
 	value = -4
 	mob_trait = TRAIT_PROSOPAGNOSIA
-	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
+	medical_record_text = "Больной страдает прозопагнозией и не может узнавать лица."
 	hardcore_value = 5
 	mail_goodies = list(/obj/item/skillchip/appraiser) // bad at recognizing faces but good at recognizing IDs
 
 /datum/quirk/prosthetic_limb
 	name = "Prosthetic Limb"
-	desc = "An accident caused you to lose one of your limbs. Because of this, you now have a random prosthetic!"
+	desc = "В результате несчастного случая вы потеряли одну из конечностей. Благодаря этому у вас теперь есть случайный протез!"
 	icon = "tg-prosthetic-leg"
 	value = -3
 	var/slot_string = "limb"
-	medical_record_text = "During physical examination, patient was found to have a prosthetic limb."
+	medical_record_text = "При осмотре у больного был обнаружен протез."
 	hardcore_value = 3
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 	mail_goodies = list(/obj/item/weldingtool/mini, /obj/item/stack/cable_coil/five)
@@ -528,28 +528,28 @@
 	switch(limb_slot)
 		if(BODY_ZONE_L_ARM)
 			prosthetic = new /obj/item/bodypart/arm/left/robot/surplus
-			slot_string = "left arm"
+			slot_string = "левая рука"
 		if(BODY_ZONE_R_ARM)
 			prosthetic = new /obj/item/bodypart/arm/right/robot/surplus
-			slot_string = "right arm"
+			slot_string = "правая рука"
 		if(BODY_ZONE_L_LEG)
 			prosthetic = new /obj/item/bodypart/leg/left/robot/surplus
-			slot_string = "left leg"
+			slot_string = "левая нога"
 		if(BODY_ZONE_R_LEG)
 			prosthetic = new /obj/item/bodypart/leg/right/robot/surplus
-			slot_string = "right leg"
+			slot_string = "правая нога"
 	human_holder.del_and_replace_bodypart(prosthetic)
 
 /datum/quirk/prosthetic_limb/post_add()
-	to_chat(quirk_holder, span_boldannounce("Your [slot_string] has been replaced with a surplus prosthetic. It is fragile and will easily come apart under duress. Additionally, \
-	you need to use a welding tool and cables to repair it, instead of bruise packs and ointment."))
+	to_chat(quirk_holder, span_boldannounce("Ваша [slot_string] была заменена протезом. Он хрупкий и легко развалится под давлением. Кроме того, \
+	вам нужно использовать сварочный инструмент и кабели для его ремонта, вместо пластырей и мази."))
 
 /datum/quirk/quadruple_amputee
 	name = "Quadruple Amputee"
-	desc = "Oops! All Prosthetics! Due to some truly cruel cosmic punishment, all your limbs have been taken from you."
+	desc = "Ой! Все протезы! Из-за какого-то поистине жестокого космического наказания у вас отняли все конечности."
 	icon = "tg-prosthetic-full"
 	value = -6
-	medical_record_text = "During physical examination, patient was found to have all prosthetic limbs."
+	medical_record_text = "При обследовании было обнаружено, что все конечности заменены на протезы."
 	hardcore_value = 6
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_CHANGES_APPEARANCE
 
@@ -561,31 +561,31 @@
 	human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/right/robot/surplus)
 
 /datum/quirk/quadruple_amputee/post_add()
-	to_chat(quirk_holder, span_boldannounce("All your limbs have been replaced with surplus prosthetics. They are fragile and will easily come apart under duress. Additionally, \
-	you need to use a welding tool and cables to repair them, instead of bruise packs and ointment."))
+	to_chat(quirk_holder, span_boldannounce("Все ваши конечности были заменены протезами. Они хрупкие и легко разваливаются под давлением. Кроме того, \
+	вам нужно использовать сварочный инструмент и кабели для их ремонта, вместо пластырей и мази."))
 
 /datum/quirk/pushover
 	name = "Pushover"
-	desc = "Your first instinct is always to let people push you around. Resisting out of grabs will take conscious effort."
+	desc = "Ваш первый инстинкт всегда состоит в том, чтобы позволить людям помыкать вами. Чтобы сопротивляться захватам, потребуются сознательные усилия."
 	icon = "handshake"
 	value = -8
 	mob_trait = TRAIT_GRABWEAKNESS
-	gain_text = span_danger("You feel like a pushover.")
-	lose_text = span_notice("You feel like standing up for yourself.")
-	medical_record_text = "Patient presents a notably unassertive personality and is easy to manipulate."
+	gain_text = span_danger("Вы чувствуете себя трусом.")
+	lose_text = span_notice("Вы чувствуете в себе храбрость.")
+	medical_record_text = "Пациент представляет собой особенно неуверенный характер, и им легко манипулировать."
 	hardcore_value = 4
 	mail_goodies = list(/obj/item/clothing/gloves/cargo_gauntlet)
 
 /datum/quirk/insanity
 	name = "Reality Dissociation Syndrome"
-	desc = "You suffer from a severe disorder that causes very vivid hallucinations. \
-		Mindbreaker toxin can suppress its effects, and you are immune to mindbreaker's hallucinogenic properties. \
-		THIS IS NOT A LICENSE TO GRIEF."
+	desc = "Вы страдаете тяжелым заболеванием, вызывающим очень правдоподобные галлюцинации. \
+		Токсин разрушителя разума может подавить его эффекты, и вы невосприимчивы к галлюциногенным свойствам токсина. \
+		ЭТО НЕ РАЗРЕШЕНИЕ ПОРТИТЬ ДРУГИМ ИГРУ!"
 	icon = "grin-tongue-wink"
 	value = -8
 	gain_text = span_userdanger("...")
-	lose_text = span_notice("You feel in tune with the world again.")
-	medical_record_text = "Patient suffers from acute Reality Dissociation Syndrome and experiences vivid hallucinations."
+	lose_text = span_notice("Вы снова чувствуете связь с реальностью.")
+	medical_record_text = "Пациент страдает от острого синдрома диссоциации реальности и испытывает серьёзные галлюцинации."
 	hardcore_value = 6
 	mail_goodies = list(/obj/item/storage/pill_bottle/lsdpsych)
 	/// Weakref to the trauma we give out
@@ -615,20 +615,19 @@
 		return
 	// I don't /think/ we'll need this, but for newbies who think "roleplay as insane" = "license to kill",
 	// it's probably a good thing to have.
-	to_chat(quirk_holder, span_big(span_bold(span_info("Please note that your [lowertext(name)] does NOT give you the right to attack people or otherwise cause any interference to \
-		the round. You are not an antagonist, and the rules will treat you the same as other crewmembers."))))
+	to_chat(quirk_holder, span_big(span_bold(span_info("Запомни, ты не антагонист, и отыгрывай нормально, хорошо?"))))
 
 /datum/quirk/insanity/remove()
 	QDEL_NULL(added_trama_ref)
 
 /datum/quirk/social_anxiety
 	name = "Social Anxiety"
-	desc = "Talking to people is very difficult for you, and you often stutter or even lock up."
+	desc = "Вам очень трудно разговаривать с людьми, и вы часто заикаетесь или даже замыкаетесь в себе."
 	icon = "comment-slash"
 	value = -3
-	gain_text = span_danger("You start worrying about what you're saying.")
-	lose_text = span_notice("You feel easier about talking again.") //if only it were that easy!
-	medical_record_text = "Patient is usually anxious in social encounters and prefers to avoid them."
+	gain_text = span_danger("Вы начинаете беспокоиться о том, что говорите.")
+	lose_text = span_notice("Вам снова легче говорить.") //if only it were that easy!
+	medical_record_text = "Пациент обычно тревожен в социальных контактах и предпочитает их избегать."
 	hardcore_value = 4
 	mob_trait = TRAIT_ANXIOUS
 	mail_goodies = list(/obj/item/storage/pill_bottle/psicodine)
@@ -664,10 +663,10 @@
 		var/mob/living/carbon/human/quirker = quirk_holder
 		for(var/word in message_split)
 			if(prob(max(5,(nearby_people*12.5*moodmod))) && word != message_split[1]) //Minimum 1/20 chance of filler
-				new_message += pick("uh,","erm,","um,")
+				new_message += pick("эм,","эмм,","хм,")
 				if(prob(min(5,(0.05*(nearby_people*12.5)*moodmod)))) //Max 1 in 20 chance of cutoff after a successful filler roll, for 50% odds in a 15 word sentence
 					quirker.set_silence_if_lower(6 SECONDS)
-					to_chat(quirker, span_danger("You feel self-conscious and stop talking. You need a moment to recover!"))
+					to_chat(quirker, span_danger("Вы чувствуете себя неловко и перестаете говорить. Вам нужно время, чтобы прийти в себя!"))
 					break
 			if(prob(max(5,(nearby_people*12.5*moodmod)))) //Minimum 1/20 chance of stutter
 				// Add a short stutter, THEN treat our word
@@ -681,17 +680,17 @@
 	var/mob/living/carbon/human/quirker = quirk_holder
 	if(prob(min(50,(0.50*(nearby_people*12.5)*moodmod)))) //Max 50% chance of not talking
 		if(dumb_thing)
-			to_chat(quirker, span_userdanger("You think of a dumb thing you said a long time ago and scream internally."))
+			to_chat(quirker, span_userdanger("Вы думаете о глупости, которую сказали давным-давно, и внутренне кричите."))
 			dumb_thing = FALSE //only once per life
 			if(prob(1))
 				new/obj/item/food/spaghetti/pastatomato(get_turf(quirker)) //now that's what I call spaghetti code
 		else
-			to_chat(quirk_holder, span_warning("You think that wouldn't add much to the conversation and decide not to say it."))
+			to_chat(quirk_holder, span_warning("Вы думаете, что это мало что добавит к разговору, и решаете не говорить этого."))
 			if(prob(min(25,(0.25*(nearby_people*12.75)*moodmod)))) //Max 25% chance of silence stacks after successful not talking roll
-				to_chat(quirker, span_danger("You retreat into yourself. You <i>really</i> don't feel up to talking."))
+				to_chat(quirker, span_danger("Вы уходите в себя. Ты <i>правда</i> не в настроении говорить."))
 				quirker.set_silence_if_lower(10 SECONDS)
 
-		speech_args[SPEECH_MESSAGE] = pick("Uh.","Erm.","Um.")
+		speech_args[SPEECH_MESSAGE] = pick("Эм.","Эмм.","Хм.")
 	else
 		speech_args[SPEECH_MESSAGE] = message
 
@@ -703,7 +702,7 @@
 	if(prob(85) || (istype(mind_check) && mind_check.mind))
 		return
 
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, span_smallnotice("You make eye contact with [A].")), 3)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, span_smallnotice("Вы пересекаетесь взглядом с [A].")), 3)
 
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	SIGNAL_HANDLER
@@ -712,37 +711,37 @@
 		return
 	var/msg
 	if(triggering_examiner)
-		msg = "You make eye contact with [other_mob], "
+		msg = "Вы пересекаетесь взглядом с [other_mob], "
 	else
-		msg = "[other_mob] makes eye contact with you, "
+		msg = "[other_mob] пересекается взглядом с вами, "
 
 	switch(rand(1,3))
 		if(1)
 			quirk_holder.set_jitter_if_lower(20 SECONDS)
-			msg += "causing you to start fidgeting!"
+			msg += "заставляя вас начать ерзать!"
 		if(2)
 			quirk_holder.set_stutter_if_lower(6 SECONDS)
-			msg += "causing you to start stuttering!"
+			msg += "заставляя вас начать заикаться!"
 		if(3)
 			quirk_holder.Stun(2 SECONDS)
-			msg += "causing you to freeze up!"
+			msg += "заставляет вас застыть!"
 
 	quirk_holder.add_mood_event("anxiety_eyecontact", /datum/mood_event/anxiety_eyecontact)
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, span_userdanger("[msg]")), 3) // so the examine signal has time to fire and this will print after
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/mood_event/anxiety_eyecontact
-	description = "Sometimes eye contact makes me so nervous..."
+	description = "Sиногда зрительный контакт так нервирует..."
 	mood_change = -5
 	timeout = 3 MINUTES
 
 /datum/quirk/item_quirk/junkie
 	name = "Junkie"
-	desc = "You can't get enough of hard drugs."
+	desc = "Вам нужно часто принимать тяжелые наркотики."
 	icon = "pills"
 	value = -6
-	gain_text = span_danger("You suddenly feel the craving for drugs.")
-	medical_record_text = "Patient has a history of hard drugs."
+	gain_text = span_danger("Вы внезапно чувствуете тягу к наркотикам.")
+	medical_record_text = "В прошлом пациент употреблял тяжелые наркотики."
 	hardcore_value = 4
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/effect/spawner/random/contraband/narcotics)
@@ -755,7 +754,7 @@
 	var/obj/item/accessory_type //! If this is null, an accessory won't be spawned.
 	var/process_interval = 30 SECONDS //! how frequently the quirk processes
 	var/next_process = 0 //! ticker for processing
-	var/drug_flavour_text = "Better hope you don't run out..."
+	var/drug_flavour_text = "Надейтесь, что они не закончатся..."
 
 /datum/quirk/item_quirk/junkie/add_unique(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
@@ -822,22 +821,22 @@
 		if(deleted || missing_addiction)
 			if(deleted)
 				reagent_instance = new reagent_type()
-			to_chat(quirk_holder, span_danger("You thought you kicked it, but you feel like you're falling back onto bad habits.."))
+			to_chat(quirk_holder, span_danger("Вы думали, что бросили, но чувствуете, что снова возвращаетесь к плохим привычкам.."))
 			for(var/addiction in reagent_instance.addiction_types)
 				human_holder.last_mind?.add_addiction_points(addiction, 1000) ///Max that shit out
 
 /datum/quirk/item_quirk/junkie/smoker
 	name = "Smoker"
-	desc = "Sometimes you just really want a smoke. Probably not great for your lungs."
+	desc = "Иногда просто очень хочется курить. Вероятно, это не очень хорошо для ваших легких."
 	icon = "smoking"
 	value = -4
-	gain_text = span_danger("You could really go for a smoke right about now.")
-	medical_record_text = "Patient is a current smoker."
+	gain_text = span_danger("Вы действительно могли бы пойти покурить прямо сейчас.")
+	medical_record_text = "Пациент в настоящее время курит."
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
 	mob_trait = TRAIT_SMOKER
 	hardcore_value = 1
-	drug_flavour_text = "Make sure you get your favorite brand when you run out."
+	drug_flavour_text = "Убедитесь, что вы получите свою любимую марку, когда она закончится."
 	mail_goodies = list(
 		/obj/effect/spawner/random/entertainment/cigarette_pack,
 		/obj/effect/spawner/random/entertainment/cigar,
@@ -877,24 +876,24 @@
 
 /datum/quirk/unstable
 	name = "Unstable"
-	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
+	desc = "Из-за прошлых неприятностей вы не сможете восстановить рассудок, если потеряете его. Будьте очень осторожны,со своим настроением!"
 	icon = "angry"
 	value = -10
 	mob_trait = TRAIT_UNSTABLE
-	gain_text = span_danger("There's a lot on your mind right now.")
-	lose_text = span_notice("Your mind finally feels calm.")
-	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
+	gain_text = span_danger("У вас сейчас много мыслей.")
+	lose_text = span_notice("Ваш разум наконец успокаивается.")
+	medical_record_text = "Психика пациента находится в уязвимом состоянии и не может оправиться от травмирующих событий."
 	hardcore_value = 9
 	mail_goodies = list(/obj/effect/spawner/random/entertainment/plushie)
 
 /datum/quirk/item_quirk/allergic
 	name = "Extreme Medicine Allergy"
-	desc = "Ever since you were a kid, you've been allergic to certain chemicals..."
+	desc = "С самого детства у вас была аллергия на определенные химические вещества..."
 	icon = "prescription-bottle"
 	value = -6
-	gain_text = span_danger("You feel your immune system shift.")
-	lose_text = span_notice("You feel your immune system phase back into perfect shape.")
-	medical_record_text = "Patient's immune system responds violently to certain chemicals."
+	gain_text = span_danger("Вы чувствуете, как меняется ваша иммунная система.")
+	lose_text = span_notice("Вы чувствуете, как ваша иммунная система возвращается в идеальную форму.")
+	medical_record_text = "Иммунная система пациента бурно реагирует на определенные химические вещества."
 	hardcore_value = 3
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/item/reagent_containers/hypospray/medipen) // epinephrine medipen stops allergic reactions
@@ -911,18 +910,18 @@
 		allergy_chem_names += initial(chem_type.name)
 
 	allergy_string = allergy_chem_names.Join(", ")
-	name = "Extreme [allergy_string] Allergies"
-	medical_record_text = "Patient's immune system responds violently to [allergy_string]"
+	name = "Серьёзные аллергии на [allergy_string]"
+	medical_record_text = "Иммунная система пациента бурно реагирует на [allergy_string]"
 
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/obj/item/clothing/accessory/allergy_dogtag/dogtag = new(get_turf(human_holder))
 	dogtag.display = allergy_string
 
-	give_item_to_holder(dogtag, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS), flavour_text = "Make sure medical staff can see this...")
+	give_item_to_holder(dogtag, list(LOCATION_BACKPACK = ITEM_SLOT_BACKPACK, LOCATION_HANDS = ITEM_SLOT_HANDS), flavour_text = "Убедитесь, что медицинский персонал может видеть это...")
 
 /datum/quirk/item_quirk/allergic/post_add()
 	quirk_holder.add_mob_memory(/datum/memory/key/quirk_allergy, allergy_string = allergy_string)
-	to_chat(quirk_holder, span_boldnotice("You are allergic to [allergy_string], make sure not to consume any of these!"))
+	to_chat(quirk_holder, span_boldnotice("У вас аллергия на [allergy_string], убедитесь, что не употребляете ничего из этого!"))
 
 /datum/quirk/item_quirk/allergic/process(delta_time)
 	if(!iscarbon(quirk_holder))
@@ -952,13 +951,13 @@
 
 /datum/quirk/bad_touch
 	name = "Bad Touch"
-	desc = "You don't like hugs. You'd really prefer if people just left you alone."
+	desc = "Ты не любишь объятия. Вы действительно предпочли бы, чтобы люди просто оставили вас в покое."
 	icon = "tg-bad-touch"
 	mob_trait = TRAIT_BADTOUCH
 	value = -1
-	gain_text = span_danger("You just want people to leave you alone.")
-	lose_text = span_notice("You could use a big hug.")
-	medical_record_text = "Patient has disdain for being touched. Potentially has undiagnosed haphephobia."
+	gain_text = span_danger("Вы просто хотите, чтобы люди оставили вас в покое.")
+	lose_text = span_notice("Вы не против крепких объятий.")
+	medical_record_text = "Больной испытывает отвращение к прикосновениям. Потенциально имеет невыявленную гаптофобию."
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
 	hardcore_value = 1
 	mail_goodies = list(/obj/item/reagent_containers/spray/pepper) // show me on the doll where the bad man touched you
@@ -984,10 +983,10 @@
 
 /datum/quirk/claustrophobia
 	name = "Claustrophobia"
-	desc = "You are terrified of small spaces and certain jolly figures. If you are placed inside any container, locker, or machinery, a panic attack sets in and you struggle to breathe."
+	desc = "Вы боитесь замкнутых пространств. Если вас поместят внутрь какого-либо контейнера, шкафчика или оборудования, у вас начнется паническая атака, и вам будет трудно дышать."
 	icon = "box-open"
 	value = -4
-	medical_record_text = "Patient demonstrates a fear of tight spaces."
+	medical_record_text = "Пациент демонстрирует боязнь ограниченного пространства."
 	hardcore_value = 5
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_PROCESSES
 	mail_goodies = list(/obj/item/reagent_containers/syringe/convermol) // to help breathing
@@ -1017,9 +1016,9 @@
 	quirk_holder.losebreath += 0.25 // miss a breath one in four times
 	if(DT_PROB(25, delta_time))
 		if(nick_spotted)
-			to_chat(quirk_holder, span_warning("Santa Claus is here! I gotta get out of here!"))
+			to_chat(quirk_holder, span_warning("Санта-Клаус здесь! Я должен выбраться отсюда!"))
 		else
-			to_chat(quirk_holder, span_warning("You feel trapped!  Must escape... can't breathe..."))
+			to_chat(quirk_holder, span_warning("Вы чувствуете себя в ловушке! Нужно выбраться... не могу дышать..."))
 
 ///investigates whether possible_saint_nick possesses a high level of christmas cheer
 /datum/quirk/claustrophobia/proc/evaluate_jolly_levels(mob/living/carbon/human/possible_saint_nick)
@@ -1039,35 +1038,35 @@
 
 /datum/quirk/illiterate
 	name = "Illiterate"
-	desc = "You dropped out of school and are unable to read or write. This affects reading, writing, using computers and other electronics."
+	desc = "Вы бросили школу и не умеете читать или писать. Это влияет на чтение, письмо, использование компьютеров и другой электроники."
 	icon = "graduation-cap"
 	value = -8
 	mob_trait = TRAIT_ILLITERATE
-	medical_record_text = "Patient is not literate."
+	medical_record_text = "Пациент безграмотен."
 	hardcore_value = 8
 	mail_goodies = list(/obj/item/pai_card) // can read things for you
 
 
 /datum/quirk/mute
 	name = "Mute"
-	desc = "For some reason you are completely unable to speak."
+	desc = "По какой-то причине вы совершенно не можете говорить."
 	icon = "volume-xmark"
 	value = -4
 	mob_trait = TRAIT_MUTE
-	gain_text = span_danger("You find yourself unable to speak!")
-	lose_text = span_notice("You feel a growing strength in your vocal chords.")
-	medical_record_text = "The patient is unable to use their voice in any capacity."
+	gain_text = span_danger("Вы обнаруживаете, что не можете говорить!")
+	lose_text = span_notice("Вы чувствуете растущую силу ваших голосовых связок.")
+	medical_record_text = "Пациент не может использовать свой голос."
 	hardcore_value = 4
 
 /datum/quirk/body_purist
 	name = "Body Purist"
-	desc = "You believe your body is a temple and its natural form is an embodiment of perfection. Accordingly, you despise the idea of ever augmenting it with unnatural parts, cybernetic, prosthetic, or anything like it."
+	desc = "Вы верите, что ваше тело — это храм, а его естественная форма — воплощение совершенства. Соответственно, вы презираете идею когда-либо дополнять его неестественными частями, кибернетическими, протезными или чем-то подобным."
 	icon = "person-rays"
 	value = -2
 	quirk_flags = QUIRK_HUMAN_ONLY|QUIRK_MOODLET_BASED
-	gain_text = span_danger("You now begin to hate the idea of having cybernetic implants.")
-	lose_text = span_notice("Maybe cybernetics aren't so bad. You now feel okay with augmentations and prosthetics.")
-	medical_record_text = "This patient has disclosed an extreme hatred for unnatural bodyparts and augmentations."
+	gain_text = span_danger("Вы презираете саму идею наличия кибернетических имплантатов.")
+	lose_text = span_notice("Возможно, кибернетика не так уж и плоха. Теперь вы хорошо себя чувствуете с аугментациями и протезами.")
+	medical_record_text = "Этот пациент проявил крайнюю ненависть к неестественным частям тела и аугментациям."
 	hardcore_value = 3
 	mail_goodies = list(/obj/item/paper/pamphlet/cybernetics)
 	var/cybernetics_level = 0
@@ -1133,13 +1132,13 @@
 		update_mood()
 /datum/quirk/cursed
 	name = "Cursed"
-	desc = "You are cursed with bad luck. You are much more likely to suffer from accidents and mishaps. When it rains, it pours."
+	desc = "Вы обречены на неудачу. У вас гораздо больше шансов пострадать от несчастных случаев. Если упадет кирпич, то точно на вас"
 	icon = "cloud-showers-heavy"
 	value = -8
 	mob_trait = TRAIT_CURSED
-	gain_text = span_danger("You feel like you're going to have a bad day.")
-	lose_text = span_notice("You feel like you're going to have a good day.")
-	medical_record_text = "Patient is cursed with bad luck."
+	gain_text = span_danger("Вы чувствуете, что у вас будет плохой день.")
+	lose_text = span_notice("Вы чувствуете, что у вас будет хороший день.")
+	medical_record_text = "Пациент обречен на неудачу."
 	hardcore_value = 8
 
 /datum/quirk/cursed/add(client/client_source)

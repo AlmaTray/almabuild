@@ -129,20 +129,20 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/nyctophobia
-	description = "It sure is dark around here..."
+	description = "Здесь, конечно, темно..."
 	mood_change = -3
 
 /datum/mood_event/claustrophobia
-	description = "Why do I feel trapped?!  Let me out!!!"
+	description = "Почему я чувствую себя в ловушке?! Выпустите меня!!!"
 	mood_change = -7
 	timeout = 1 MINUTES
 
 /datum/mood_event/bright_light
-	description = "I hate it in the light...I need to find a darker place..."
+	description = "Я ненавижу быть на свету... Мне нужно найти место потемнее..."
 	mood_change = -12
 
 /datum/mood_event/family_heirloom_missing
-	description = "I'm missing my family heirloom..."
+	description = "Мне так не хватает моей семейной реликвии..."
 	mood_change = -4
 
 /datum/mood_event/healsbadman
@@ -207,7 +207,7 @@
 	timeout = 15 SECONDS
 
 /datum/mood_event/back_pain
-	description = "Bags never sit right on my back, this hurts like hell!"
+	description = "Сумки никогда не сидят прямо на моей спине, это чертовски больно!"
 	mood_change = -15
 
 /datum/mood_event/sad_empath

@@ -2,17 +2,17 @@
 
 /datum/quirk/alexithymia
 	name = "Alexithymia"
-	desc = "You cannot accurately assess your feelings."
+	desc = "Вы не можете точно оценить свои чувства."
 	value = -4
 	mob_trait = TRAIT_MOOD_NOEXAMINE
-	medical_record_text = "Patient is incapable of communicating their emotions."
+	medical_record_text = "Пациент не способен передавать свои эмоции."
 	icon = "question-circle"
 
 /datum/quirk/fragile
 	name = "Fragility"
-	desc = "You feel incredibly fragile. Burns and bruises hurt you more than the average person!"
+	desc = "Вы чувствуете себя невероятно хрупким. Ожоги и синяки причиняют вам больше боли, чем обычно!"
 	value = -6
-	medical_record_text = "Patient's body has adapted to low gravity. Sadly low-gravity environments are not conducive to strong bone development."
+	medical_record_text = "Тело пациента адаптировалось к низкой гравитации. К сожалению, условия с низкой гравитацией не способствуют развитию крепких костей."
 	icon = "tired"
 
 /datum/quirk/fragile/post_add()
@@ -29,11 +29,11 @@
 
 /datum/quirk/monophobia
 	name = "Monophobia"
-	desc = "You will become increasingly stressed when not in company of others, triggering panic reactions ranging from sickness to heart attacks."
+	desc = "Вы будете испытывать все больший стресс, когда не находитесь в компании других людей, вызывая панические реакции, начиная от тошноты и заканчивая сердечными приступами."
 	value = -6
-	gain_text = span_danger("You feel really lonely...")
-	lose_text = span_notice("You feel like you could be safe on your own.")
-	medical_record_text = "Patient feels sick and distressed when not around other people, leading to potentially lethal levels of stress."
+	gain_text = span_danger("Вы чувствуете себя очень одиноко...")
+	lose_text = span_notice("Вы чувствуете, что в безопасности и в одиночку.")
+	medical_record_text = "Пациент чувствует себя плохо и нервозно, когда рядом нет других людей, что приводит к потенциально смертельному уровню стресса."
 	icon = "people-arrows"
 
 /datum/quirk/monophobia/post_add()
@@ -48,20 +48,20 @@
 
 /datum/quirk/ashwalkertalons
 	name = "Chunky Fingers"
-	desc = "Your digits are thick and tough and unable to use modular computers including tablets, certain devices like laser pointers, and non-adapted firearms."
-	gain_text = span_notice("Your fingers feel thicker and slightly less dextrous. You expect you'll have a difficult time using computers, certain small devices and firearms.")
-	lose_text = span_notice("Your digits feel lithe and capable once more.")
-	medical_record_text = "Patient's digits are thick and lack the dexterity for operating some small devices, computers and non-adapted firearms."
+	desc = "Ваши пальцы толстые и жесткие и не позволяют использовать модульные компьютеры, включая планшеты, некоторые устройства, такие как лазерные указки, и неадаптированное огнестрельное оружие."
+	gain_text = span_notice("Ваши пальцы кажутся толще и немного менее ловкими. Вы ожидаете, что вам будет трудно пользоваться компьютерами, некоторыми небольшими устройствами и огнестрельным оружием")
+	lose_text = span_notice("Ваши пальцы снова чувствуют себя гибкими и дееспособными.")
+	medical_record_text = "Пальцы пациента толстые, и им не хватает ловкости для управления некоторыми небольшими устройствами, компьютерами и неадаптированным огнестрельным оружием."
 	value = -8
 	mob_trait = TRAIT_CHUNKYFINGERS
 	icon = "hand-middle-finger"
 
 /datum/quirk/no_guns
 	name = "No Guns"
-	desc = "For whatever reason, you are unable to use guns. The reasoning may vary, but is up to you to decide."
-	gain_text = span_notice("You feel like you won't be able to use guns anymore...")
-	lose_text = span_notice("You suddenly feel like you can use guns again!")
-	medical_record_text = "Patient is unable to use firearms. Reasoning unknown."
+	desc = "По какой-либо причине вы не можете использовать дальнобойное оружие. По какой, решать уже вам."
+	gain_text = span_notice("Вы чувствуете, что больше не сможете стрелять...")
+	lose_text = span_notice("Вы вдруг чувствуют, что снова можете стрелять!")
+	medical_record_text = "Пациент не может использовать огнестрельное оружие. Причины неизвестны."
 	value = -6
 	mob_trait = TRAIT_NOGUNS
 	icon = "none"

@@ -1,10 +1,10 @@
 /datum/quirk/equipping/nerve_staple
 	name = "Nerve Stapled"
-	desc = "You're a pacifist. Not because you want to be, but because of the device stapled into your eye."
+	desc = "Вы пацифист, не по своим убеждениям, а из-за устройства установленного на вас."
 	value = -10 // pacifism = -8, losing eye slots = -2
-	gain_text = span_danger("You suddenly can't raise a hand to hurt others!")
-	lose_text = span_notice("You think you can defend yourself again.")
-	medical_record_text = "Patient is nerve stapled and is unable to harm others."
+	gain_text = span_danger("Внезапно вы понимаете, что не можете навредить кому либо.")
+	lose_text = span_notice("Ты думаешь, что сможешь снова защитить себя.")
+	medical_record_text = "В связи с устройством на пациенте, он не может кому либо навредить. "
 	icon = "hand-peace"
 	forced_items = list(/obj/item/clothing/glasses/nerve_staple = list(ITEM_SLOT_EYES))
 	/// The nerve staple attached to the quirk
@@ -19,23 +19,23 @@
 	. = ..()
 	if (!staple || staple != quirk_holder.get_item_by_slot(ITEM_SLOT_EYES))
 		return
-	to_chat(quirk_holder, span_warning("The nerve staple suddenly falls off your face and melts[istype(quirk_holder.loc, /turf/open/floor) ? " on the floor" : ""]!"))
+	to_chat(quirk_holder, span_warning("Устройство внезапно падает с вашего лица и плавится.[istype(quirk_holder.loc, /turf/open/floor) ? " on the floor" : ""]!"))
 	qdel(staple)
 
 // Re-labels TG brainproblems to be more generic. There never was a tumor anyways!
 /datum/quirk/item_quirk/brainproblems
 	name = "Brain Degeneration"
-	desc = "You have a lethal condition in your brain that is slowly destroying it. Better bring some mannitol!"
-	medical_record_text = "Patient has a lethal condition in their brain that is slowly causing brain death."
+	desc = "У вас смертельное заболевание в вашем мозгу, которое медленно разрушает его. Запасайтесь маннитолом!"
+	medical_record_text = "У пациента смертельное заболевание головного мозга, которое медленно вызывает смерть мозга."
 
 // Override of Brain Tumor quirk for robotic/synthetic species with posibrains.
 // Does not appear in TGUI or the character preferences window.
 /datum/quirk/item_quirk/brainproblems/synth
 	name = "Positronic Cascade Anomaly"
-	desc = "Your positronic brain is slowly corrupting itself due to a cascading anomaly. Better bring some liquid solder!"
-	gain_text = "<span class='danger'>You feel glitchy.</span>"
-	lose_text = "<span class='notice'>You no longer feel glitchy.</span>"
-	medical_record_text = "Patient has a cascading anomaly in their brain that is slowly causing brain death."
+	desc = "Ваш позитронный мозг медленно разрушается из-за каскадной аномалии. Лучше принеси немного жидкого припоя!"
+	gain_text = "<span class='danger'>Вы чувствуете себя сбойным.</span>"
+	lose_text = "<span class='notice'>Вы больше не чувствуете себя сбойным.</span>"
+	medical_record_text = "У пациента каскадная аномалия в головном мозге, которая медленно вызывает смерть мозга."
 	icon = "bp_synth_brain"
 	mail_goodies = list(/obj/item/storage/pill_bottle/liquid_solder/braintumor)
 	hidden_quirk = TRUE
@@ -69,8 +69,8 @@
 // Does not appear in TGUI or the character preferences window.
 /datum/quirk/blooddeficiency/synth
 	name = "Hydraulic Leak"
-	desc = "Your body's hydraulic fluids are leaking through their seals."
-	medical_record_text = "Patient requires regular treatment for hydraulic fluid loss."
+	desc = "Гидравлические жидкости вашего тела просачиваются через уплотнения."
+	medical_record_text = "Пациенту требуется регулярное обслуживание в связи с потерей гидравлической жидкости."
 	icon = "bd_synth_tint"
 	mail_goodies = list(/obj/item/reagent_containers/blood/oil)
 	// min_blood = BLOOD_VOLUME_BAD - 25; // TODO: Uncomment after TG PR #70563
