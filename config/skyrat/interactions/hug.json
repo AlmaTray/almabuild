@@ -1,11 +1,11 @@
 {
-	"name": "Поглаживание",
-	"description": "Погладить по голове. Ересь... Ужас... Непотребство!",
+	"name": "Крепко обнять",
+	"description": "Крепко обнять собеседника.",
 	"usage": "other",
 	"category": "Miscellaneous",
 	"distance_allowed": 0,
 	"message": [
-		"%USER% гладит %TARGET% по голове."
+		"%USER% крепко обнимает %TARGET%."
 	],
 	"sound_use": 0,
 	"sound_possible": [
