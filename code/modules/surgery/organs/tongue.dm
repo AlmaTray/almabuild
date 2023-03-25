@@ -1,12 +1,12 @@
 /obj/item/organ/internal/tongue
-	name = "tongue"
-	desc = "A fleshy muscle mostly used for lying."
+	name = "язык"
+	desc = "Мясистая мышца, чаще всего для лжи."
 	icon_state = "tongue"
 	visual = FALSE
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_TONGUE
-	attack_verb_continuous = list("licks", "slobbers", "slaps", "frenches", "tongues")
-	attack_verb_simple = list("lick", "slobber", "slap", "french", "tongue")
+	attack_verb_continuous = list("лижет", "слюнявит", "шлёпает", "frenches", "tongues")
+	attack_verb_simple = list("лизнуть", "обслюнявить", "шлёпнуть", "french", "tongue")
 	/**
 	 * A cached list of paths of all the languages this tongue is capable of speaking
 	 *
@@ -25,7 +25,7 @@
 	var/list/languages_native
 	///changes the verbage of how you speak. (Permille -> says <-, "I just used a verb!")
 	///i hate to say it, but because of sign language, this may have to be a component. and we may have to do some insane shit like putting a component on a component
-	var/say_mod = "says"
+	var/say_mod = "говорит"
 	///for temporary overrides of the above variable.
 	var/temp_say_mod = ""
 
@@ -114,10 +114,10 @@
 	return owner_species.mutanttongue
 
 /obj/item/organ/internal/tongue/lizard
-	name = "forked tongue"
-	desc = "A thin and long muscle typically found in reptilian races, apparently moonlights as a nose."
+	name = "остроконечный язык"
+	desc = "Тонкая и длинная мышца, свойственная ящеровидным расам. Иногда частично замещает нос."
 	icon_state = "tonguelizard"
-	say_mod = "hisses"
+	say_mod = "вышипывает"
 	taste_sensitivity = 10 // combined nose + tongue, extra sensitive
 	modifies_speech = TRUE
 	languages_native = list(/datum/language/draconic, /datum/language/ashtongue) //SKYRAT EDIT: Ashtongue for Ashwalkers
@@ -155,14 +155,14 @@
 	speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/internal/tongue/lizard/silver
-	name = "silver tongue"
-	desc = "A genetic branch of the high society Silver Scales that gives them their silverizing properties. To them, it is everything, and society traitors have their tongue forcibly revoked. Oddly enough, it itself is just blue."
+	name = "серебрянный язык"
+	desc = "Генетическая ветвь высокого общества Серебрянных Чешуй, которая даёт им способность серебрения. Для них он крайне важен, а предатели общества лишаются языка силой. В общем-то, он просто синий."
 	icon_state = "silvertongue"
 	actions_types = list(/datum/action/item_action/organ_action/statue)
 
 /datum/action/item_action/organ_action/statue
-	name = "Become Statue"
-	desc = "Become an elegant silver statue. Its durability and yours are directly tied together, so make sure you're careful."
+	name = "Стать Статуей"
+	desc = "Превратиться в элегантную серебрянную статую. Её целостность напрямую связана с вашей, так что будьте хорошо уверены в своей аккуратности."
 	COOLDOWN_DECLARE(ability_cooldown)
 
 	var/obj/structure/statue/custom/statue
@@ -180,35 +180,35 @@
 /datum/action/item_action/organ_action/statue/Trigger(trigger_flags)
 	. = ..()
 	if(!iscarbon(owner))
-		to_chat(owner, span_warning("Your body rejects the powers of the tongue!"))
+		to_chat(owner, span_warning("Ваше тело отвергает мощи этого языка!"))
 		return
 	var/mob/living/carbon/becoming_statue = owner
 	if(becoming_statue.health < 1)
-		to_chat(becoming_statue, span_danger("You are too weak to become a statue!"))
+		to_chat(becoming_statue, span_danger("Вы слишком слабы, чтобы превратиться в статую!"))
 		return
 	if(!COOLDOWN_FINISHED(src, ability_cooldown))
-		to_chat(becoming_statue, span_warning("You just used the ability, wait a little bit!"))
+		to_chat(becoming_statue, span_warning("Вы только что использовали способность, подождите слегка!"))
 		return
 	var/is_statue = becoming_statue.loc == statue
-	to_chat(becoming_statue, span_notice("You begin to [is_statue ? "break free from the statue" : "make a glorious pose as you become a statue"]!"))
+	to_chat(becoming_statue, span_notice("Вы начинаете [is_statue ? "оживать из формы статуи" : "вставать в величественную позу, пока ваше тело превращается в статую"]!"))
 	if(!do_after(becoming_statue, (is_statue ? 5 : 30), target = get_turf(becoming_statue)))
-		to_chat(becoming_statue, span_warning("Your transformation is interrupted!"))
+		to_chat(becoming_statue, span_warning("Трансформация прервана!"))
 		COOLDOWN_START(src, ability_cooldown, 3 SECONDS)
 		return
 	COOLDOWN_START(src, ability_cooldown, 10 SECONDS)
 
 	if(statue.name == initial(statue.name)) //statue has not been set up
-		statue.name = "statue of [becoming_statue.real_name]"
-		statue.desc = "statue depicting [becoming_statue.real_name]"
+		statue.name = "статуя [becoming_statue.real_name]"
+		statue.desc = "становление статуей [becoming_statue.real_name]"
 		statue.set_custom_materials(list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT*5))
 
 	if(is_statue)
-		statue.visible_message(span_danger("[statue] becomes animated!"))
+		statue.visible_message(span_danger("[statue] начинает оживать!"))
 		becoming_statue.forceMove(get_turf(statue))
 		statue.moveToNullspace()
 		UnregisterSignal(becoming_statue, COMSIG_MOVABLE_MOVED)
 	else
-		becoming_statue.visible_message(span_notice("[becoming_statue] hardens into a silver statue."), span_notice("You have become a silver statue!"))
+		becoming_statue.visible_message(span_notice("[becoming_statue] затвердевает в серебрянную статую."), span_notice("Вы стали серебрянной статуей!"))
 		statue.set_visuals(becoming_statue.appearance)
 		statue.forceMove(get_turf(becoming_statue))
 		becoming_statue.forceMove(statue)
@@ -225,7 +225,7 @@
 /datum/action/item_action/organ_action/statue/proc/statue_destroyed(datum/source)
 	SIGNAL_HANDLER
 
-	to_chat(owner, span_userdanger("Your existence as a living creature snaps as your statue form crumbles!"))
+	to_chat(owner, span_userdanger("Ваше существование как чего-то живого под угрозой из-за повреждений формы статуи!"))
 	if(iscarbon(owner))
 		//drop everything, just in case
 		var/mob/living/carbon/dying_carbon = owner
@@ -235,10 +235,10 @@
 	qdel(owner)
 
 /obj/item/organ/internal/tongue/abductor
-	name = "superlingual matrix"
-	desc = "A mysterious structure that allows for instant communication between users. Pretty impressive until you need to eat something."
+	name = "суперязыковая матрица"
+	desc = "Мистический объект, позволяющий носителям коммуницировать мгновенно. Весьма впечатляет, пока не приходится есть."
 	icon_state = "tongueayylmao"
-	say_mod = "gibbers"
+	say_mod = "тараторит"
 	sense_of_taste = FALSE
 	modifies_speech = TRUE
 	var/mothership
@@ -252,21 +252,21 @@
 		return
 
 	if(tongue.mothership == mothership)
-		to_chat(tongue_holder, span_notice("[src] is already attuned to the same channel as your own."))
+		to_chat(tongue_holder, span_notice("[src] уже настроена на тот же канал, что и вы."))
 
 	tongue_holder.visible_message(span_notice("[tongue_holder] holds [src] in their hands, and concentrates for a moment."), span_notice("You attempt to modify the attenuation of [src]."))
 	if(do_after(tongue_holder, delay=15, target=src))
-		to_chat(tongue_holder, span_notice("You attune [src] to your own channel."))
+		to_chat(tongue_holder, span_notice("Вы настраиваете [src] на ваш канал."))
 		mothership = tongue.mothership
 
 /obj/item/organ/internal/tongue/abductor/examine(mob/examining_mob)
 	. = ..()
 	if(HAS_TRAIT(examining_mob, TRAIT_ABDUCTOR_TRAINING) || (examining_mob.mind && HAS_TRAIT(examining_mob.mind, TRAIT_ABDUCTOR_TRAINING)) || isobserver(examining_mob))
-		. += span_notice("It can be attuned to a different channel by using it inhand.")
+		. += span_notice("Может быть настроена на разные каналы использованием в руке.")
 		if(!mothership)
-			. += span_notice("It is not attuned to a specific mothership.")
+			. += span_notice("Не привязан определённый материнский корабль.")
 		else
-			. += span_notice("It is attuned to [mothership].")
+			. += span_notice("Привязана к [mothership].")
 
 /obj/item/organ/internal/tongue/abductor/modify_speech(datum/source, list/speech_args)
 	//Hacks
@@ -288,10 +288,10 @@
 	speech_args[SPEECH_MESSAGE] = ""
 
 /obj/item/organ/internal/tongue/zombie
-	name = "rotting tongue"
-	desc = "Between the decay and the fact that it's just lying there you doubt a tongue has ever seemed less sexy."
+	name = "подгнивающий язык"
+	desc = "Между полным разложением и тем, что этот язык всё ещё тут валяется пролетают сильные сомнения о том, что язык может выглядеть менее сексуально."
 	icon_state = "tonguezombie"
-	say_mod = "moans"
+	say_mod = "завывает"
 	modifies_speech = TRUE
 	taste_sensitivity = 32
 
@@ -353,10 +353,10 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 		speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/internal/tongue/alien
-	name = "alien tongue"
-	desc = "According to leading xenobiologists the evolutionary benefit of having a second mouth in your mouth is \"that it looks badass\"."
+	name = "инопланетный язык"
+	desc = "По последним данным ксенобиологов эволюицонное преимущество второго рта у вас во рту - \"выглядит убойно круто\"."
 	icon_state = "tonguexeno"
-	say_mod = "hisses"
+	say_mod = "вышипывает"
 	taste_sensitivity = 10 // LIZARDS ARE ALIENS CONFIRMED
 	modifies_speech = TRUE // not really, they just hiss
 
@@ -378,12 +378,12 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	playsound(owner, SFX_HISS, 25, TRUE, TRUE)
 
 /obj/item/organ/internal/tongue/bone
-	name = "bone \"tongue\""
-	desc = "Apparently skeletons alter the sounds they produce through oscillation of their teeth, hence their characteristic rattling."
+	name = "костяной \"язык\""
+	desc = "По-видимому, скелеты издают разные звуки колебанием своих зубов, отсюда же их характерное дребезжание."
 	icon_state = "tonguebone"
-	say_mod = "rattles"
-	attack_verb_continuous = list("bites", "chatters", "chomps", "enamelles", "bones")
-	attack_verb_simple = list("bite", "chatter", "chomp", "enamel", "bone")
+	say_mod = "простукивает"
+	attack_verb_continuous = list("кусает", "отстукивает", "chomps", "enamelles", "bones")
+	attack_verb_simple = list("укусить", "отстучать", "chomp", "enamel", "bone")
 	sense_of_taste = FALSE
 	modifies_speech = TRUE
 	var/chattering = FALSE
@@ -408,20 +408,20 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 			speech_args[SPEECH_SPANS] |= SPAN_PAPYRUS
 
 /obj/item/organ/internal/tongue/bone/plasmaman
-	name = "plasma bone \"tongue\""
-	desc = "Like animated skeletons, Plasmamen vibrate their teeth in order to produce speech."
+	name = "плазменно-костяной \"язык\""
+	desc = "Словно ожившие скелеты, Плазмамены вибрируют своими зубами в определённом порядке для изображения речи."
 	icon_state = "tongueplasma"
 	modifies_speech = FALSE
 
 /obj/item/organ/internal/tongue/robot
-	name = "robotic voicebox"
-	desc = "A voice synthesizer that can interface with organic lifeforms."
+	name = "синтезатор речи"
+	desc = "Синтезатор голоса, позволяющий контактировать с органическими формами жизни."
 	status = ORGAN_ROBOTIC
 	organ_flags = NONE
 	icon_state = "tonguerobot"
-	say_mod = "states"
-	attack_verb_continuous = list("beeps", "boops")
-	attack_verb_simple = list("beep", "boop")
+	say_mod = "проговаривает"
+	attack_verb_continuous = list("гудит", "гудит")
+	attack_verb_simple = list("гудеть", "гудеть")
 	modifies_speech = TRUE
 	taste_sensitivity = 25 // not as good as an organic tongue
 
@@ -432,9 +432,9 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	speech_args[SPEECH_SPANS] |= SPAN_ROBOT
 
 /obj/item/organ/internal/tongue/snail
-	name = "radula"
+	name = "радула"
 	color = "#96DB00" // TODO proper sprite, rather than recoloured pink tongue
-	desc = "A minutely toothed, chitious ribbon, which as a side effect, makes all snails talk IINNCCRREEDDIIBBLLYY SSLLOOWWLLYY."
+	desc = "Грубоватая лента со множеством мелких зубцов. Как побочный эффект, это заставляет всех улиток говорить ОООООЧЧЧЧЧЕЕЕЕЕНННННЬ МЕЕЕЕЕЕЕЕДЛЛЛЕЕЕЕНННООО."
 	modifies_speech = TRUE
 
 /* SKYRAT EDIT START - Roundstart Snails: Less annoying speech.
@@ -450,10 +450,10 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 */ // SKYRAT EDIT END
 
 /obj/item/organ/internal/tongue/ethereal
-	name = "electric discharger"
-	desc = "A sophisticated ethereal organ, capable of synthesising speech via electrical discharge."
+	name = "электрический разрядник"
+	desc = "Хитро устроенный орган этереалов, способный синтезировать речь электрическими разрядами."
 	icon_state = "electrotongue"
-	say_mod = "crackles"
+	say_mod = "протрескивает"
 	taste_sensitivity = 10 // ethereal tongues function (very loosely) like a gas spectrometer: vaporising a small amount of the food and allowing it to pass to the nose, resulting in more sensitive taste
 	attack_verb_continuous = list("shocks", "jolts", "zaps")
 	attack_verb_simple = list("shock", "jolt", "zap")
@@ -463,14 +463,14 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	return ..() + /datum/language/voltaic
 
 /obj/item/organ/internal/tongue/cat
-	name = "felinid tongue"
-	desc = "A fleshy muscle mostly used for meowing."
-	say_mod = "meows"
+	name = "кошачий язык"
+	desc = "Мясистая мышца, чаще всего для мяуканья."
+	say_mod = "мяукает"
 
 /obj/item/organ/internal/tongue/bananium
-	name = "bananium tongue"
-	desc = "A bananium geode mostly used for honking."
-	say_mod = "honks"
+	name = "бананиумный язык"
+	desc = "Бананиумная минеральная структура, обычно для бибиканья."
+	say_mod = "бипкает"
 
 	icon = 'icons/obj/weapons/items_and_weapons.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'
@@ -478,29 +478,29 @@ GLOBAL_LIST_INIT(english_to_zombie, list())
 	icon_state = "gold_horn"
 
 /obj/item/organ/internal/tongue/jelly
-	name = "jelly tongue"
-	desc = "Ah... That's not the sound I expected it to make. Sounds like a Space Autumn Bird."
+	name = "желеобразный язык"
+	desc = "Ах... Звучит не так, как предполагалось. Звучит как Птица Космо-осени."
 	say_mod = "chirps"
 
 /obj/item/organ/internal/tongue/monkey
-	name = "primitive tongue"
-	desc = "For aggressively chimpering. And consuming bananas."
-	say_mod = "chimpers"
+	name = "примитивный язык"
+	desc = "Для агрессивных воплей. И потребления бананов."
+	say_mod = "вопит"
 
 /obj/item/organ/internal/tongue/moth
-	name = "moth tongue"
-	desc = "Moths don't have tongues. Someone get god on the phone, tell them I'm not happy."
-	say_mod = "flutters"
+	name = "мотыльковый"
+	desc = "У мотыльков нет языков. Кто-нибудь, бога к телефону, передайте, что это неправильно."
+	say_mod = "трепещет"
 
 /obj/item/organ/internal/tongue/zombie
-	name = "rotting tongue"
-	desc = "Makes you speak like you're at the dentist and you just absolutely refuse to spit because you forgot to mention you were allergic to space shellfish."
-	say_mod = "moans"
+	name = "подгнивающий язык"
+	desc = "Заставляет вас говорить так, будто вы у стоматолога, и вы абсолютно отказываетесь сплёвывать, ведь забыли сказать, что у вас аллергия на космических моллюсков."
+	say_mod = "завывает"
 
 /obj/item/organ/internal/tongue/mush
-	name = "mush-tongue-room"
-	desc = "You poof with this. Got it?"
-	say_mod = "poofs"
+	name = "Грибозык"
+	desc = "Этим вы пуфаете. Ясно?"
+	say_mod = "пуфает"
 
 	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "mycelium-angel"
