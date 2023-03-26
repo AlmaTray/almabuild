@@ -15,7 +15,7 @@
  */
 /datum/outfit
 	///Name of the outfit (shows up in the equip admin verb)
-	var/name = "Naked"
+	var/name = "Без одежды"
 
 	/// Type path of item to go in the idcard slot
 	var/id = null
@@ -249,7 +249,7 @@
 				var/obj/item/tank/internals/internals = H.is_holding_item_of_type(/obj/item/tank/internals)
 				if(internals)
 					H.open_internals(internals)
-			else 
+			else
 				H.open_internals(H.get_item_by_slot(internals_slot))
 		if(implants)
 			for(var/implant_type in implants)
