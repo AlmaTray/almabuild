@@ -192,18 +192,18 @@ GLOBAL_LIST_INIT(skin_tones, sort_list(list(
 	)))
 
 GLOBAL_LIST_INIT(skin_tone_names, list(
-	"african1" = "Medium brown",
-	"african2" = "Dark brown",
-	"albino" = "Albino",
-	"arab" = "Light brown",
-	"asian1" = "Ivory",
-	"asian2" = "Beige",
-	"caucasian1" = "Porcelain",
-	"caucasian2" = "Light peach",
-	"caucasian3" = "Peach",
-	"indian" = "Brown",
-	"latino" = "Light beige",
-	"mediterranean" = "Olive",
+	"african1" = "Коричневый",
+	"african2" = "Тёмно-коричневый",
+	"albino" = "Альбинос",
+	"arab" = "Светло-коричневый",
+	"asian1" = "Слоновая кость",
+	"asian2" = "Бежевый",
+	"caucasian1" = "Фарфоровый",
+	"caucasian2" = "Светло-персиковый",
+	"caucasian3" = "Персиковый",
+	"indian" = "Коричневый 2",
+	"latino" = "Светло-бежевый",
+	"mediterranean" = "Оливковый",
 ))
 
 /// An assoc list of species IDs to type paths
@@ -393,7 +393,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			if (!M.client?.holder)
 				return
 			else
-				message += span_deadsay(" (This is viewable to admins only).")
+				message += span_deadsay(" (Это показывается только педалям).")
 		var/override = FALSE
 		if(M.client?.holder && (chat_toggles & CHAT_DEAD))
 			override = TRUE
@@ -538,7 +538,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/list/borgs = active_free_borgs()
 	if(borgs.len)
 		if(user)
-			. = input(user,"Unshackled cyborg signals detected:", "Cyborg Selection", borgs[1]) in sort_list(borgs)
+			. = input(user,"Пойман сигнал свободного киборга:", "Выбор Киборга", borgs[1]) in sort_list(borgs)
 		else
 			. = pick(borgs)
 	return .
@@ -547,7 +547,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/list/ais = active_ais(FALSE, z)
 	if(ais.len)
 		if(user)
-			. = input(user,"AI signals detected:", "AI Selection", ais[1]) in sort_list(ais)
+			. = input(user,"Пойман сигнал ИИ:", "Выбор ИИ", ais[1]) in sort_list(ais)
 		else
 			. = pick(ais)
 	return .
