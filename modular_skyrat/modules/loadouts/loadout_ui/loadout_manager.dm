@@ -283,7 +283,7 @@
 	loadout_tabs += list(list("name" = "Шея", "title" = "Предметы в слот шеи", "contents" = list_to_data(GLOB.loadout_necks)))
 	loadout_tabs += list(list("name" = "Обувь", "title" = "Предметы в слот обуви", "contents" = list_to_data(GLOB.loadout_shoes)))
 	loadout_tabs += list(list("name" = "Костюм", "title" = "Предметы в слот верхней одежды", "contents" = list_to_data(GLOB.loadout_exosuits)))
-	loadout_tabs += list(list("name" = "Комбенизон", "title" = "Предметы в слот униформы", "contents" = list_to_data(GLOB.loadout_jumpsuits)))
+	loadout_tabs += list(list("name" = "Комбинезон", "title" = "Предметы в слот униформы", "contents" = list_to_data(GLOB.loadout_jumpsuits)))
 	loadout_tabs += list(list("name" = "Официальное", "title" = "Предметы в слот униформы", "contents" = list_to_data(GLOB.loadout_undersuits)))
 	loadout_tabs += list(list("name" = "Разн. униформа", "title" = "Предметы в слот униформы", "contents" = list_to_data(GLOB.loadout_miscunders)))
 	loadout_tabs += list(list("name" = "Аксессуары", "title" = "Различные аксессуары", "contents" = list_to_data(GLOB.loadout_accessory)))
