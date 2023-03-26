@@ -18,24 +18,24 @@
 		"change_emissive" = PROC_REF(change_emissive_marking),
 	)
 	var/list/limbs_to_process = list(
-		"l_arm" = "Left Arm",
-		"r_arm" = "Right Arm",
-		"l_leg" = "Left Leg",
-		"r_leg" = "Right Leg",
-		"chest" = "Chest",
-		"head" = "Head",
-		"l_hand" = "Left Hand",
-		"r_hand" = "Right Hand"
+		"l_arm" = "Левая Рука",
+		"r_arm" = "Правая Рука",
+		"l_leg" = "Левая Нога",
+		"r_leg" = "Правая Нога",
+		"chest" = "Торс",
+		"head" = "Голова",
+		"l_hand" = "Левая Рука",
+		"r_hand" = "Правая Рука"
 	)
 
 	var/list/organs_to_process = list(
-		"heart" = "Heart",
-		"lungs" = "Lungs",
-		"liver" = "Liver",
-		"stomach" = "Stomach",
-		"eyes" = "Eyes",
-		"tongue" = "Tongue",
-		"Mouth implant" = "Mouth implant"
+		"heart" = "Сердце",
+		"lungs" = "Лёгкие",
+		"liver" = "Печень",
+		"stomach" = "Желудок",
+		"eyes" = "Глаза",
+		"tongue" = "Язык",
+		"Mouth implant" = "Ротовой имплант"
 	)
 
 	var/list/aug_support = list(
@@ -134,7 +134,7 @@
 		new_markings[marking_entry] = markings[marking_entry]
 	var/new_color = input(
 		usr,
-		"Select new color",
+		"Выберите новый цвет",
 		null,
 		preferences.body_markings[limb_slot][marking_entry_name],
 	) as color | null
