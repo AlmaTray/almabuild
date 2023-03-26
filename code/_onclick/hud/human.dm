@@ -2,7 +2,7 @@
 	icon = 'icons/hud/screen_midnight.dmi'
 
 /atom/movable/screen/human/toggle
-	name = "toggle"
+	name = "переключить"
 	icon_state = "toggle"
 
 /atom/movable/screen/human/toggle/Click()
@@ -24,7 +24,7 @@
 	targetmob.hud_used.hidden_inventory_update(usr)
 
 /atom/movable/screen/human/equip
-	name = "equip"
+	name = "экипировать"
 	icon_state = "act_equip"
 
 /atom/movable/screen/human/equip/Click()
@@ -37,12 +37,12 @@
 	icon = 'icons/hud/screen_changeling.dmi'
 
 /atom/movable/screen/ling/chems
-	name = "chemical storage"
+	name = "химический контейнер"
 	icon_state = "power_display"
 	screen_loc = ui_lingchemdisplay
 
 /atom/movable/screen/ling/sting
-	name = "current sting"
+	name = "подготовленное жало"
 	screen_loc = ui_lingstingdisplay
 	invisibility = INVISIBILITY_ABSTRACT
 
@@ -82,7 +82,7 @@
 
 	using = new /atom/movable/screen/mov_intent
 	using.icon = ui_style
-	using.icon_state = (mymob.m_intent == MOVE_INTENT_RUN ? "running" : "walking")
+	using.icon_state = (mymob.m_intent == MOVE_INTENT_RUN ? "бежит" : "идёт")
 	using.screen_loc = ui_movi
 	using.hud = src
 	static_inventory += using
@@ -94,7 +94,7 @@
 	static_inventory += using
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "uniform"
+	inv_box.name = "униформа"
 	inv_box.icon = ui_style
 	inv_box.slot_id = ITEM_SLOT_ICLOTHING
 	inv_box.icon_state = "uniform"
@@ -104,7 +104,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "suit"
+	inv_box.name = "костюм"
 	inv_box.icon = ui_style
 	inv_box.slot_id = ITEM_SLOT_OCLOTHING
 	inv_box.icon_state = "suit"
@@ -130,7 +130,7 @@
 	static_inventory += using
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "id"
+	inv_box.name = "ID"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "id"
 	inv_box.icon_full = "template_small"
@@ -140,7 +140,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "mask"
+	inv_box.name = "маска"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mask"
 	inv_box.icon_full = "template"
@@ -150,7 +150,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "neck"
+	inv_box.name = "шея"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "neck"
 	inv_box.icon_full = "template"
@@ -160,7 +160,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "back"
+	inv_box.name = "спина"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "back"
 	inv_box.icon_full = "template_small"
@@ -170,7 +170,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "left pocket"
+	inv_box.name = "левый карман"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.icon_full = "template_small"
@@ -180,7 +180,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "right pocket"
+	inv_box.name = "правый карман"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.icon_full = "template_small"
@@ -190,7 +190,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "suit storage"
+	inv_box.name = "хранилище костюма"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "suit_storage"
 	inv_box.icon_full = "template"
@@ -218,7 +218,7 @@
 	static_inventory += using
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "gloves"
+	inv_box.name = "руки"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "gloves"
 	inv_box.icon_full = "template"
@@ -228,7 +228,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "eyes"
+	inv_box.name = "глаза"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "glasses"
 	inv_box.icon_full = "template"
@@ -238,7 +238,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "ears"
+	inv_box.name = "уши"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "ears"
 	inv_box.icon_full = "template"
@@ -248,7 +248,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "head"
+	inv_box.name = "голова"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "head"
 	inv_box.icon_full = "template"
@@ -258,7 +258,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "shoes"
+	inv_box.name = "обувь"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "shoes"
 	inv_box.icon_full = "template"
@@ -268,7 +268,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /atom/movable/screen/inventory()
-	inv_box.name = "belt"
+	inv_box.name = "пояс"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "belt"
 	inv_box.icon_full = "template_small"
@@ -460,8 +460,8 @@
 
 /mob/living/carbon/human/verb/toggle_hotkey_verbs()
 	set category = "OOC"
-	set name = "Toggle hotkey buttons"
-	set desc = "This disables or enables the user interface buttons which can be used with hotkeys."
+	set name = "Переключить хоткеи"
+	set desc = "Переключает кнопки интерфейса, которые могут быть использованы вместе с хоткеями."
 
 	if(hud_used.hotkey_ui_hidden)
 		client.screen += hud_used.hotkeybuttons
