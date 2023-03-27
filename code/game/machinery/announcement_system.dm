@@ -2,24 +2,24 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 
 /obj/machinery/announcement_system
 	density = TRUE
-	name = "\improper Automated Announcement System"
-	desc = "An automated announcement system that handles minor announcements over the radio."
+	name = "\improper Автоматизированная Система Оповещения"
+	desc = "Автоматизированная система оповещения, берущая на себя роль озвучивания маловажных сообщений."
 	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "AAS_On"
 	base_icon_state = "AAS"
 
-	verb_say = "coldly states"
-	verb_ask = "queries"
-	verb_exclaim = "alarms"
+	verb_say = "холодно констатирует"
+	verb_ask = "вопрошает"
+	verb_exclaim = "восклицает"
 
 	active_power_usage = BASE_MACHINE_ACTIVE_CONSUMPTION * 0.05
 
 	circuit = /obj/item/circuitboard/machine/announcement_system
 
 	var/obj/item/radio/headset/radio
-	var/arrival = "%PERSON has signed up as %RANK"
+	var/arrival = "%PERSON прибывает на станцию, занимая должность %RANK"
 	var/arrivalToggle = 1
-	var/newhead = "%PERSON, %RANK, is the department head."
+	var/newhead = "%PERSON прибывает на станцию, занимая должность главы отдела - %RANK."
 	var/newheadToggle = 1
 
 	var/greenlight = "Light_Green"
@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 /obj/machinery/announcement_system/screwdriver_act(mob/living/user, obj/item/tool)
 	tool.play_tool_sound(src)
 	toggle_panel_open()
-	to_chat(user, span_notice("You [panel_open ? "open" : "close"] the maintenance hatch of [src]."))
+	to_chat(user, span_notice("Вы [panel_open ? "открываете" : "закрываете"] крышку [src]."))
 	update_appearance()
 	return TRUE
 
@@ -66,7 +66,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 /obj/machinery/announcement_system/multitool_act(mob/living/user, obj/item/tool)
 	if(!panel_open || !(machine_stat & BROKEN))
 		return FALSE
-	to_chat(user, span_notice("You reset [src]'s firmware."))
+	to_chat(user, span_notice("Вы сбрасываете прошивку [src]."))
 	set_machine_stat(machine_stat & ~BROKEN)
 	update_appearance()
 
@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	else if(message_type == "NEWHEAD" && newheadToggle)
 		message = CompileText(newhead, user, rank)
 	else if(message_type == "ARRIVALS_BROKEN")
-		message = "The arrivals shuttle has been damaged. Docking for repairs..."
+		message = "Шаттл прибытия имеет повреждения. Производится стыковка на ремонт..."
 
 	broadcast(message, channels)
 
@@ -95,7 +95,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	if (!is_operational)
 		return
 
-	broadcast("Officer [officer.real_name] has been assigned to [department].", list(RADIO_CHANNEL_SECURITY))
+	broadcast("Офицер [officer.real_name] назначается на отдел [department].", list(RADIO_CHANNEL_SECURITY))
 
 /// Sends a message to the appropriate channels.
 /obj/machinery/announcement_system/proc/broadcast(message, list/channels)
@@ -137,14 +137,14 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 				return
 			if(NewMessage)
 				arrival = NewMessage
-				usr.log_message("updated the arrivals announcement to: [NewMessage]", LOG_GAME)
+				usr.log_message("обновил сообщение о прибытии на: [NewMessage]", LOG_GAME)
 		if("NewheadText")
 			var/NewMessage = trim(html_encode(param["newText"]), MAX_MESSAGE_LEN)
 			if(!usr.can_perform_action(src, ALLOW_SILICON_REACH))
 				return
 			if(NewMessage)
 				newhead = NewMessage
-				usr.log_message("updated the head announcement to: [NewMessage]", LOG_GAME)
+				usr.log_message("обновил сообщение о прибытии главы отдела на: [NewMessage]", LOG_GAME)
 		if("NewheadToggle")
 			newheadToggle = !newheadToggle
 			update_appearance()
@@ -160,7 +160,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	if(!user.can_perform_action(src, ALLOW_SILICON_REACH))
 		return
 	if(machine_stat & BROKEN)
-		to_chat(user, span_warning("[src]'s firmware appears to be malfunctioning!"))
+		to_chat(user, span_warning("Прошивка [src] явно сбоит!"))
 		return
 	interact(user)
 
