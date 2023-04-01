@@ -1,4 +1,4 @@
-## Skyrat 13 (/tg/station Downstream)
+## Lain Station 13 (/Skyrat Downstream)
 
 [![CI Suite](https://github.com/Skyrat-SS13/Skyrat-tg/actions/workflows/ci_suite.yml/badge.svg)](https://github.com/Skyrat-SS13/Skyrat-tg/actions/workflows/ci_suite.yml)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/Skyrat-SS13/Skyrat-tg.svg)](https://isitmaintained.com/project/Skyrat-SS13/Skyrat-tg "Percentage of issues still open")
@@ -16,7 +16,7 @@
 * **Skyrat 13 Discord:** https://discord.com/invite/hGpZ4Z3
 * **Coderbus Discord:** https://discord.gg/Vh8TJp9
 
-This is Skyrat's downstream fork of /tg/station created in byond.
+This is Lain Station's downstream fork of /Skyrat/station created in byond.
 
 **Please note that this repository contains sexually explicit content and is not suitable for those under the age of 18.**
 
