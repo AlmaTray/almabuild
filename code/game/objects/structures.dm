@@ -39,9 +39,9 @@
 	. = ..()
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)
-			. += span_warning("It's on fire!")
+			. += span_warning("ГОРИТ!")
 		if(broken)
-			. += span_notice("It appears to be broken.")
+			. += span_notice("Кажется, сломано.")
 		var/examine_status = examine_status(user)
 		if(examine_status)
 			. += examine_status
@@ -50,12 +50,12 @@
 	var/healthpercent = (atom_integrity/max_integrity) * 100
 	switch(healthpercent)
 		if(50 to 99)
-			return  "It looks slightly damaged."
+			return  "Заметны некоторые повреждения."
 		if(25 to 50)
-			return  "It appears heavily damaged."
+			return  "Выглядит серьёзно повреждённым."
 		if(0 to 25)
 			if(!broken)
-				return  span_warning("It's falling apart!")
+				return  span_warning("Оно вот-вот развалится!")
 
 /obj/structure/rust_heretic_act()
 	take_damage(500, BRUTE, "melee", 1)

@@ -1,6 +1,6 @@
 /turf/closed/wall/material
-	name = "wall"
-	desc = "A huge chunk of material used to separate rooms."
+	name = "стена"
+	desc = "Огромный кусок стены из определённого материала для разделения пространства на помещения."
 	icon = 'icons/turf/walls/materialwall.dmi'
 	icon_state = "materialwall-0"
 	base_icon_state = "materialwall"
@@ -22,5 +22,5 @@
 		new M.sheet_type(src, FLOOR(custom_materials[M] / MINERAL_MATERIAL_AMOUNT, 1))
 
 /turf/closed/wall/material/mat_update_desc(mat)
-	desc = "A huge chunk of [mat] used to separate rooms."
+	desc = "Огромный кусок стены из [mat] для разделения пространства на помещения."
 

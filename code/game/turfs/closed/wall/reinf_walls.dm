@@ -1,6 +1,6 @@
 /turf/closed/wall/r_wall
-	name = "reinforced wall"
-	desc = "A huge chunk of reinforced metal used to separate rooms."
+	name = "укреплённая стена"
+	desc = "Огромный кусок прочного металла для разделения пространства на помещения."
 	icon = 'icons/turf/walls/reinforced_wall.dmi' //ICON OVERRIDEN IN SKYRAT AESTHETICS - SEE MODULE
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
@@ -22,19 +22,19 @@
 /turf/closed/wall/r_wall/deconstruction_hints(mob/user)
 	switch(d_state)
 		if(INTACT)
-			return span_notice("The outer <b>grille</b> is fully intact.")
+			return span_notice("Внешняя <b>решётка</b> полностью целая.")
 		if(SUPPORT_LINES)
-			return span_notice("The outer <i>grille</i> has been cut, and the support lines are <b>screwed</b> securely to the outer cover.")
+			return span_notice("Внешняя <i>решётка</i> прорезана, а поддерживающие оси крепко <b>прикручены</b> к внешнему покрытию.")
 		if(COVER)
-			return span_notice("The support lines have been <i>unscrewed</i>, and the metal cover is <b>welded</b> firmly in place.")
+			return span_notice("Поддерживающие оси <i>откручены</i>, а металлическое покрытие крепко <b>приварено</b> на своём месте.")
 		if(CUT_COVER)
-			return span_notice("The metal cover has been <i>sliced through</i>, and is <b>connected loosely</b> to the girder.")
+			return span_notice("Металлическое покрытие <i>прорезано насквозь</i> и <b>шатко</b> держится на каркасе.")
 		if(ANCHOR_BOLTS)
-			return span_notice("The outer cover has been <i>pried away</i>, and the bolts anchoring the support rods are <b>wrenched</b> in place.")
+			return span_notice("Внешнее покрытие <i>выдавлено</i> наружу, а болты, поддерживающие защитные стержни, <b>закручены</b> на своём месте.")
 		if(SUPPORT_RODS)
-			return span_notice("The bolts anchoring the support rods have been <i>loosened</i>, but are still <b>welded</b> firmly to the girder.")
+			return span_notice("Болты, поддерживающие защитные стержни, <i>раскручены</i>, но всё ещё крепко <b>приварены</b> к каркасу.")
 		if(SHEATH)
-			return span_notice("The support rods have been <i>sliced through</i>, and the outer sheath is <b>connected loosely</b> to the girder.")
+			return span_notice("Поддерживающие стержни были <i>прорезаны насквозь</i>, внешняя обшивка <b>шатко держится</b> на каркасе.")
 
 /turf/closed/wall/r_wall/devastate_wall()
 	new sheet_type(src, sheet_amount)
@@ -51,138 +51,138 @@
 				W.play_tool_sound(src, 100)
 				d_state = SUPPORT_LINES
 				update_appearance()
-				to_chat(user, span_notice("You cut the outer grille."))
+				to_chat(user, span_notice("Вы прорезаете внешнюю решётку."))
 				return TRUE
 
 		if(SUPPORT_LINES)
 			if(W.tool_behaviour == TOOL_SCREWDRIVER)
-				to_chat(user, span_notice("You begin unsecuring the support lines..."))
+				to_chat(user, span_notice("Вы начинаете откручивать поддерживающие оси..."))
 				if(W.use_tool(src, user, 40, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_LINES)
 						return TRUE
 					d_state = COVER
 					update_appearance()
-					to_chat(user, span_notice("You unsecure the support lines."))
+					to_chat(user, span_notice("Вы откручиваете поддерживающие оси."))
 				return TRUE
 
 			else if(W.tool_behaviour == TOOL_WIRECUTTER)
 				W.play_tool_sound(src, 100)
 				d_state = INTACT
 				update_appearance()
-				to_chat(user, span_notice("You repair the outer grille."))
+				to_chat(user, span_notice("Вы чините внешнюю решётку."))
 				return TRUE
 
 		if(COVER)
 			if(W.tool_behaviour == TOOL_WELDER)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				to_chat(user, span_notice("You begin slicing through the metal cover..."))
+				to_chat(user, span_notice("Вы начинаете прорезать металлическое покрытие..."))
 				if(W.use_tool(src, user, 60, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != COVER)
 						return TRUE
 					d_state = CUT_COVER
 					update_appearance()
-					to_chat(user, span_notice("You press firmly on the cover, dislodging it."))
+					to_chat(user, span_notice("Вы сильно нажимаете на покрытие, выдавливая его."))
 				return TRUE
 
 			if(W.tool_behaviour == TOOL_SCREWDRIVER)
-				to_chat(user, span_notice("You begin securing the support lines..."))
+				to_chat(user, span_notice("Вы начинаете прикручивать поддерживающие оси..."))
 				if(W.use_tool(src, user, 40, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != COVER)
 						return TRUE
 					d_state = SUPPORT_LINES
 					update_appearance()
-					to_chat(user, span_notice("The support lines have been secured."))
+					to_chat(user, span_notice("Поддерживающие оси прикручены."))
 				return TRUE
 
 		if(CUT_COVER)
 			if(W.tool_behaviour == TOOL_CROWBAR)
-				to_chat(user, span_notice("You struggle to pry off the cover..."))
+				to_chat(user, span_notice("Вы пытаетесь сорвать покрытие..."))
 				if(W.use_tool(src, user, 100, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != CUT_COVER)
 						return TRUE
 					d_state = ANCHOR_BOLTS
 					update_appearance()
-					to_chat(user, span_notice("You pry off the cover."))
+					to_chat(user, span_notice("Вы срываете покрытие."))
 				return TRUE
 
 			if(W.tool_behaviour == TOOL_WELDER)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				to_chat(user, span_notice("You begin welding the metal cover back to the frame..."))
+				to_chat(user, span_notice("Вы начинаете приваривать металлическое покрытие обратно к каркасу..."))
 				if(W.use_tool(src, user, 60, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != CUT_COVER)
 						return TRUE
 					d_state = COVER
 					update_appearance()
-					to_chat(user, span_notice("The metal cover has been welded securely to the frame."))
+					to_chat(user, span_notice("Металлическое покрытие надёжно прикреплено к каркасу."))
 				return TRUE
 
 		if(ANCHOR_BOLTS)
 			if(W.tool_behaviour == TOOL_WRENCH)
-				to_chat(user, span_notice("You start loosening the anchoring bolts which secure the support rods to their frame..."))
+				to_chat(user, span_notice("Вы начинаете раскручивать болты, фиксировавшие поддерживающие стержи у каркаса..."))
 				if(W.use_tool(src, user, 40, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != ANCHOR_BOLTS)
 						return TRUE
 					d_state = SUPPORT_RODS
 					update_appearance()
-					to_chat(user, span_notice("You remove the bolts anchoring the support rods."))
+					to_chat(user, span_notice("Вы снимаете болты, фиксировавшие поддерживающие стержни."))
 				return TRUE
 
 			if(W.tool_behaviour == TOOL_CROWBAR)
-				to_chat(user, span_notice("You start to pry the cover back into place..."))
+				to_chat(user, span_notice("Вы пытаетесь вставить покрытие обратно на место..."))
 				if(W.use_tool(src, user, 20, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != ANCHOR_BOLTS)
 						return TRUE
 					d_state = CUT_COVER
 					update_appearance()
-					to_chat(user, span_notice("The metal cover has been pried back into place."))
+					to_chat(user, span_notice("Металлическое покрытие надёжно вставлено на место."))
 				return TRUE
 
 		if(SUPPORT_RODS)
 			if(W.tool_behaviour == TOOL_WELDER)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				to_chat(user, span_notice("You begin slicing through the support rods..."))
+				to_chat(user, span_notice("Вы начинаете прорезать поддерживающие стержни..."))
 				if(W.use_tool(src, user, 100, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_RODS)
 						return TRUE
 					d_state = SHEATH
 					update_appearance()
-					to_chat(user, span_notice("You slice through the support rods."))
+					to_chat(user, span_notice("Вы прорезаете поддерживающие стержни."))
 				return TRUE
 
 			if(W.tool_behaviour == TOOL_WRENCH)
-				to_chat(user, span_notice("You start tightening the bolts which secure the support rods to their frame..."))
+				to_chat(user, span_notice("Вы начинаете ослаблять болты, что держали поддерживающие стержни на каркасе..."))
 				W.play_tool_sound(src, 100)
 				if(W.use_tool(src, user, 40))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SUPPORT_RODS)
 						return TRUE
 					d_state = ANCHOR_BOLTS
 					update_appearance()
-					to_chat(user, span_notice("You tighten the bolts anchoring the support rods."))
+					to_chat(user, span_notice("Вы ослабляете болты, державшие стержни у каркаса."))
 				return TRUE
 
 		if(SHEATH)
 			if(W.tool_behaviour == TOOL_CROWBAR)
-				to_chat(user, span_notice("You struggle to pry off the outer sheath..."))
+				to_chat(user, span_notice("Вы пытаетесь сорвать внешнюю оболочку..."))
 				if(W.use_tool(src, user, 100, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SHEATH)
 						return TRUE
-					to_chat(user, span_notice("You pry off the outer sheath."))
+					to_chat(user, span_notice("Вы срываете внешнюю оболочку."))
 					dismantle_wall()
 				return TRUE
 
 			if(W.tool_behaviour == TOOL_WELDER)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				to_chat(user, span_notice("You begin welding the support rods back together..."))
+				to_chat(user, span_notice("Вы начинаете приваривать поддерживающие стержни обратно друг к другу..."))
 				if(W.use_tool(src, user, 100, volume=100))
 					if(!istype(src, /turf/closed/wall/r_wall) || d_state != SHEATH)
 						return TRUE
 					d_state = SUPPORT_RODS
 					update_appearance()
-					to_chat(user, span_notice("You weld the support rods back together."))
+					to_chat(user, span_notice("Вы привариваете поддерживающие стержни на место."))
 				return TRUE
 	return FALSE
 
@@ -228,8 +228,8 @@
 	return ..()
 
 /turf/closed/wall/r_wall/syndicate
-	name = "hull"
-	desc = "The armored hull of an ominous looking ship."
+	name = "обшивка"
+	desc = "Бронированная обшивка грозно выглядящего корабля."
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
 	icon_state = "plastitanium_wall-0"
 	base_icon_state = "plastitanium_wall"

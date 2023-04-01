@@ -1,6 +1,6 @@
 /turf/closed/wall/mineral/cult
-	name = "runed metal wall"
-	desc = "A cold metal wall engraved with indecipherable symbols. Studying them causes your head to pound."
+	name = "стена из рунического металла"
+	desc = "Холодная металлическая стена с гравировками нечитаемых символов. Попытки их разобрать вызывают головную боль."
 	icon = 'icons/turf/walls/cult_wall.dmi'
 	icon_state = "cult_wall-0"
 	base_icon_state = "cult_wall"
@@ -29,8 +29,8 @@
 			H.start_pulling(stored_pulling, supress_message = TRUE)
 
 /turf/closed/wall/mineral/cult/artificer
-	name = "runed stone wall"
-	desc = "A cold stone wall engraved with indecipherable symbols. Studying them causes your head to pound."
+	name = "руническая каменная стена"
+	desc = "Холодная металлическая стена с гравировками нечитаемых символов. Попытки их разобрать вызывают головную боль."
 
 /turf/closed/wall/mineral/cult/artificer/break_wall()
 	new /obj/effect/temp_visual/cult/turf(get_turf(src))
@@ -40,7 +40,7 @@
 	new /obj/effect/temp_visual/cult/turf(get_turf(src))
 
 /turf/closed/wall/vault
-	name = "strange wall"
+	name = "странная стена"
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "rockvault"
 	base_icon_state = "rockvault"
@@ -51,16 +51,16 @@
 	rcd_memory = null
 
 /turf/closed/wall/vault/rock
-	name = "rocky wall"
-	desc = "You feel a strange nostalgia from looking at this..."
+	name = "каменистая стена"
+	desc = "Смотря на это, вы чувствуете некую ностальгию..."
 
 /turf/closed/wall/vault/alien
-	name = "alien wall"
+	name = "неземная стена"
 	icon_state = "alienvault"
 	base_icon_state = "alienvault"
 
 /turf/closed/wall/vault/sandstone
-	name = "sandstone wall"
+	name = "песчаниковая стена"
 	icon_state = "sandstonevault"
 	base_icon_state = "sandstonevault"
 
@@ -68,7 +68,7 @@
 	icon = 'icons/turf/walls/icedmetal_wall.dmi'
 	icon_state = "icedmetal_wall-0"
 	base_icon_state = "icedmetal_wall"
-	desc = "A wall covered in a thick sheet of ice."
+	desc = "Стена, покрытая толстым слоем льда."
 	turf_flags = IS_SOLID
 	smoothing_flags = SMOOTH_BITMASK
 	canSmoothWith = null
@@ -98,8 +98,8 @@
 	AddElement(/datum/element/rust)
 
 /turf/closed/wall/mineral/bronze
-	name = "clockwork wall"
-	desc = "A huge chunk of bronze, decorated like gears and cogs."
+	name = "тикающая стена"
+	desc = "Огромный пласт бронзы, содержащий винтики и шестерёнки."
 	icon = 'icons/turf/walls/clockwork_wall.dmi'
 	icon_state = "clockwork_wall-0"
 	base_icon_state = "clockwork_wall"
@@ -110,8 +110,8 @@
 	girder_type = /obj/structure/girder/bronze
 
 /turf/closed/wall/rock
-	name = "reinforced rock"
-	desc = "It has metal struts that need to be welded away before it can be mined."
+	name = "прочный камень"
+	desc = "Фрагменты металла в нём должны быть разварены для попыток вскопать."
 	icon = 'icons/turf/walls/reinforced_rock.dmi'
 	icon_state = "porous_rock-0"
 	base_icon_state = "porous_rock"
@@ -122,12 +122,12 @@
 	decon_type = /turf/closed/mineral/asteroid
 
 /turf/closed/wall/rock/porous
-	name = "reinforced porous rock"
-	desc = "This rock is filled with pockets of breathable air. It has metal struts to protect it from mining."
+	name = "прочный пористый камень"
+	desc = "Этот камень состоит из пор с воздухом, пригодным для дыхания. Имеет фрагменты металла, что не позволяет его вскопать."
 	decon_type = /turf/closed/mineral/asteroid/porous
 
 /turf/closed/wall/space
-	name = "illusionist wall"
+	name = "иллюзионистская стена"
 	icon = 'icons/turf/space.dmi'
 	icon_state = "space"
 	plane = PLANE_SPACE
