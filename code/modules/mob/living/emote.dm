@@ -375,6 +375,14 @@
 	key = "smug"
 	key_third_person = "smugs"
 	message = "grins smugly."
+	
+/datum/emote/living/kys
+	key = "kys"
+	key_third_person = "kill yourself"
+	message = "сказал что ваша жизнь никчемна!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+	sound = 'sound/misc/NOW.ogg'
 
 /datum/emote/living/sniff
 	key = "sniff"
