@@ -1,7 +1,7 @@
 /datum/job/doctor
 	title = JOB_MEDICAL_DOCTOR
-	description = "Save lives, run around the station looking for victims, \
-		scan everyone in sight"
+	description = "Спасайте жизни, носитесь по станции в поисках жертв, \
+		сканируйте всех, кого видите"
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 5
@@ -40,7 +40,7 @@
 
 
 /datum/outfit/job/doctor
-	name = "Medical Doctor"
+	name = "Врач"
 	jobtype = /datum/job/doctor
 
 	id_trim = /datum/id_trim/job/medical_doctor
@@ -62,7 +62,7 @@
 	skillchips = list(/obj/item/skillchip/entrails_reader)
 
 /datum/outfit/job/doctor/mod
-	name = "Medical Doctor (MODsuit)"
+	name = "Врач (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/medical

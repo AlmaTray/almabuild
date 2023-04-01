@@ -1,7 +1,7 @@
 /datum/job/detective
 	title = JOB_DETECTIVE
-	description = "Investigate crimes, gather evidence, perform interrogations, \
-		look badass, smoke cigarettes."
+	description = "Раскрывайте преступления, собирайте доказательства, проводите допросы, \
+		выглядьте грозно, курите сижки."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_HEAD_OF_SECURITY)
 	faction = FACTION_STATION
@@ -46,7 +46,7 @@
 
 
 /datum/outfit/job/detective
-	name = "Detective"
+	name = "Детектив"
 	jobtype = /datum/job/detective
 
 	id_trim = /datum/id_trim/job/detective

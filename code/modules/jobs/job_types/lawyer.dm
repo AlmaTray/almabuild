@@ -1,7 +1,7 @@
 /datum/job/lawyer
 	title = JOB_LAWYER
-	description = "Advocate for prisoners, create law-binding contracts, \
-		ensure Security is following protocol and Space Law."
+	description = "Оказывайте адвокатские услуги заключённым, оформляйте юридические контракты, \
+		следите за тем, что отдел охраны не нарушает своих полномочий и следует Космозакону."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	faction = FACTION_STATION
 	total_positions = 2
@@ -31,7 +31,7 @@
 
 
 /datum/outfit/job/lawyer
-	name = "Lawyer"
+	name = "Адвокат"
 	jobtype = /datum/job/lawyer
 
 	id_trim = /datum/id_trim/job/lawyer

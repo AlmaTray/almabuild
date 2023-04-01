@@ -1,6 +1,6 @@
 /datum/job/clown
 	title = JOB_CLOWN
-	description = "Entertain the crew, make bad jokes, go on a holy quest to find bananium, HONK!"
+	description = "Развлекайте экипаж, выдавайте плохие шутки, отправляйтесь в святой путь на поиски бананиума, БИП!"
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	faction = FACTION_STATION
 	total_positions = 1
@@ -45,7 +45,7 @@
 
 
 /datum/outfit/job/clown
-	name = "Clown"
+	name = "Клоун"
 	jobtype = /datum/job/clown
 
 	id = /obj/item/card/id/advanced/rainbow
@@ -72,7 +72,7 @@
 	implants = list(/obj/item/implant/sad_trombone)
 
 /datum/outfit/job/clown/mod
-	name = "Clown (MODsuit)"
+	name = "Клоун (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/cosmohonk

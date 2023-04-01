@@ -1,7 +1,7 @@
 /datum/job/curator
 	title = JOB_CURATOR
-	description = "Read and write books and hand them to people, stock \
-		bookshelves, report on station news."
+	description = "Читайте и пишите литературу, делитесь ей с народом. Заполняйте \
+		книжные полки, докладывайте о новостях станции."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	faction = FACTION_STATION
 	total_positions = 1
@@ -37,7 +37,7 @@
 	rpg_title = "Veteran Adventurer"
 
 /datum/outfit/job/curator
-	name = "Curator"
+	name = "Библиотекарь"
 	jobtype = /datum/job/curator
 
 	id_trim = /datum/id_trim/job/curator

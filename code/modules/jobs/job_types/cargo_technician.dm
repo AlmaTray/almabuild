@@ -1,7 +1,7 @@
 /datum/job/cargo_technician
 	title = JOB_CARGO_TECHNICIAN
-	description = "Distribute supplies to the departments that ordered them, \
-		collect empty crates, load and unload the supply shuttle, \
+	description = "Доставляйте заказы в запросившие их отделы, \
+		собирайте пустые коробки, загружайте и разгружайте шаттл снабжения, \
 		ship bounty cubes."
 	department_head = list(JOB_QUARTERMASTER)
 	faction = FACTION_STATION
@@ -36,7 +36,7 @@
 
 
 /datum/outfit/job/cargo_tech
-	name = "Cargo Technician"
+	name = "Менеджер снабжения"
 	jobtype = /datum/job/cargo_technician
 
 	backpack_contents = list(
@@ -49,6 +49,6 @@
 	l_hand = /obj/item/universal_scanner
 
 /datum/outfit/job/cargo_tech/mod
-	name = "Cargo Technician (MODsuit)"
+	name = "Менеджер снабжения (Костюм МОД)"
 
 	back = /obj/item/mod/control/pre_equipped/loader

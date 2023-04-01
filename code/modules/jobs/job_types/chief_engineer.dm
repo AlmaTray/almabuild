@@ -1,7 +1,6 @@
 /datum/job/chief_engineer
 	title = JOB_CHIEF_ENGINEER
-	description = "Coordinate engineering, ensure equipment doesn't get stolen, \
-		make sure the Supermatter doesn't blow up, maintain telecommunications."
+	description = "Координируйте инженерную деятельность, убедитесь, что экипировка не сворована, а \ Суперматерия не трещит по швам, обслуживайте телекоммуникации."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list(JOB_CAPTAIN)
 	head_announce = list("Engineering")
@@ -49,11 +48,11 @@
 
 
 /datum/job/chief_engineer/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
+	return "Из-за сокращений персонала станции, ВРИО Капитана [captain.real_name] вступает в должность!"
 
 
 /datum/outfit/job/ce
-	name = "Chief Engineer"
+	name = "Заведующий Инженер"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/advanced/silver
@@ -79,7 +78,7 @@
 	pda_slot = ITEM_SLOT_LPOCKET
 
 /datum/outfit/job/ce/mod
-	name = "Chief Engineer (MODsuit)"
+	name = "Заведующий инженер (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/advanced

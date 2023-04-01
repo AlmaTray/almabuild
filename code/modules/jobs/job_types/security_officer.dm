@@ -1,13 +1,13 @@
 /datum/job/security_officer
 	title = JOB_SECURITY_OFFICER
-	description = "Protect company assets, follow the Standard Operating \
-		Procedure, eat donuts."
+	description = "Защищайте имущество станции, следуйте Стандартному Рабочему \
+		Распорядку, ешьте пончики."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list(JOB_HEAD_OF_SECURITY)
 	faction = FACTION_STATION
 	total_positions = 8 //Handled in /datum/controller/occupations/proc/setup_officer_positions() //SKYRAT EDIT: SET TO 8, WAS 5
 	spawn_positions = 8 //Handled in /datum/controller/occupations/proc/setup_officer_positions() //SKYRAT EDIT: SEE ABOVE
-	supervisors = "the Head of Security, and the head of your assigned department (if applicable)"
+	supervisors = "Глава Охраны, глава отдела, к которому вы прикреплены"
 	minimal_player_age = 7
 	exp_requirements = 300
 	exp_required_type = EXP_TYPE_CREW
@@ -141,9 +141,9 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 
 	if(player_client)
 		if(department)
-			to_chat(player_client, "<b>You have been assigned to [department]!</b>")
+			to_chat(player_client, "<b>Отдел, к которому вы прикреплены - [department]!</b>")
 		else
-			to_chat(player_client, "<b>You have not been assigned to any department. Patrol the halls and help where needed.</b>")
+			to_chat(player_client, "<b>Вы не прикреплены к какому-либо отделу. Патрулируйте коридоры и помогайте там, где требуется.</b>")
 
 	return department
 
@@ -177,9 +177,9 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 		return
 
 	var/datum/signal/subspace/messaging/tablet_msg/signal = new(announcement_system, list(
-		"name" = "Security Department Update",
-		"job" = "Automated Announcement System",
-		"message" = "Officer [officer.real_name] has been assigned to your department, [department].",
+		"name" = "Обновление Отдела Охраны",
+		"job" = "Автоматизированная Система Оповещений",
+		"message" = "Офицер [officer.real_name] теперь прикреплен к отделу [department].",
 		"targets" = targets,
 		"automated" = TRUE,
 	))
@@ -200,7 +200,7 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 	)
 
 /datum/outfit/job/security
-	name = "Security Officer"
+	name = "Офицер Охраны"
 	jobtype = /datum/job/security_officer
 
 	id_trim = /datum/id_trim/job/security_officer
@@ -232,7 +232,7 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 	implants = list(/obj/item/implant/mindshield)
 
 /datum/outfit/job/security/mod
-	name = "Security Officer (MODsuit)"
+	name = "Офицер Охраны (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/security

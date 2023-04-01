@@ -1,7 +1,7 @@
 /datum/job/chief_medical_officer
 	title = JOB_CHIEF_MEDICAL_OFFICER
-	description = "Coordinate doctors and other medbay employees, ensure they \
-		know how to save lives, check for injuries on the crew monitor."
+	description = "Координируйте деятельность врачей и прочих работников медбея, убедитесь, что \
+		знаете, как спасать жизни, проверяйте состояние экипажа на соответствующем мониторе."
 	department_head = list(JOB_CAPTAIN)
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	head_announce = list(RADIO_CHANNEL_MEDICAL)
@@ -46,11 +46,11 @@
 
 
 /datum/job/chief_medical_officer/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
+	return "Из-за сокращений персонала станции, ВРИО Капитана [captain.real_name] вступает в должность!"
 
 
 /datum/outfit/job/cmo
-	name = "Chief Medical Officer"
+	name = "Главврач"
 	jobtype = /datum/job/chief_medical_officer
 
 	id = /obj/item/card/id/advanced/silver
@@ -81,7 +81,7 @@
 	skillchips = list(/obj/item/skillchip/entrails_reader)
 
 /datum/outfit/job/cmo/mod
-	name = "Chief Medical Officer (MODsuit)"
+	name = "Главврач (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/rescue

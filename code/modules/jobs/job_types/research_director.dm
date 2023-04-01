@@ -1,8 +1,7 @@
 /datum/job/research_director
 	title = JOB_RESEARCH_DIRECTOR
-	description = "Supervise research efforts, ensure Robotics is in working \
-		order, make sure the AI and its Cyborgs aren't rogue, replacing them if \
-		they are."
+	description = "Контролируйте затраты на исследования, приводите Робототехнику в работу, \
+		убедитесь, что ИИ и киборги не вышли из под контроля, заменяя их при необходимости."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list(JOB_CAPTAIN)
 	head_announce = list("Science")
@@ -47,7 +46,7 @@
 
 
 /datum/job/research_director/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
+	return "Из-за сокращений персонала станции, ВРИО Капитана [captain.real_name] вступает в должность!"
 
 
 /datum/outfit/job/rd
@@ -77,7 +76,7 @@
 	skillchips = list(/obj/item/skillchip/job/research_director)
 
 /datum/outfit/job/rd/mod
-	name = "Research Director (MODsuit)"
+	name = "Глава Исследований (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/research

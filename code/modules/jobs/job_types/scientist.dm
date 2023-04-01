@@ -1,6 +1,6 @@
 /datum/job/scientist
 	title = JOB_SCIENTIST
-	description = "Do experiments, perform research, feed the slimes, make bombs."
+	description = "Проводите эксперименты, perform research, feed the slimes, make bombs."
 	department_head = list(JOB_RESEARCH_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 5
@@ -39,7 +39,7 @@
 
 
 /datum/outfit/job/scientist
-	name = "Scientist"
+	name = "Научный Сотрудник"
 	jobtype = /datum/job/scientist
 
 	id_trim = /datum/id_trim/job/scientist

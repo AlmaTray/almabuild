@@ -45,7 +45,7 @@
 
 
 /datum/outfit/job/mime
-	name = "Mime"
+	name = "Мим"
 	jobtype = /datum/job/mime
 
 	id_trim = /datum/id_trim/job/mime
@@ -95,20 +95,20 @@
 		return
 
 	var/list/spell_icons = list(
-		"Invisible Wall" = image(icon = 'icons/mob/actions/actions_mime.dmi', icon_state = "invisible_wall"),
-		"Invisible Chair" = image(icon = 'icons/mob/actions/actions_mime.dmi', icon_state = "invisible_chair"),
-		"Invisible Box" = image(icon = 'icons/mob/actions/actions_mime.dmi', icon_state = "invisible_box")
+		"Невидимая стена" = image(icon = 'icons/mob/actions/actions_mime.dmi', icon_state = "invisible_wall"),
+		"Невидимый стул" = image(icon = 'icons/mob/actions/actions_mime.dmi', icon_state = "invisible_chair"),
+		"Невидимая коробка" = image(icon = 'icons/mob/actions/actions_mime.dmi', icon_state = "invisible_box")
 		)
 	var/picked_spell = show_radial_menu(user, src, spell_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), user), radius = 36, require_near = TRUE)
 	var/datum/action/cooldown/spell/picked_spell_type
 	switch(picked_spell)
-		if("Invisible Wall")
+		if("Невидимая стена")
 			picked_spell_type = /datum/action/cooldown/spell/conjure/invisible_wall
 
-		if("Invisible Chair")
+		if("Невидимый стул")
 			picked_spell_type = /datum/action/cooldown/spell/conjure/invisible_chair
 
-		if("Invisible Box")
+		if("Невидимая коробка")
 			picked_spell_type = /datum/action/cooldown/spell/conjure_item/invisible_box
 
 	if(ispath(picked_spell_type))
@@ -121,7 +121,7 @@
 		picked_spell_type = new picked_spell_type(user.mind || user)
 		picked_spell_type.Grant(user)
 
-		to_chat(user, span_warning("The book disappears into thin air."))
+		to_chat(user, span_warning("Книга испаряется в толще воздуха."))
 		qdel(src)
 
 	return TRUE

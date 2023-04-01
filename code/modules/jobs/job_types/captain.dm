@@ -1,14 +1,14 @@
 /datum/job/captain
 	title = JOB_CAPTAIN
-	description = "Be responsible for the station, manage your Heads of Staff, \
-		keep the crew alive, be prepared to do anything and everything or die \
+	description = "Будьте ответственны, давайте распоряжения главам отделов, \
+		следите за численностью экипажа, будьте готовы пойти на всё, или погибнуть \
 		horribly trying."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
 	department_head = list("CentCom")
 	faction = FACTION_STATION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Nanotrasen officials and Space Law"
+	supervisors = "Представители нанотрайзен и Космозакон"
 	req_admin_notify = 1
 	minimal_player_age = 14
 	exp_requirements = 180
@@ -49,11 +49,11 @@
 
 
 /datum/job/captain/get_captaincy_announcement(mob/living/captain)
-	return "Captain [captain.real_name] on deck!"
+	return "Капитан [captain.real_name] вступает в должность!"
 
 
 /datum/outfit/job/captain
-	name = "Captain"
+	name = "Капитан"
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/advanced/gold
@@ -108,7 +108,7 @@
 	celestial_charter.name_type = special_charter
 
 /datum/outfit/job/captain/mod
-	name = "Captain (MODsuit)"
+	name = "Капитан (Костюм МОД)"
 
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/magnate

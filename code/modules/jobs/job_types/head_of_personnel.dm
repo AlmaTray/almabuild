@@ -1,7 +1,7 @@
 /datum/job/head_of_personnel
 	title = JOB_HEAD_OF_PERSONNEL
-	description = "Alter access on ID cards, manage the service department, \
-		protect Ian, run the station when the captain dies."
+	description = "Управляйте доступом на ID-картах, распоряжайтесь отделом обслуживания, \
+		защищайте Яна, берите станцию на себя, если капитан погибнет."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list(JOB_CAPTAIN)
 	head_announce = list(RADIO_CHANNEL_SERVICE)
@@ -44,11 +44,11 @@
 
 
 /datum/job/head_of_personnel/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
+	return "Из-за сокращений персонала станции, ВРИО Капитана [captain.real_name] вступает в должность!"
 
 
 /datum/outfit/job/hop
-	name = "Head of Personnel"
+	name = "Глава Персонала"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/advanced/silver
@@ -75,7 +75,7 @@
 
 /datum/outfit/job/hop/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(check_holidays("Ian's Birthday"))
+	if(check_holidays("День рождения Яна"))
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
 //only pet worth reviving

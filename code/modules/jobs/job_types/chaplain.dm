@@ -1,7 +1,7 @@
 /datum/job/chaplain
 	title = JOB_CHAPLAIN
-	description = "Hold services and funerals, cremate people, preach your \
-		religion, protect the crew against cults."
+	description = "Проводите похороны и прочие услуги, занимайтесь кремацией, исповедуйте свою \
+		религию, защищайте экипаж от культов."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	faction = FACTION_STATION
 	total_positions = 1
@@ -55,7 +55,7 @@
 			B.icon_state = GLOB.bible_icon_state
 		if(GLOB.bible_inhand_icon_state)
 			B.inhand_icon_state = GLOB.bible_inhand_icon_state
-		to_chat(H, span_boldnotice("There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain."))
+		to_chat(H, span_boldnotice("На борту уже обосновалась другая религия. Вы - аколит [GLOB.deity]. Подчиняйтесь священнику."))
 		H.equip_to_slot_or_del(B, ITEM_SLOT_BACKPACK)
 		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
 		var/obj/item/nullrod/N = new nrt(H)
@@ -117,7 +117,7 @@
 	SSblackbox.record_feedback("text", "religion_bible", 1, "[new_bible]", 1)
 
 /datum/outfit/job/chaplain
-	name = "Chaplain"
+	name = "Священник"
 	jobtype = /datum/job/chaplain
 
 	id_trim = /datum/id_trim/job/chaplain

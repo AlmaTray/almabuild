@@ -1,11 +1,11 @@
 /datum/job/cyborg
 	title = JOB_CYBORG
-	description = "Assist the crew, follow your laws, obey your AI."
+	description = "Помогайте экипажу, следуйте вашим законам, слушайтесь ваш ИИ."
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
 	faction = FACTION_STATION
 	total_positions = 3	// SKYRAT EDIT: Original value (0)
 	spawn_positions = 3	// SKYRAT EDIT: Original value (1)
-	supervisors = "your laws and the AI" //Nodrak
+	supervisors = "ваши законы и ИИ" //Nodrak
 	spawn_type = /mob/living/silicon/robot
 	minimal_player_age = 21
 	exp_requirements = 120
@@ -59,4 +59,4 @@
 		robot_spawn.log_current_laws()
 
 /datum/job/cyborg/radio_help_message(mob/M)
-	to_chat(M, "<b>Prefix your message with :b to speak with other cyborgs and AI.</b>")
+	to_chat(M, "<b>Поставьте :b перед сообщением, чтобы говорить с киборгами и другими ИИ.</b>")

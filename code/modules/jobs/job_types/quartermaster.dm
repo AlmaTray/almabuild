@@ -1,7 +1,7 @@
 /datum/job/quartermaster
 	title = JOB_QUARTERMASTER
-	description = "Coordinate cargo technicians and shaft miners, assist with \
-		economical purchasing."
+	description = "Координируйте сотрудников карго, контролируйте \
+		экономические процессы."
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list(JOB_CAPTAIN)
 	faction = FACTION_STATION
@@ -36,7 +36,7 @@
 	ignore_human_authority = TRUE
 
 /datum/outfit/job/quartermaster
-	name = "Quartermaster"
+	name = "Завхоз"
 	jobtype = /datum/job/quartermaster
 	backpack_contents = list(
 		/obj/item/melee/baton/telescopic = 1,

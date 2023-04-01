@@ -1,11 +1,11 @@
 /datum/job/prisoner
 	title = JOB_PRISONER
-	description = "Keep yourself occupied in permabrig."
-	department_head = list("The Security Team")
+	description = "Отсиживайте своё в пермабриге."
+	department_head = list("Персонал отдела охраны")
 	faction = FACTION_STATION
 	total_positions = 12		// SKYRAT EDIT: Original value (0)
 	spawn_positions = 2
-	supervisors = "the security team"
+	supervisors = "персонал отдела охраны"
 	exp_granted_type = EXP_TYPE_CREW
 	paycheck = PAYCHECK_LOWER
 	config_tag = "PRISONER"
@@ -44,10 +44,10 @@
 	var/datum/record/crew/target_record = find_record(crewmember.real_name)
 	var/datum/crime/past_crime = new(crime.name, crime.desc, "Central Command", "Indefinite.")
 	target_record.crimes += past_crime
-	to_chat(crewmember, span_warning("You are imprisoned for \"[crime_name]\"."))
+	to_chat(crewmember, span_warning("Вы в заключении за \"[crime_name]\"."))
 
 /datum/outfit/job/prisoner
-	name = "Prisoner"
+	name = "Заключённый"
 	jobtype = /datum/job/prisoner
 
 	id = /obj/item/card/id/advanced/prisoner

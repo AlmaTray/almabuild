@@ -1,6 +1,6 @@
 /datum/job/roboticist
 	title = JOB_ROBOTICIST
-	description = "Build and repair the AI and cyborgs, create mechs."
+	description = "Собирайте и чините киборгов с ИИ, создавайте мехов."
 	department_head = list(JOB_RESEARCH_DIRECTOR)
 	faction = FACTION_STATION
 	total_positions = 2
@@ -39,7 +39,7 @@
 	family_heirlooms += subtypesof(/obj/item/toy/mecha)
 
 /datum/outfit/job/roboticist
-	name = "Roboticist"
+	name = "Робототехник"
 	jobtype = /datum/job/roboticist
 
 	id_trim = /datum/id_trim/job/roboticist
@@ -57,7 +57,7 @@
 	skillchips = list(/obj/item/skillchip/job/roboticist)
 
 /datum/outfit/job/roboticist/mod
-	name = "Roboticist (MODsuit)"
+	name = "Робототехник (Костюм МОД)"
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/mod/control/pre_equipped/standard
 	suit = null

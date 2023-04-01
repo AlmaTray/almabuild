@@ -1,6 +1,6 @@
 /datum/job/botanist
 	title = JOB_BOTANIST
-	description = "Grow plants for the cook, for medicine, and for recreation."
+	description = "Выращивайте культуры для пищи, медицины и размножения."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
 	faction = FACTION_STATION
 	total_positions = 3
@@ -40,7 +40,7 @@
 	rpg_title = "Gardener"
 
 /datum/outfit/job/botanist
-	name = "Botanist"
+	name = "Ботаник"
 	jobtype = /datum/job/botanist
 
 	id_trim = /datum/id_trim/job/botanist

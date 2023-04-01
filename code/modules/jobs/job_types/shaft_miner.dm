@@ -1,7 +1,7 @@
 /datum/job/shaft_miner
 	title = JOB_SHAFT_MINER
-	description = "Travel to strange lands. Mine ores. \
-		Meet strange creatures. Kill them for their gold."
+	description = "Путешествуйте по неизведанным землям. Добывайте руду. \
+		Встречайтесь с разными существами. Убейте их ради награды."
 	department_head = list(JOB_QUARTERMASTER)
 	faction = FACTION_STATION
 	total_positions = 3
@@ -30,7 +30,7 @@
 
 
 /datum/outfit/job/miner
-	name = "Shaft Miner"
+	name = "Шахтёр"
 	jobtype = /datum/job/shaft_miner
 
 	id_trim = /datum/id_trim/job/shaft_miner
@@ -57,7 +57,7 @@
 	chameleon_extras = /obj/item/gun/energy/recharge/kinetic_accelerator
 
 /datum/outfit/job/miner/equipped
-	name = "Shaft Miner (Equipment)"
+	name = "Шахтёр (В экипировке)"
 
 	suit = /obj/item/clothing/suit/hooded/explorer
 	suit_store = /obj/item/tank/internals/oxygen
@@ -74,13 +74,13 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 
 /datum/outfit/job/miner/equipped/mod
-	name = "Shaft Miner (Equipment + MODsuit)"
+	name = "Шахтёр (В экипировке + Костюм МОД)"
 	back = /obj/item/mod/control/pre_equipped/mining
 	suit = null
 	mask = /obj/item/clothing/mask/gas/explorer
 
 /datum/outfit/job/miner/equipped/combat
-	name = "Shaft Miner (Combat-Ready)"
+	name = "Шахтёр (В боевой готовности)"
 	glasses = /obj/item/clothing/glasses/hud/health/night/meson
 	gloves = /obj/item/clothing/gloves/bracer
 	accessory = /obj/item/clothing/accessory/talisman

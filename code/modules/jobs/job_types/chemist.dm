@@ -1,7 +1,7 @@
 /datum/job/chemist
 	title = JOB_CHEMIST
-	description = "Supply the doctors with chemicals, make medicine, as well as \
-		less likable substances in the comfort of a fully reinforced room."
+	description = "Обеспейчивайте медиков химикатами, делайте лекарства, также, как и \
+		менее желательные для производства в наглухо закрытом помещении вещества."
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
 	faction = FACTION_STATION
 	total_positions = 2
@@ -39,7 +39,7 @@
 
 
 /datum/outfit/job/chemist
-	name = "Chemist"
+	name = "Химик"
 	jobtype = /datum/job/chemist
 
 	id_trim = /datum/id_trim/job/chemist
