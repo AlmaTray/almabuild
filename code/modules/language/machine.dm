@@ -1,10 +1,10 @@
 /datum/language/machine
-	name = "Encoded Audio Language"
-	desc = "An efficient language of encoded tones developed by synthetics and cyborgs."
+	name = "Зашифрованный аудиоязык"
+	desc = "Эффективный способ коммуникаций синтетиков и киборгов, использующий специальные частоты."
 	spans = list(SPAN_ROBOT)
 	key = "6"
 	flags = NO_STUTTER
-	syllables = list("beep","beep","beep","beep","beep","boop","boop","boop","bop","bop","dee","dee","doo","doo","hiss","hss","buzz","buzz","bzz","ksssh","keey","wurr","wahh","tzzz")
+	syllables = list("бип","бип","бип","бип","бип","бип","буп","буп","бап","bаp","ди","ди","ду","ду","пшш","хсс","бзз","бзз","бз","кшшш","кии","ўурр","ўаа","тззз")
 	space_chance = 10
 	default_priority = 90
 

@@ -84,49 +84,49 @@
 				. = TRUE
 		if("grant_language")
 			if((is_admin || isobserver(AM)) && language_datum)
-				var/list/choices = list("Only Spoken", "Only Understood", "Both")
-				var/choice = tgui_input_list(user, "How do you want to add this language?", "[language_datum]", choices)
+				var/list/choices = list("Возможность говорить", "Возможность понимать", "Оба")
+				var/choice = tgui_input_list(user, "Как вы хотите добавить этот язык?", "[language_datum]", choices)
 				if(isnull(choice))
 					return
 				var/spoken = FALSE
 				var/understood = FALSE
 				switch(choice)
-					if("Only Spoken")
+					if("Возможность говорить")
 						spoken = TRUE
-					if("Only Understood")
+					if("Возможность понимать")
 						understood = TRUE
-					if("Both")
+					if("Обе")
 						spoken = TRUE
 						understood = TRUE
 				if(language_holder.blocked_languages && language_holder.blocked_languages[language_datum])
-					choice = tgui_alert(user, "Do you want to lift the blockage that's also preventing the language to be spoken or understood?", "[language_datum]", list("Yes", "No"))
-					if(choice == "Yes")
+					choice = tgui_alert(user, "Снять блокировку, не поволяющую понимать и говорить на языке?", "[language_datum]", list("Да", "Нет"))
+					if(choice == "Да")
 						language_holder.remove_blocked_language(language_datum, LANGUAGE_ALL)
 				language_holder.grant_language(language_datum, understood, spoken)
 				if(is_admin)
-					message_admins("[key_name_admin(user)] granted the [language_name] language to [key_name_admin(AM)].")
-					log_admin("[key_name(user)] granted the language [language_name] to [key_name(AM)].")
+					message_admins("[key_name_admin(user)] выдаёт язык [language_name] [key_name_admin(AM)].")
+					log_admin("[key_name(user)] выдаёт [language_name] [key_name(AM)].")
 				. = TRUE
 		if("remove_language")
 			if((is_admin || isobserver(AM)) && language_datum)
-				var/list/choices = list("Only Spoken", "Only Understood", "Both")
-				var/choice = tgui_input_list(user, "Which part do you wish to remove?", "[language_datum]", choices)
+				var/list/choices = list("Возможность говорить", "Возможность понимать", "Обе")
+				var/choice = tgui_input_list(user, "Какую из частей вы хотите удалить?", "[language_datum]", choices)
 				if(isnull(choice))
 					return
 				var/spoken = FALSE
 				var/understood = FALSE
 				switch(choice)
-					if("Only Spoken")
+					if("Возможность говорить")
 						spoken = TRUE
-					if("Only Understood")
+					if("Возможность понимать")
 						understood = TRUE
-					if("Both")
+					if("Обе")
 						spoken = TRUE
 						understood = TRUE
 				language_holder.remove_language(language_datum, understood, spoken)
 				if(is_admin)
-					message_admins("[key_name_admin(user)] removed the [language_name] language to [key_name_admin(AM)].")
-					log_admin("[key_name(user)] removed the language [language_name] to [key_name(AM)].")
+					message_admins("[key_name_admin(user)] удаляет язык [language_name] у [key_name_admin(AM)].")
+					log_admin("[key_name(user)] удаляет язык [language_name] у [key_name(AM)].")
 				. = TRUE
 		if("toggle_omnitongue")
 			if(is_admin || isobserver(AM))

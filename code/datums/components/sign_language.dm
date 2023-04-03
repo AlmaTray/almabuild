@@ -69,14 +69,14 @@
 	var/mob/living/carbon/carbon_parent = parent
 	var/obj/item/organ/internal/tongue/tongue = carbon_parent.getorganslot(ORGAN_SLOT_TONGUE)
 	if(tongue)
-		tongue.temp_say_mod = "signs"
+		tongue.temp_say_mod = "жестикулирует"
 	//this speech relies on hands, which we have our own way of garbling speech when they're occupied, so we can have this always on
 	ADD_TRAIT(carbon_parent, TRAIT_SPEAKS_CLEARLY, SPEAKING_FROM_HANDS)
-	carbon_parent.verb_ask = "signs"
-	carbon_parent.verb_exclaim = "signs"
-	carbon_parent.verb_whisper = "subtly signs"
-	carbon_parent.verb_sing = "rythmically signs"
-	carbon_parent.verb_yell = "emphatically signs"
+	carbon_parent.verb_ask = "жестикулирует"
+	carbon_parent.verb_exclaim = "жестикулирует"
+	carbon_parent.verb_whisper = "плавно жестикулирует"
+	carbon_parent.verb_sing = "ритмично жестикулирует"
+	carbon_parent.verb_yell = "настойчиво жестикулирует"
 	carbon_parent.bubble_icon = "signlang"
 	RegisterSignal(carbon_parent, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(on_added_organ))
 	RegisterSignal(carbon_parent, COMSIG_LIVING_TRY_SPEECH, PROC_REF(on_try_speech))
@@ -121,7 +121,7 @@
 	if(!istype(new_organ, /obj/item/organ/internal/tongue))
 		return
 	var/obj/item/organ/internal/tongue/new_tongue = new_organ
-	new_tongue.temp_say_mod = "signs"
+	new_tongue.temp_say_mod = "показывает"
 
 /// Signal proc for [COMSIG_LIVING_TRY_SPEECH]
 /// Sign languagers can always speak regardless of they're mute (as long as they're not mimes)
@@ -130,28 +130,28 @@
 
 	var/mob/living/carbon/carbon_parent = parent
 	if(HAS_TRAIT(carbon_parent, TRAIT_MIMING))
-		to_chat(carbon_parent, span_green("You stop yourself from signing in favor of the artform of mimery!"))
+		to_chat(carbon_parent, span_green("Вы не позволяете себе жестикулировать, чтобы придерживаться искусства мима!"))
 		return COMPONENT_CANNOT_SPEAK
 
 	switch(check_signables_state())
 		if(SIGN_HANDS_FULL) // Full hands
-			carbon_parent.visible_message("tries to sign, but can't with [carbon_parent.p_their()] hands full!", visible_message_flags = EMOTE_MESSAGE)
+			carbon_parent.visible_message("пытается жестикулировать, но руки [carbon_parent.p_their()] заняты!", visible_message_flags = EMOTE_MESSAGE)
 			return COMPONENT_CANNOT_SPEAK
 
 		if(SIGN_CUFFED) // Restrained
-			carbon_parent.visible_message("tries to sign, but can't with [carbon_parent.p_their()] hands bound!", visible_message_flags = EMOTE_MESSAGE)
+			carbon_parent.visible_message("пытается жестикулировать, но руки [carbon_parent.p_their()] связаны!", visible_message_flags = EMOTE_MESSAGE)
 			return COMPONENT_CANNOT_SPEAK
 
 		if(SIGN_ARMLESS) // No arms
-			to_chat(carbon_parent, span_warning("You can't sign with no hands!"))
+			to_chat(carbon_parent, span_warning("Вы не можете жестикулировать без рук!"))
 			return COMPONENT_CANNOT_SPEAK
 
 		if(SIGN_ARMS_DISABLED) // Arms but they're disabled
-			to_chat(carbon_parent, span_warning("You can't sign with your hands right now!"))
+			to_chat(carbon_parent, span_warning("Не выходит жестикулировать!"))
 			return COMPONENT_CANNOT_SPEAK
 
 		if(SIGN_TRAIT_BLOCKED) // Hands blocked or emote mute
-			to_chat(carbon_parent, span_warning("You can't sign at the moment!"))
+			to_chat(carbon_parent, span_warning("Прямо сейчас жестикулировать не получится!"))
 			return COMPONENT_CANNOT_SPEAK
 
 	// Assuming none of the above fail, sign language users can speak
@@ -236,10 +236,10 @@
 	// Prioritize questions
 	if(question_found)
 		tonal_indicator = mutable_appearance('icons/mob/effects/talk.dmi', "signlang1", TYPING_LAYER)
-		carbon_parent.visible_message(span_notice("[carbon_parent] lowers [carbon_parent.p_their()] eyebrows."))
+		carbon_parent.visible_message(span_notice("[carbon_parent] опускает брови [carbon_parent.p_their()]."))
 	else if(exclamation_found)
 		tonal_indicator = mutable_appearance('icons/mob/effects/talk.dmi', "signlang2", TYPING_LAYER)
-		carbon_parent.visible_message(span_notice("[carbon_parent] raises [carbon_parent.p_their()] eyebrows."))
+		carbon_parent.visible_message(span_notice("[carbon_parent] поднимает брови [carbon_parent.p_their()]."))
 	// If either an exclamation or question are found
 	if(!isnull(tonal_indicator) && carbon_parent.client?.typing_indicators)
 		carbon_parent.add_overlay(tonal_indicator)

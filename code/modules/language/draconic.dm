@@ -1,17 +1,17 @@
 /datum/language/draconic
-	name = "Draconic"
+	name = "Ящерский"
 	desc = "The common language of lizard-people, composed of sibilant hisses and rattles."
 	key = "o"
 	flags = TONGUELESS_SPEECH
 	space_chance = 40
 	syllables = list(
-		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
-		"ha", "ah", "he", "eh", "hi", "ih", "ho", "oh", "hu", "uh", "hs", "sh",
-		"la", "al", "le", "el", "li", "il", "lo", "ol", "lu", "ul", "ls", "sl",
-		"ka", "ak", "ke", "ek", "ki", "ik", "ko", "ok", "ku", "uk", "ks", "sk",
-		"sa", "as", "se", "es", "si", "is", "so", "os", "su", "us", "ss", "ss",
-		"ra", "ar", "re", "er", "ri", "ir", "ro", "or", "ru", "ur", "rs", "sr",
-		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
+		"за", "аз", "зе", "ez", "зи", "из", "зо", "оз", "зу", "уз", "зс", "щ",
+		"ха", "ах", "хе", "эх", "хи", "их", "хо", "ох", "ху", "ух", "хс", "ш",
+		"ла", "ал", "ле", "эл", "ли", "ил", "ло", "ол", "лу", "ул", "лс", "сл",
+		"ка", "ак", "ке", "эк", "ки", "ик", "ко", "ок", "ку", "ук", "кс", "ск",
+		"са", "ас", "се", "эс", "си", "ис", "со", "ос", "су", "ус", "сс", "сс",
+		"па", "ап", "ре", "эр", "ри", "ир", "ро", "ор", "ру", "ур", "рс", "ср",
+		"а",  "а",  "е",  "э",  "и",  "йи",  "о",  "ё",  "у",  "у",  "с",  "с"
 	)
 	icon_state = "lizard"
 	default_priority = 90

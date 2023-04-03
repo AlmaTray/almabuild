@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(language)
-	name = "Language"
+	name = "Язык"
 	init_order = INIT_ORDER_LANGUAGE
 	flags = SS_NO_FIRE
 

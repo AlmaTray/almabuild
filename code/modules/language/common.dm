@@ -1,7 +1,7 @@
 // 'basic' language; spoken by default.
 /datum/language/common
-	name = "Galactic Common"
-	desc = "The common galactic tongue."
+	name = "Местный Галактический"
+	desc = "Самый распространённый язык галактики. В здешних секторах также записывается кириллицей."
 	key = "0"
 	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD
 	default_priority = 100

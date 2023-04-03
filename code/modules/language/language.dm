@@ -5,8 +5,8 @@
 */
 
 /datum/language
-	var/name = "an unknown language"  // Fluff name of language if any.
-	var/desc = "A language."          // Short description for 'Check Languages'.
+	var/name = "неизвестный язык"  // Fluff name of language if any.
+	var/desc = "Язык."          // Short description for 'Check Languages'.
 	var/key                           // Character used to speak in language
 	// If key is null, then the language isn't real or learnable.
 	var/flags                         // Various language flags.

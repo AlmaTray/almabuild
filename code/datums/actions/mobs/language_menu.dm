@@ -1,6 +1,6 @@
 /datum/action/language_menu
-	name = "Language Menu"
-	desc = "Open the language menu to review your languages, their keys, and select your default language."
+	name = "Меню языков"
+	desc = "Используйте меню языков, чтобы узнать ваши языки, их назначения, а также ваш основной язык."
 	button_icon_state = "language_menu"
 	check_flags = NONE
 

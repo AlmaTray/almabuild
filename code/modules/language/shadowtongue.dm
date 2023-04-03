@@ -1,8 +1,8 @@
 // You n'wah!
 // many thanks to https://casualscrolls.fandom.com/wiki/Dunmeri_language, for providing this list of syllables
 /datum/language/shadowtongue
-	name = "Shadowtongue"
-	desc = "What a grand and intoxicating innocence."
+	name = "Тенеязык"
+	desc = "Какая грандиозная и опьяняющая невинность.."
 	key = "x"
 	space_chance = 50
 	syllables = list(

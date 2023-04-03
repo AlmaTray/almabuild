@@ -10,10 +10,10 @@
  * - Action sprite created by @Wallemations (icons/hud/actions.dmi:sign_language)
 */
 /datum/action/innate/sign_language
-	name = "Sign Language"
+	name = "Язык жестов"
 	button_icon = 'icons/hud/actions.dmi'
 	button_icon_state = "sign_language"
-	desc = "Allows you to communicate via sign language."
+	desc = "Позволяет коммуницировать при помощи языка жестов."
 	owner_has_control = FALSE
 
 /datum/action/innate/sign_language/is_action_active(atom/movable/screen/movable/action_button/current_button)
@@ -47,12 +47,12 @@
 /datum/action/innate/sign_language/Activate()
 	active = TRUE
 	ADD_TRAIT(owner, TRAIT_SIGN_LANG, TRAIT_GENERIC)
-	to_chat(owner, span_green("You are now communicating with sign language."))
+	to_chat(owner, span_green("Теперь вы используете язык жестов."))
 
 /datum/action/innate/sign_language/Deactivate()
 	active = FALSE
 	REMOVE_TRAIT(owner, TRAIT_SIGN_LANG, TRAIT_GENERIC)
-	to_chat(owner, span_green("You have stopped using sign language."))
+	to_chat(owner, span_green("Вы больше не используете язык жестов."))
 
 /// Shows the linked action to the owner Carbon.
 /datum/action/innate/sign_language/proc/show_action()

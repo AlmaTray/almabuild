@@ -1,6 +1,6 @@
 /datum/language/moffic
-	name = "Moffic"
-	desc = "The language of the Mothpeople borders on complete unintelligibility."
+	name = "Мольский"
+	desc = "Язык Мотыльков. Граничит с полностью невозможной к пониманию чепухой."
 	key = "m"
 	space_chance = 10
 	syllables = list(
