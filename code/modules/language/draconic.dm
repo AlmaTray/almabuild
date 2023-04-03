@@ -1,6 +1,6 @@
 /datum/language/draconic
 	name = "Ящерский"
-	desc = "The common language of lizard-people, composed of sibilant hisses and rattles."
+	desc = "Язык, свойственный ящерам. Собирается из свистящих шипений и хрипов."
 	key = "o"
 	flags = TONGUELESS_SPEECH
 	space_chance = 40
