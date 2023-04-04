@@ -74,6 +74,8 @@ GLOBAL_VAR(restart_counter)
 	if(CONFIG_GET(flag/usewhitelist))
 		load_whitelist()
 
+	load_whitelist_exrp()
+
 	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
 
 	if(fexists(RESTART_COUNTER_PATH))
@@ -162,6 +164,7 @@ GLOBAL_VAR(restart_counter)
 	GLOB.world_suspicious_login_log = "[GLOB.log_directory]/suspicious_logins.log"
 	GLOB.world_telecomms_log = "[GLOB.log_directory]/telecomms.log"
 	GLOB.world_tool_log = "[GLOB.log_directory]/tools.log"
+	GLOB.world_exrp_log = "[GLOB.log_directory]/exrp.log"
 	GLOB.world_uplink_log = "[GLOB.log_directory]/uplink.log"
 	GLOB.world_virus_log = "[GLOB.log_directory]/virus.log"
 
@@ -191,6 +194,7 @@ GLOBAL_VAR(restart_counter)
 	start_log(GLOB.world_telecomms_log)
 	start_log(GLOB.world_uplink_log)
 	start_log(GLOB.world_pda_log)
+	start_log(GLOB.world_exrp_log)
 
 	// SKYRAT EDIT ADDITION
 	start_log(GLOB.event_vote_log)

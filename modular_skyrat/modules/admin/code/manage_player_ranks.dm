@@ -2,9 +2,10 @@
 #define SKYRAT_DONATOR_CONFIG_FILE "[global.config.directory]/skyrat/donators.txt"
 #define SKYRAT_MENTOR_CONFIG_FILE "[global.config.directory]/skyrat/mentors.txt"
 #define SKYRAT_VETERAN_CONFIG_FILE "[global.config.directory]/skyrat/veteran_players.txt"
+#define EXRP_CONFIG_FILE "[global.config.directory]/whitelist_exrp.txt"
 
 /// The list of the available special player ranks
-#define SKYRAT_PLAYER_RANKS list("Donator", "Mentor", "Veteran")
+#define SKYRAT_PLAYER_RANKS list("Donator", "Mentor", "Veteran", "EXRP")
 
 /client/proc/manage_player_ranks()
 	set category = "Admin"
@@ -72,6 +73,14 @@
 					// Now that we know that the ckey is valid and they're not already apart of that group, let's add them to it!
 					GLOB.veteran_players[player_to_be] = TRUE
 					text2file(player_to_be, SKYRAT_VETERAN_CONFIG_FILE)
+				if("EXRP")
+					for(var/a_exrp as anything in GLOB.whitelist_exrp)
+						if(player_to_be == a_exrp)
+							to_chat(usr, span_warning("\"[player_to_be]\" is already a [group_title]!"))
+							return
+					// Now that we know that the ckey is valid and they're not already apart of that group, let's add them to it!
+					GLOB.whitelist_exrp[player_to_be] = TRUE
+					text2file(player_to_be, EXRP_CONFIG_FILE)
 
 				else
 					return
@@ -121,6 +130,15 @@
 						to_chat(usr, span_warning("\"[player_that_was]\" was already not a [group_title]."))
 						return
 					save_veteran_players()
+				if("EXRP")
+					for(var/a_exrp as anything in GLOB.whitelist_exrp)
+						if(player_that_was == a_exrp)
+							GLOB.whitelist_exrp -= player_that_was
+							changes = TRUE
+					if(!changes)
+						to_chat(usr, span_warning("\"[player_that_was]\" was already not a [group_title]."))
+						return
+					save_exrp_players()
 
 				else
 					return
@@ -129,8 +147,14 @@
 
 		else
 			return
+/proc/save_exrp_players()
+	var/exrp_list = ""
+	for(var/exrp in GLOB.whitelist_exrp)
+		exrp_list += exrp + "\n"
+	rustg_file_write(exrp_list, EXRP_CONFIG_FILE)
 
 #undef SKYRAT_DONATOR_CONFIG_FILE
 #undef SKYRAT_MENTOR_CONFIG_FILE
 #undef SKYRAT_VETERAN_CONFIG_FILE
 #undef SKYRAT_PLAYER_RANKS
+#undef EXRP_CONFIG_FILE

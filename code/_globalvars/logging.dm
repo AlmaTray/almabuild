@@ -121,6 +121,9 @@ GLOBAL_PROTECT(world_qdel_log)
 GLOBAL_VAR(world_runtime_log)
 GLOBAL_PROTECT(world_runtime_log)
 
+GLOBAL_VAR(world_exrp_log)
+GLOBAL_PROTECT(world_exrp_log)
+
 GLOBAL_VAR(world_shuttle_log)
 GLOBAL_PROTECT(world_shuttle_log)
 
