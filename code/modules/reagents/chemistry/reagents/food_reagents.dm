@@ -141,6 +141,7 @@
 	name = "Сперма"
 	description = "Натуральный биопродукт."
 	brute_heal = 0.3
+	color = "#FFFFFF"
 	nutriment_factor = 18 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/nutriment/protein/semen/expose_turf(turf/exposed_turf, reac_volume)

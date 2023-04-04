@@ -3,7 +3,7 @@
 	if(!(prob(dancing / dancing_tolerance * 65)))
 		return
 
-	visible_message(span_purple("<b>[capitalize(src)]</b> [pick("стонет", "стонет в наслаждении")]."))
+	visible_message(span_purple("<b>[capitalize(src.real_name)]</b> [pick("стонет", "стонет в наслаждении")]."))
 
 	var/temp_age = 0
 
