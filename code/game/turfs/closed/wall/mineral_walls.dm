@@ -20,6 +20,19 @@
 	canSmoothWith = SMOOTH_GROUP_GOLD_WALLS
 	custom_materials = list(/datum/material/gold = 4000)
 
+/turf/closed/wall/mineral/copper
+	name = "медная стена"
+	desc = "Стена с медным покрытием."
+	icon = 'icons/turf/walls/copper_wall.dmi'
+	icon_state = "copper_wall-0"
+	base_icon_state = "copper_wall"
+	sheet_type = /obj/item/stack/sheet/mineral/copper
+	hardness = 60
+	explosive_resistance = 0 
+	smoothing_groups = SMOOTH_GROUP_COPPER_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
+	canSmoothWith = SMOOTH_GROUP_COPPER_WALLS
+	custom_materials = list(/datum/material/copper = 4000)
+
 /turf/closed/wall/mineral/silver
 	name = "серебрянная стена"
 	desc = "Стена с серебрянным покрытием. Блестит!"
@@ -137,7 +150,7 @@
 
 /turf/closed/wall/mineral/plasma
 	name = "плазмовая стена"
-	desc = "Стена с плазмовым. Это определённо плохая идея."
+	desc = "Стена с плазмовым покрытием. Это определённо плохая идея."
 	icon = 'icons/turf/walls/plasma_wall.dmi'
 	icon_state = "plasma_wall-0"
 	base_icon_state = "plasma_wall"
@@ -194,7 +207,7 @@
 	hardness = 80 //it's not a mineral...
 
 /turf/closed/wall/mineral/iron
-	name = "хрупкая деревянная стена"
+	name = "хрупкая стена"
 	desc = "Стена с грубым металлическим покрытием."
 	icon = 'icons/turf/walls/iron_wall.dmi'
 	icon_state = "iron_wall-0"
@@ -310,7 +323,7 @@
 
 /turf/closed/wall/mineral/plastitanium
 	name = "стена"
-	desc = "Прочная стена из сплава титана и плазмы."
+	desc = "Жутко прочная стена из сплава титана и плазмы."
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
 	icon_state = "plastitanium_wall-0"
 	base_icon_state = "plastitanium_wall"
