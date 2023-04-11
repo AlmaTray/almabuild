@@ -274,6 +274,20 @@
 	canSmoothWith = SMOOTH_GROUP_IRON_WALLS
 	custom_materials = list(/datum/material/iron = 5000)
 
+/obj/structure/tramwall/copper
+	name = "copper wall"
+	desc = "A wall with copper plating."
+	icon = 'icons/turf/walls/copper_wall.dmi'
+	icon_state = "copper_wall-0"
+	base_icon_state = "copper_wall"
+	mineral = /obj/item/stack/sheet/mineral/copper
+	mineral_amount = 5
+	tram_wall_type = /obj/structure/tramwall/copper
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = SMOOTH_GROUP_COPPER_WALLS + SMOOTH_GROUP_WALLS + SMOOTH_GROUP_CLOSED_TURFS
+	canSmoothWith = SMOOTH_GROUP_COPPER_WALLS
+	custom_materials = list(/datum/material/copper = 4000)
+
 /obj/structure/tramwall/abductor
 	name = "alien wall"
 	desc = "A wall with alien alloy plating."

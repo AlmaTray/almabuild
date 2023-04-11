@@ -21,6 +21,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 	var/static/list/materials_list = list(
 		/datum/material/iron,
 		/datum/material/glass,
+		/datum/material/copper,
 		/datum/material/silver,
 		/datum/material/gold,
 		/datum/material/diamond,

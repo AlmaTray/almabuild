@@ -192,6 +192,7 @@
 /turf/closed/mineral/random/volcanic/mineral_chances()
 	return list(
 		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/copper = 25,
 		/obj/item/stack/ore/plasma = 20,
 		/obj/item/stack/ore/silver = 12,
 		/obj/item/stack/ore/titanium = 11,
@@ -221,6 +222,7 @@
 /turf/closed/mineral/random/snow/mineral_chances()
 	return list(
 		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/copper = 25,
 		/obj/item/stack/ore/plasma = 20,
 		/obj/item/stack/ore/silver = 12,
 		/obj/item/stack/ore/titanium = 11,
@@ -244,6 +246,7 @@
 		/obj/item/stack/ore/gold = 20,
 		/obj/item/stack/ore/plasma = 20,
 		/obj/item/stack/ore/iron = 20,
+		/obj/item/stack/ore/copper = 20,
 		/obj/item/stack/ore/uranium = 10,
 		/turf/closed/mineral/strange_rock/ice/icemoon = 10,
 		/turf/closed/mineral/gibtonite/ice/icemoon = 8,
@@ -281,6 +284,7 @@
 /turf/closed/mineral/random/stationside/asteroid/rockplanet/mineral_chances()
 	return list(
 		/obj/item/stack/ore/iron = 40,
+		/obj/item/stack/ore/copper = 25,
 		/obj/item/stack/ore/plasma = 20,
 		/obj/item/stack/ore/silver = 12,
 		/obj/item/stack/ore/titanium = 11,

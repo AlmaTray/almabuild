@@ -143,6 +143,7 @@
 	var/list/allowed_materials = list(
 		/datum/material/iron,
 		/datum/material/glass,
+		/datum/material/copper,
 		/datum/material/silver,
 		/datum/material/gold,
 		/datum/material/diamond,

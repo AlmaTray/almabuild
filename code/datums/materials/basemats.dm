@@ -33,6 +33,22 @@
 	victim.apply_damage(10, BRUTE, BODY_ZONE_HEAD, wound_bonus = 5, sharpness = TRUE) //cronch
 	return TRUE
 
+/datum/material/copper
+	name = "copper"
+	desc = "Copper"
+	color = rgb(189, 102, 47)
+	greyscale_colors = "#ffff00"
+	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE, MAT_CATEGORY_ITEM_MATERIAL=TRUE)
+	sheet_type = /obj/item/stack/sheet/mineral/copper
+	value_per_unit = 0.5
+	beauty_modifier = 0.5
+	armor_modifiers = list(MELEE = 0.2, BULLET = 0.2, ENERGY = 1, BIO = 0.2, FIRE = 1, ACID = 0.2)
+
+/datum/material/copper/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
+	victim.apply_damage(10, BRUTE, BODY_ZONE_HEAD, wound_bonus = 5)
+	return TRUE
+
+
 /*
 Color matrices are like regular colors but unlike with normal colors, you can go over 255 on a channel.
 Unless you know what you're doing, only use the first three numbers. They're in RGB order.
