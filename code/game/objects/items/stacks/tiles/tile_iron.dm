@@ -1,7 +1,7 @@
 /obj/item/stack/tile/iron
-	name = "floor tile"
-	singular_name = "floor tile"
-	desc = "The ground you walk on."
+	name = "плитка пола"
+	singular_name = "плитка пола"
+	desc = "Земля, по которой мы ходим."
 	icon_state = "tile"
 	inhand_icon_state = "tile"
 	force = 6
@@ -97,21 +97,21 @@
 	. = ..()
 	var/static/list/tool_behaviors = list(
 		TOOL_WELDER = list(
-			SCREENTIP_CONTEXT_LMB = "Craft iron sheets",
-			SCREENTIP_CONTEXT_RMB = "Craft iron rods",
+			SCREENTIP_CONTEXT_LMB = "Создать листы железа",
+			SCREENTIP_CONTEXT_RMB = "Создать железные стержни",
 		),
 	)
 	AddElement(/datum/element/contextual_screentip_tools, tool_behaviors)
 
 /obj/item/stack/tile/iron/welder_act(mob/living/user, obj/item/tool)
 	if(get_amount() < 4)
-		balloon_alert(user, "not enough tiles!")
+		balloon_alert(user, "недостаточно плиток!")
 		return
 	if(tool.use_tool(src, user, delay = 0, volume = 40))
 		var/obj/item/stack/sheet/iron/new_item = new(user.loc)
 		user.visible_message(
-			span_notice("[user.name] shaped [src] into sheets with [tool]."),
-			blind_message = span_hear("You hear welding."),
+			span_notice("[user.name] превращает [src] в листы при помощи [tool]."),
+			blind_message = span_hear("Слышу треск сварки."),
 			vision_distance = COMBAT_MESSAGE_RANGE,
 			ignored_mobs = user
 		)
@@ -121,13 +121,13 @@
 
 /obj/item/stack/tile/iron/welder_act_secondary(mob/living/user, obj/item/tool)
 	if(get_amount() < 2)
-		balloon_alert(user, "not enough tiles!")
+		balloon_alert(user, "недостаточно плиток!")
 		return
 	if(tool.use_tool(src, user, delay = 0, volume = 40))
 		var/obj/item/stack/rods/new_item = new(user.loc)
 		user.visible_message(
-			span_notice("[user.name] shaped [src] into rods with [tool]."),
-			blind_message = span_hear("You hear welding."),
+			span_notice("[user.name] превращает [src] в стержни [tool]."),
+			blind_message = span_hear("Слышу треск сварки."),
 			vision_distance = COMBAT_MESSAGE_RANGE,
 			ignored_mobs = user
 		)
