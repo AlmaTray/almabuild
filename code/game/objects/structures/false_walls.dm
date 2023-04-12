@@ -148,7 +148,7 @@
 
 /obj/structure/falsewall/reinforced
 	name = "укреплённая стена"
-	desc = "громный кусок прочного металла для разделения пространства на помещения."
+	desc = "Огромный кусок прочного металла для разделения пространства на помещения."
 	//icon = 'icons/turf/walls/reinforced_wall.dmi'
 	icon = 'modular_skyrat/modules/aesthetics/walls/icons/reinforced_wall.dmi' //SKYRAT EDIT CHANGE - AESTHETICS
 	icon_state = "reinforced_wall-0"
