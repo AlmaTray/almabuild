@@ -1,5 +1,5 @@
 /datum/surgery/amputation
-	name = "Amputation"
+	name = "Ампутация"
 	requires_bodypart_type = NONE
 	possible_locs = list(
 		BODY_ZONE_R_ARM,
@@ -20,7 +20,7 @@
 
 
 /datum/surgery_step/sever_limb
-	name = "sever limb (circular saw)"
+	name = "распилить кость (циркулярная пила)"
 	implements = list(
 		/obj/item/shears = 300,
 		TOOL_SCALPEL = 100,
@@ -37,22 +37,22 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to sever [target]'s [parse_zone(target_zone)]..."),
-		span_notice("[user] begins to sever [target]'s [parse_zone(target_zone)]!"),
-		span_notice("[user] begins to sever [target]'s [parse_zone(target_zone)]!"),
+		span_notice("Вы начинаете пилить кость в [parse_zone(target_zone)] [target]..."),
+		span_notice("[user] начинает пилить кость в [parse_zone(target_zone)] [target]!"),
+		span_notice("[user] начинает пилить кость в [parse_zone(target_zone)] [target]!"),
 	)
-	display_pain(target, "You feel a gruesome pain in your [parse_zone(target_zone)]'s joint!")
+	display_pain(target, "Сустав в [parse_zone(target_zone)] жутко болит!")
 
 
 /datum/surgery_step/sever_limb/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	display_results(
 		user,
 		target,
-		span_notice("You sever [target]'s [parse_zone(target_zone)]."),
-		span_notice("[user] severs [target]'s [parse_zone(target_zone)]!"),
-		span_notice("[user] severs [target]'s [parse_zone(target_zone)]!"),
+		span_notice("Вы закончили распиливать кость в [parse_zone(target_zone)] [target]."),
+		span_notice("[user] заканчивает пилить кость в [parse_zone(target_zone)] [target]!"),
+		span_notice("[user] заканчивает пилить кость в [parse_zone(target_zone)] [target]!"),
 	)
-	display_pain(target, "You can no longer feel your severed [parse_zone(target_zone)]!")
+	display_pain(target, "Вы больше не чувствуете вашу распиленную [parse_zone(target_zone)]!")
 	if(surgery.operated_bodypart)
 		var/obj/item/bodypart/target_limb = surgery.operated_bodypart
 		target_limb.drop_limb()

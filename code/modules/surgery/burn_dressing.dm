@@ -3,7 +3,7 @@
 
 ///// Debride burnt flesh
 /datum/surgery/debride
-	name = "Debride burnt flesh"
+	name = "Удаление обожжёной плоти"
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	targetable_wound = /datum/wound/burn
 	possible_locs = list(
@@ -31,7 +31,7 @@
 
 ///// Debride
 /datum/surgery_step/debride
-	name = "excise infection (hemostat)"
+	name = "удаление инфекции (зажим)"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_SCALPEL = 85,
@@ -58,11 +58,11 @@
 		if(-INFINITY to 1)
 			return
 		if(1 to 2)
-			progress_text = ", preparing to remove the last remaining bits of infection"
+			progress_text = ", остаётся удалять последние фрагменты заражения.."
 		if(2 to 4)
-			progress_text = ", steadily narrowing the remaining bits of infection"
+			progress_text = ", старательно избавляюсь от немногих оставшихся участков инфекции"
 		if(5 to INFINITY)
-			progress_text = ", though there's still quite a lot to excise"
+			progress_text = ", тут ещё довольно много работы"
 
 	return progress_text
 
@@ -70,20 +70,20 @@
 	if(surgery.operated_wound)
 		var/datum/wound/burn/burn_wound = surgery.operated_wound
 		if(burn_wound.infestation <= 0)
-			to_chat(user, span_notice("[target]'s [parse_zone(user.zone_selected)] has no infected flesh to remove!"))
+			to_chat(user, span_notice("у [target] нет инфицированной плоти на [parse_zone(user.zone_selected)]!"))
 			surgery.status++
 			repeatable = FALSE
 			return
 		display_results(
 			user,
 			target,
-			span_notice("You begin to excise infected flesh from [target]'s [parse_zone(user.zone_selected)]..."),
-			span_notice("[user] begins to excise infected flesh from [target]'s [parse_zone(user.zone_selected)] with [tool]."),
-			span_notice("[user] begins to excise infected flesh from [target]'s [parse_zone(user.zone_selected)]."),
+			span_notice("Вы начинаете вырезать инфицированную плоть на [parse_zone(user.zone_selected)] [target]..."),
+			span_notice("[user] начинает вырезать инфицированную плоть с [parse_zone(user.zone_selected)] [target] при помощи [tool]."),
+			span_notice("[user] начинает вырезать инфицированную плоть с [parse_zone(user.zone_selected)] [target]."),
 		)
-		display_pain(target, "The infection in your [parse_zone(user.zone_selected)] stings like hell! It feels like you're being stabbed!")
+		display_pain(target, "Инфицированная [parse_zone(user.zone_selected)] дико жжётся! Меня будто режут!")
 	else
-		user.visible_message(span_notice("[user] looks for [target]'s [parse_zone(user.zone_selected)]."), span_notice("You look for [target]'s [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] упорно ищет [parse_zone(user.zone_selected)] у [target]."), span_notice("Вы ищете [parse_zone(user.zone_selected)] у [target]..."))
 
 /datum/surgery_step/debride/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/burn/burn_wound = surgery.operated_wound
@@ -92,18 +92,18 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully excise some of the infected flesh from [target]'s [parse_zone(target_zone)][progress_text]."),
-			span_notice("[user] successfully excises some of the infected flesh from [target]'s [parse_zone(target_zone)] with [tool]!"),
-			span_notice("[user] successfully excises some of the infected flesh from  [target]'s [parse_zone(target_zone)]!"),
+			span_notice("Вы успешно срезаете часть инфицированной плоти с [parse_zone(user.zone_selected)] [target]."),
+			span_notice("[user] успешно срезает часть инфицированной плоти с [parse_zone(user.zone_selected)] [target] при помощи [tool]!"),
+			span_notice("[user] успешно срезает часть инфицированной плоти с [parse_zone(user.zone_selected)] [target]!"),
 		)
-		log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "срезает инфицированную плоть", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
 		burn_wound.infestation -= infestation_removed
 		burn_wound.sanitization += sanitization_added
 		if(burn_wound.infestation <= 0)
 			repeatable = FALSE
 	else
-		to_chat(user, span_warning("[target] has no infected flesh there!"))
+		to_chat(user, span_warning("У [target] тут больше нет инфекции!"))
 	return ..()
 
 /datum/surgery_step/debride/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)
@@ -111,9 +111,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("You carve away some of the healthy flesh from [target]'s [parse_zone(target_zone)]."),
-		span_notice("[user] carves away some of the healthy flesh from [target]'s [parse_zone(target_zone)] with [tool]!"),
-		span_notice("[user] carves away some of the healthy flesh from  [target]'s [parse_zone(target_zone)]!"),
+		span_notice("Вы удаляете фрагменты здоровой плоти с [parse_zone(user.zone_selected)] [target]."),
+		span_notice("[user] удаляет фрагменты здоровой плоти с [parse_zone(user.zone_selected)] [target] при помощи [tool]!"),
+		span_notice("[user] удаляет фрагменты здоровой плоти с [parse_zone(user.zone_selected)] [target]!"),
 	)
 	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=TRUE)
 
@@ -127,7 +127,7 @@
 
 ///// Dressing burns
 /datum/surgery_step/dress
-	name = "bandage burns (gauze/tape)"
+	name = "перебинтовать ожоги (сетка/хирург. лента)"
 	implements = list(
 		/obj/item/stack/medical/gauze = 100,
 		/obj/item/stack/sticky_tape/surgical = 100)
@@ -144,13 +144,13 @@
 		display_results(
 			user,
 			target,
-			span_notice("You begin to dress the burns on [target]'s [parse_zone(user.zone_selected)]..."),
-			span_notice("[user] begins to dress the burns on [target]'s [parse_zone(user.zone_selected)] with [tool]."),
-			span_notice("[user] begins to dress the burns on [target]'s [parse_zone(user.zone_selected)]."),
+			span_notice("Вы начинаете бинтовать ожоги на [parse_zone(user.zone_selected)] [target]..."),
+			span_notice("[user] начинает бинтовать ожоги на [parse_zone(user.zone_selected)] [target] при помощи [tool]."),
+			span_notice("[user] начинает бинтовать ожоги на [parse_zone(user.zone_selected)] [target]."),
 		)
-		display_pain(target, "The burns on your [parse_zone(user.zone_selected)] sting like hell!")
+		display_pain(target, "[parse_zone(user.zone_selected)] дико щиплет из-за ожогов!")
 	else
-		user.visible_message(span_notice("[user] looks for [target]'s [parse_zone(user.zone_selected)]."), span_notice("You look for [target]'s [parse_zone(user.zone_selected)]..."))
+		user.visible_message(span_notice("[user] ищет [parse_zone(user.zone_selected)] у [target]."), span_notice("Вы ищете [parse_zone(user.zone_selected)] у [target]..."))
 
 /datum/surgery_step/dress/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/datum/wound/burn/burn_wound = surgery.operated_wound
@@ -158,17 +158,17 @@
 		display_results(
 			user,
 			target,
-			span_notice("You successfully wrap [target]'s [parse_zone(target_zone)] with [tool]."),
-			span_notice("[user] successfully wraps [target]'s [parse_zone(target_zone)] with [tool]!"),
-			span_notice("[user] successfully wraps [target]'s [parse_zone(target_zone)]!"),
+			span_notice("Вы успешно перебинтовываете ожоги на [parse_zone(user.zone_selected)] [target] при помощи [tool]."),
+			span_notice("[user] успешно перебинтовывает [parse_zone(user.zone_selected)] [target] при помощи [tool]!"),
+			span_notice("[user] успешно перебинтовывает [parse_zone(user.zone_selected)] [target]!"),
 		)
-		log_combat(user, target, "dressed burns in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "заматывает ожоги", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
 		burn_wound.sanitization += sanitization_added
 		burn_wound.flesh_healing += flesh_healing_added
 		var/obj/item/bodypart/the_part = target.get_bodypart(target_zone)
 		the_part.apply_gauze(tool)
 	else
-		to_chat(user, span_warning("[target] has no burns there!"))
+		to_chat(user, span_warning("У [target] здесь нет ожогов!"))
 	return ..()
 
 /datum/surgery_step/dress/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, fail_prob = 0)

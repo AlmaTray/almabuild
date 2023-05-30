@@ -1,5 +1,5 @@
 /datum/surgery/cavity_implant
-	name = "Cavity implant"
+	name = "Имплантация полости"
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -11,7 +11,7 @@
 
 //handle cavity
 /datum/surgery_step/handle_cavity
-	name = "implant item"
+	name = "вставить предмет"
 	accept_hand = 1
 	implements = list(/obj/item = 100)
 	repeatable = TRUE
@@ -32,33 +32,33 @@
 		display_results(
 			user,
 			target,
-			span_notice("You begin to insert [tool] into [target]'s [target_zone]..."),
-			span_notice("[user] begins to insert [tool] into [target]'s [target_zone]."),
-			span_notice("[user] begins to insert [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "something"] into [target]'s [target_zone]."),
+			span_notice("Вы начинаете вставлять [tool] в [target_zone] [target]..."),
+			span_notice("[user] начинает вставлять [tool] в [target_zone] [target]."),
+			span_notice("[user] начинает вставлять [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target_zone] [target]."),
 		)
-		display_pain(target, "You can feel something being inserted into your [target_zone], it hurts like hell!")
+		display_pain(target, "Вы чувствуете, как вам в [target_zone] что-то вставляют, это ужасно больно!")
 	else
 		display_results(
 			user,
 			target,
-			span_notice("You check for items in [target]'s [target_zone]..."),
-			span_notice("[user] checks for items in [target]'s [target_zone]."),
-			span_notice("[user] looks for something in [target]'s [target_zone]."),
+			span_notice("Вы проверяете полость в [target_zone] у [target]..."),
+			span_notice("[user] проверяет полость в [target_zone] у [target]."),
+			span_notice("[user] ищет что-то в [target_zone] у [target]."),
 		)
 
 /datum/surgery_step/handle_cavity/success(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery = FALSE)
 	var/obj/item/bodypart/chest/target_chest = target.get_bodypart(BODY_ZONE_CHEST)
 	if(tool)
 		if(item_for_cavity || tool.w_class > WEIGHT_CLASS_NORMAL || HAS_TRAIT(tool, TRAIT_NODROP) || isorgan(tool))
-			to_chat(user, span_warning("You can't seem to fit [tool] in [target]'s [target_zone]!"))
+			to_chat(user, span_warning("Кажется, [tool] не помещается в [target_zone] [target]!"))
 			return FALSE
 		else
 			display_results(
 				user,
 				target,
-				span_notice("You stuff [tool] into [target]'s [target_zone]."),
-				span_notice("[user] stuffs [tool] into [target]'s [target_zone]!"),
-				span_notice("[user] stuffs [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "something"] into [target]'s [target_zone]."),
+				span_notice("Вы запихиваете [tool] в [target_zone] [target]."),
+				span_notice("[user] запихивает [tool] в [target_zone] [target]!"),
+				span_notice("[user] запихивает [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target_zone] [target]."),
 			)
 			user.transferItemToLoc(tool, target, TRUE)
 			target_chest.cavity_item = tool
@@ -68,14 +68,14 @@
 			display_results(
 				user,
 				target,
-				span_notice("You pull [item_for_cavity] out of [target]'s [target_zone]."),
-				span_notice("[user] pulls [item_for_cavity] out of [target]'s [target_zone]!"),
-				span_notice("[user] pulls [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "something"] out of [target]'s [target_zone]."),
+				span_notice("Вы вытаскиваете [item_for_cavity] из [target_zone] [target]."),
+				span_notice("[user] вытаскивает [item_for_cavity] из [target_zone] [target]!"),
+				span_notice("[user] вытаскивает [item_for_cavity.w_class > WEIGHT_CLASS_SMALL ? item_for_cavity : "что-то"] из [target_zone] [target]."),
 			)
-			display_pain(target, "Something is pulled out of your [target_zone]! It hurts like hell!")
+			display_pain(target, "Из моей [target_zone] только что что-то достали! Это ужасно больно!")
 			user.put_in_hands(item_for_cavity)
 			target_chest.cavity_item = null
 			return ..()
 		else
-			to_chat(user, span_warning("You don't find anything in [target]'s [target_zone]."))
+			to_chat(user, span_warning("Не удалось ничего найти у [target] в [target_zone]."))
 			return FALSE

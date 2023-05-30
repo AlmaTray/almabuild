@@ -1,5 +1,5 @@
 /datum/surgery/eye_surgery
-	name = "Eye surgery"
+	name = "Глазная хирургия"
 	requires_bodypart_type = NONE
 	organ_to_manipulate = ORGAN_SLOT_EYES
 	possible_locs = list(BODY_ZONE_PRECISE_EYES)
@@ -13,7 +13,7 @@
 
 //fix eyes
 /datum/surgery_step/fix_eyes
-	name = "fix eyes (hemostat)"
+	name = "исправить глаза (зажим)"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_SCREWDRIVER = 45,
@@ -23,7 +23,7 @@
 /datum/surgery/eye_surgery/can_start(mob/user, mob/living/carbon/target)
 	var/obj/item/organ/internal/eyes/target_eyes = target.getorganslot(ORGAN_SLOT_EYES)
 	if(!target_eyes)
-		to_chat(user, span_warning("It's hard to do surgery on someone's eyes when [target.p_they()] [target.p_do()]n't have any."))
+		to_chat(user, span_warning("Тяжело будет провести операцию на глазах у того, у кого их нет."))
 		return FALSE
 	return TRUE
 
@@ -31,23 +31,23 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin to fix [target]'s eyes..."),
-		span_notice("[user] begins to fix [target]'s eyes."),
-		span_notice("[user] begins to perform surgery on [target]'s eyes."),
+		span_notice("Вы начинаете исправлять глаза [target]..."),
+		span_notice("[user] начинает исправлять глаза [target]."),
+		span_notice("[user] проводит операцию на глазах [target]."),
 	)
-	display_pain(target, "You feel a stabbing pain in your eyes!")
+	display_pain(target, "Вы чувствуете режущую боль в глазах!")
 
 /datum/surgery_step/fix_eyes/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/obj/item/organ/internal/eyes/target_eyes = target.getorganslot(ORGAN_SLOT_EYES)
-	user.visible_message(span_notice("[user] successfully fixes [target]'s eyes!"), span_notice("You succeed in fixing [target]'s eyes."))
+	user.visible_message(span_notice("[user] успешно исправляет глаза [target]!"), span_notice("Вы успешно исправляете глаза [target]."))
 	display_results(
 		user,
 		target,
-		span_notice("You succeed in fixing [target]'s eyes."),
-		span_notice("[user] successfully fixes [target]'s eyes!"),
-		span_notice("[user] completes the surgery on [target]'s eyes."),
+		span_notice("Вы успешно исправляете глаза [target]."),
+		span_notice("[user] успешно исправляет глаза [target]!"),
+		span_notice("[user] завершает операцию на глазах [target]."),
 	)
-	display_pain(target, "Your vision blurs, but it seems like you can see a little better now!")
+	display_pain(target, "Ваше зрение мутновато, но теперь, кажется, видно чуть лучше!")
 	target.remove_status_effect(/datum/status_effect/temporary_blindness)
 	target.set_eye_blur_if_lower(70 SECONDS) //this will fix itself slowly.
 	target_eyes.setOrganDamage(0) // heals nearsightedness and blindness from eye damage
@@ -58,9 +58,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("You accidentally stab [target] right in the brain!"),
-			span_warning("[user] accidentally stabs [target] right in the brain!"),
-			span_warning("[user] accidentally stabs [target] right in the brain!"),
+			span_warning("Вы случайно попадаете [target] прямо в мозг!"),
+			span_warning("[user] случайно попадает [target] прямо в мозг!"),
+			span_warning("[user] случайно попадает [target] прямо в мозг!"),
 		)
 		display_pain(target, "You feel a visceral stabbing pain right through your head, into your brain!")
 		target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 70)
@@ -68,9 +68,9 @@
 		display_results(
 			user,
 			target,
-			span_warning("You accidentally stab [target] right in the brain! Or would have, if [target] had a brain."),
-			span_warning("[user] accidentally stabs [target] right in the brain! Or would have, if [target] had a brain."),
-			span_warning("[user] accidentally stabs [target] right in the brain!"),
+			span_warning("Вы случайно попадаете [target] прямо в мозг! Или попали бы, если бы у [target] был мозг."),
+			span_warning("[user] случайно попадает [target] прямо в мозг! Ну, или не попадает. У [target] нет мозга.."),
+			span_warning("[user] случайно попадает [target] прямо в мозг!"),
 		)
-		display_pain(target, "You feel a visceral stabbing pain right through your head!") // dunno who can feel pain w/o a brain but may as well be consistent.
+		display_pain(target, "Вы чувствуете глубочайшую боль, проходящую через вашу голову!") // dunno who can feel pain w/o a brain but may as well be consistent.
 	return FALSE
