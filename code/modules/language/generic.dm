@@ -1,5 +1,5 @@
 // 'basic' language; spoken by default.
-/datum/language/common
+/datum/language/generic
 	name = "Местный Галактический"
 	desc = "Самый распространённый язык галактики. В здешних секторах также записывается кириллицей."
 	key = "0"
