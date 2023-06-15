@@ -26,6 +26,19 @@ SUBSYSTEM_DEF(ai_controllers)
 	for(var/datum/ai_controller/ai_controller as anything in active_ai_controllers)
 		if(!COOLDOWN_FINISHED(ai_controller, failed_planning_cooldown))
 			continue
+		var/client/C
+		var/_run = FALSE
+		if(ismob(ai_controller.pawn))
+			var/mob/_pawn = ai_controller.pawn
+			for(C in GLOB.clients)
+				var/has_mob = !isnull(C.mob)
+				if(has_mob)
+					if(get_dist(C.mob, _pawn) < 15)
+						_run = TRUE
+						break
+
+		if(!_run)
+			continue
 
 		if(!ai_controller.able_to_plan())
 			continue

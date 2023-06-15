@@ -280,7 +280,17 @@
 
 /mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
-	if(speak_chance)
+
+	var/client/C
+	var/_run = FALSE
+	for(C in GLOB.clients)
+		var/has_mob = !isnull(C.mob)
+		if(has_mob)
+			if(get_dist(C.mob, src) < 15)
+				_run = TRUE
+				break
+
+	if(speak_chance && _run)
 		if(prob(speak_chance) || override)
 			if(speak?.len)
 				if((emote_hear?.len) || (emote_see?.len))
